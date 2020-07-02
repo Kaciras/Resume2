@@ -4,7 +4,8 @@
 body {
   margin: 0;
 }
-section {
+section,
+footer {
   padding: 2rem 10vw;
 }
 .header {
@@ -57,5 +58,13 @@ li {
   background: whitesmoke;
   padding: 0.4em 0.6em;
   border-radius: 4px;
+}
+footer {
+  display: flex;
+}
+#qrcode {
+  margin-left: auto;
+  width: 80px;
+  height: 80px;
 }
 /*# sourceMappingURL=index.css.map */
