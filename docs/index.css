@@ -5,10 +5,16 @@ body {
   margin: 0;
 }
 section,
+header,
 footer {
   padding: 2rem 10vw;
 }
-.header {
+.section-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.header,
+.footer {
   display: flex;
 }
 h1 {
@@ -47,7 +53,7 @@ h2 {
   padding-right: 0.5em;
 }
 li {
-  margin: 0.5em 0;
+  margin: 1em 0;
 }
 #university {
   margin-left: auto;
@@ -59,12 +65,14 @@ li {
   padding: 0.4em 0.6em;
   border-radius: 4px;
 }
-footer {
-  display: flex;
-}
 #qrcode {
   margin-left: auto;
   width: 80px;
   height: 80px;
+}
+.screenshot {
+  margin: 50px 0;
+  max-width: 100%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=index.css.map */
