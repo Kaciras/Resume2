@@ -1,17 +1,16 @@
 import React from "react";
-import Section from "./section";
 
 const ResumeHeader = ({ title }) => (
-	<>
+	<header>
 		<div id="name-group">
 			<h1 id="name">徐帆</h1>
 			<span>{title}</span>
 		</div>
-		<div>
-			毕业于
-			<strong>湖北理工学院</strong>
-			<span id="degree">本科</span>
-			电气与电子信息工程
+		<div id="degree">
+			毕业于：
+			<span>湖北理工学院</span>
+			<span>本科</span>
+			<span>电气与电子信息工程</span>
 		</div>
 		<div id="addr-group">
 			<address>QQ: 907421955</address>
@@ -21,9 +20,9 @@ const ResumeHeader = ({ title }) => (
 		<img
 			id="university"
 			src="../images/hbpu.jpg"
-			alt="湖北理工学院"
+			alt="university"
 		/>
-	</>
+	</header>
 );
 
 export default ResumeHeader;

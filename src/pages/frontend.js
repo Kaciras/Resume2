@@ -1,40 +1,33 @@
 import React from "react";
 import Section from "../components/section";
-import Tech from "../components/tech";
 import "../scss/index.scss"
 import ResumeHeader from "../components/resume-header";
+import TechLabels from "../components/tech-labels";
+
+const techstack = {
+	lang: ["JAVA", "TypeScript"],
+	frontend: ["NodeJS", "Webpack", "PWA", "Vue.js"],
+	backend: ["Spring Boot", "Redis", "MySQL"],
+	operation: ["Nginx", "Debian"],
+};
+
 
 const FrontendPage = () => (
 	<>
-		<Section tag="header">
-			<ResumeHeader title="Web前端开发工程师"/>
-		</Section>
-		<Section>
-			<div className="hgroup">
-				<h1>项目展示</h1>
-				<h2 className="subtitle">编织有艺术感的代码</h2>
-			</div>
+		<ResumeHeader title="Web前端开发工程师"/>
+
+		<Section title="项目展示" subtitle="编织有艺术感的代码">
+
 			<div className="project-header">
 				<h3>个人网站项目</h3>
 				<div>
-					<a href="https://blog.kaciras.com">blog.kaciras.com</a> |
+					<a href="https://blog.kaciras.com">blog.kaciras.com</a>
+					|
 					<a href="https://github.com/kaciras-blog">GitHub</a>
 				</div>
 			</div>
 
-			<div>
-				<Tech type="frontend">NodeJS</Tech>
-				<Tech type="frontend">Webpack</Tech>
-				<Tech type="frontend">PWA</Tech>
-				<Tech type="frontend">Vue.js</Tech>
-				<Tech type="lang">JAVA</Tech>
-				<Tech type="lang">TypeScript</Tech>
-				<Tech type="backend">Spring Boot</Tech>
-				<Tech type="backend">Redis</Tech>
-				<Tech type="backend">MySQL</Tech>
-				<Tech type="ops">Nginx</Tech>
-				<Tech type="ops">Debian</Tech>
-			</div>
+			<TechLabels stack={techstack}/>
 
 			<img className="screenshot" src="../images/screenshot.png" alt="screenshot"/>
 
@@ -73,11 +66,7 @@ const FrontendPage = () => (
 				<li>拥有自己编写的 Markdown 编辑器用来写文章，支持LaTeX、上传图片和视频</li>
 			</ul>
 		</Section>
-		<Section>
-			<div className="hgroup">
-				<h1>拥有全栈技能树</h1>
-				<h2 className="subtitle">广泛的知识不惧任何挑战</h2>
-			</div>
+		<Section title="拥有全栈技能树" subtitle="广泛的知识不惧任何挑战">
 			<ul>
 				<li>
 					熟悉多种编程语言：C#，JavaScript，TypeScript，Python，JAVA
