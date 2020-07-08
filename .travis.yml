@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 14
+
+git:
+  depth: false
+  quiet: true
+
+cache: npm
+
+script: npm build
+
+deploy:
+  github_token: $GITHUB_TOKEN
+  local_dir: public
+  provider: pages
+  skip_cleanup: true
+  on:
+    branch: master
