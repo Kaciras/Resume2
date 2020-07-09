@@ -1,0 +1,23 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+address {
+	font-style: normal;
+}
+
+section, header, footer {
+	padding: 2rem 10vw;
+
+	&:nth-child(even) {
+		background: #fafafa;
+	}
+}
+
+header, footer {
+	display: flex;
+}
