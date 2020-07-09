@@ -1,15 +1,16 @@
-import React from "react";
-import style from "./section.module.scss";
+import React from "react"
+import style from "./section.module.scss"
 
 export default function Section({ title, subtitle, children }) {
-	let header = null;
+	let header = null
 
 	if (title) {
-		header =
+		header = (
 			<div className={style.header}>
 				<h1>{title}</h1>
 				{subtitle ? <h2>{subtitle}</h2> : null}
 			</div>
+		)
 	}
 
 	return (
@@ -19,5 +20,5 @@ export default function Section({ title, subtitle, children }) {
 				{children}
 			</div>
 		</section>
-	);
-};
+	)
+}

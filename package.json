@@ -4,6 +4,7 @@
 	"license": "MIT",
 	"author": "Kaciras <Kaciras@outlook.com>",
 	"scripts": {
+		"lint": "eslint --fix .",
 		"dev": "next dev",
 		"build": "next build && next export",
 		"start": "next start"
