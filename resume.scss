@@ -12,15 +12,19 @@ address {
 
 section, header, footer {
 	padding: 2rem 10vw;
+
+	&:nth-child(even) {
+		background: #fafafa;
+	}
+}
+
+header, footer {
+	display: flex;
 }
 
 .section-content {
 	max-width: 1000px;
 	margin: 0 auto;
-}
-
-.header, .footer {
-	display: flex;
 }
 
 // ======================================
@@ -35,16 +39,16 @@ h2 {
 	font-weight: normal;
 }
 
-.subtitle {
-	color: #667;
-}
-
 .gray {
 	background: #fafafa;
 }
 
-.hgroup {
+.section-header {
 	text-align: center;
+
+	& > h2 {
+		color: #667;
+	}
 }
 
 .project-header {

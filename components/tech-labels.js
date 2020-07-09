@@ -1,11 +1,11 @@
 import React from "react";
-import "./tech.scss";
+import style from "./tech.module.scss";
 
 export default function TechLabels({ stack }) {
 	const labels = [];
 
 	function render(type) {
-		(stack[type] || []).forEach(name => labels.push(<span className={"tech " + type}>{name}</span>))
+		(stack[type] || []).forEach(name => labels.push(<span className={style.tech + " " + style[type]}>{name}</span>))
 	}
 
 	render("frontend");
