@@ -1,17 +1,17 @@
-import React from "react"
-import ReactMarkdown from "react-markdown"
-import Section from "../../components/section"
-import ResumeHeader from "../../components/header"
-import TechLabels from "../../components/tech-labels"
-import blogMarkdown from "./Blog.md"
-import skillMarkdown from "./Skill.md"
+import React from "react";
+import ReactMarkdown from "react-markdown";
+import Section from "../../components/section";
+import ResumeHeader from "../../components/header";
+import TechLabels from "../../components/tech-labels";
+import blogMarkdown from "./Blog.md";
+import skillMarkdown from "./Skill.md";
 
 const techstack = {
 	lang: ["JAVA", "TypeScript"],
 	frontend: ["NodeJS", "Webpack", "PWA", "Vue.js"],
 	backend: ["Spring Boot", "Redis", "MySQL"],
 	operation: ["Nginx", "Debian"],
-}
+};
 
 export default function WebResume() {
 	return (
@@ -48,5 +48,5 @@ export default function WebResume() {
 				<img id="qrcode" alt="QR Code" src="/QR.png" />
 			</footer>
 		</>
-	)
+	);
 }
