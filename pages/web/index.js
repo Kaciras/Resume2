@@ -45,7 +45,7 @@ export default function WebResume() {
 
 			<footer>
 				<span>Copyright &copy; Kaciras 2020</span>
-				<img id="qrcode" alt="QR Code" src="/QR.png" />
+				<img id="qrcode" alt="QR Code" src="/qrcode.png" />
 			</footer>
 		</>
 	);
