@@ -6,9 +6,9 @@ git:
   depth: false
   quiet: true
 
-cache: npm
+cache: yarn
 
-script: npm build
+script: yarn build
 
 deploy:
   github_token: $GITHUB_TOKEN
