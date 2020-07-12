@@ -3,11 +3,14 @@
 	"version": "0.1.0",
 	"license": "MIT",
 	"author": "Kaciras <Kaciras@outlook.com>",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kaciras-blog/website"
+	},
 	"scripts": {
 		"lint": "eslint --fix .",
 		"dev": "next dev",
-		"build": "next build && next export",
-		"start": "next start"
+		"build": "next build && next export"
 	},
 	"dependencies": {
 		"next": "9.4.4",
