@@ -31,9 +31,9 @@ export default function WebResume() {
 				<TechLabels stack={techstack} />
 
 				<img
-					src="/screenshot.png"
-					alt="screenshot"
 					className="screenshot"
+					alt="screenshot"
+					src={require("@/assets/screenshot.png")}
 				/>
 
 				<ReactMarkdown source={blogMarkdown} />

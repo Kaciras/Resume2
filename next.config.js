@@ -1,9 +1,15 @@
+const withOptimizedImages = require("next-optimized-images");
+
 function customWebpack(config) {
 	config.module.rules.push({
 		test: /\.md$/,
 		use: "raw-loader",
 	});
+	config.resolve.alias["@"] = __dirname;
 	return config;
 }
 
-module.exports = { webpack: customWebpack };
+module.exports = withOptimizedImages({
+	poweredByHeader: false,
+	webpack: customWebpack,
+});
