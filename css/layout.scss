@@ -31,6 +31,7 @@
 .project-header {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 }
 
 li {
@@ -39,8 +40,11 @@ li {
 
 #qrcode {
 	margin-left: auto;
-	width: 80px;
-	height: 80px;
+
+	& > img {
+		width: 80px;
+		height: 80px;
+	}
 }
 
 .screenshot {
