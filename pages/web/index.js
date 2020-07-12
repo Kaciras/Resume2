@@ -6,17 +6,17 @@ import TechLabels from "../../components/tech-labels";
 import blogMarkdown from "./Blog.md";
 import skillMarkdown from "./Skill.md";
 
-const techstack = {
+const stack = {
 	lang: ["JAVA", "TypeScript"],
 	frontend: ["NodeJS", "Webpack", "PWA", "Vue.js"],
 	backend: ["Spring Boot", "Redis", "MySQL"],
-	operation: ["Nginx", "Debian"]
+	operation: ["Nginx", "Debian"],
 };
 
-export default function WebResume() {
+export default function FrontendResume() {
 	return (
 		<>
-			<ResumeHeader title="Web前端开发工程师"/>
+			<ResumeHeader title="Web前端开发工程师" />
 
 			<Section title="项目展示" subtitle="编织有艺术感的代码">
 				<div className="project-header">
@@ -28,7 +28,7 @@ export default function WebResume() {
 					</div>
 				</div>
 
-				<TechLabels stack={techstack}/>
+				<TechLabels stack={stack} />
 
 				<img
 					className="screenshot"
@@ -36,17 +36,17 @@ export default function WebResume() {
 					src={require("@/assets/screenshot.png")}
 				/>
 
-				<ReactMarkdown source={blogMarkdown}/>
+				<ReactMarkdown source={blogMarkdown} />
 			</Section>
 
 			<Section title="拥有全栈技能树" subtitle="广泛的知识不惧任何挑战">
-				<ReactMarkdown source={skillMarkdown}/>
+				<ReactMarkdown source={skillMarkdown} />
 			</Section>
 
 			<footer>
 				<span>Copyright &copy; Kaciras 2020</span>
 				<a id="qrcode" href="/qrcode.png">
-					<img alt="QR Code" src="/qrcode.png"/>
+					<img alt="QR Code" src="/qrcode.png" />
 				</a>
 			</footer>
 		</>
