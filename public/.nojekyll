@@ -1,9 +1,0 @@
-GitHub Pages 默认使用 jekyll 生成资源。
-
-jekyll 默认的配置会忽略以下划线开头的目录，这导致 _next 目录无法访问。
-
-本站已用 Next.js 的导出命令生成了静态网站，故没有必要再用 jekyll 再处理一遍。
-
-【GitHub Pages 中 jekyll 的说明】
-https://docs.github.com/en/github/working-with-github-pages/about-github-pages#static-site-generators
-https://docs.github.com/en/github/working-with-github-pages/about-github-pages-and-jekyll#configuring-jekyll-in-your-github-pages-site
