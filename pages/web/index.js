@@ -5,6 +5,7 @@ import ResumeHeader from "../../components/header";
 import TechLabels from "../../components/tech-labels";
 import blogMarkdown from "./Blog.md";
 import skillMarkdown from "./Skill.md";
+import Head from "next/head";
 
 const stack = {
 	lang: ["JAVA", "TypeScript"],
@@ -16,6 +17,11 @@ const stack = {
 export default function FrontendResume() {
 	return (
 		<>
+			<Head>
+				<title>前端工程师 | 简历</title>
+				<base target="_blank" />
+			</Head>
+
 			<ResumeHeader title="Web前端开发工程师" />
 
 			<Section title="项目展示" subtitle="编织有艺术感的代码">
