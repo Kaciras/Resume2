@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./section.module.scss";
+import style from "./Section.module.scss";
 
 export default function Section({ title, subtitle, children }) {
 	let header = null;

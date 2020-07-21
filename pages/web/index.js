@@ -1,11 +1,11 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import Section from "../../components/section";
-import ResumeHeader from "../../components/header";
-import TechLabels from "../../components/tech-labels";
+import Head from "next/head";
+import Section from "../../components/Section";
+import ResumeHeader from "../../components/ResumeHeader";
+import TechLabels from "../../components/TechLabels";
 import blogMarkdown from "./Blog.md";
 import skillMarkdown from "./Skill.md";
-import Head from "next/head";
 
 const stack = {
 	lang: ["JAVA", "TypeScript"],

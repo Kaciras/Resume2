@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./tech-labels.module.scss";
+import style from "./TechLabels.module.scss";
 
 export default function TechLabels({ stack }) {
 	const labels = [];
