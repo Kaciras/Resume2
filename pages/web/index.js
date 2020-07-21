@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
+import QRCode from "qrcode";
 import Section from "../../components/Section";
 import ResumeHeader from "../../components/ResumeHeader";
 import TechLabels from "../../components/TechLabels";
@@ -15,6 +16,17 @@ const stack = {
 };
 
 export default function FrontendResume() {
+	const qrcodeCanvas = useRef(null);
+
+	useEffect(() => {
+		QRCode.toCanvas(qrcodeCanvas.current, location.href, {
+			color: {
+				light: "#00000000",
+			},
+			margin: 0,
+		});
+	});
+
 	return (
 		<>
 			<Head>
@@ -51,9 +63,7 @@ export default function FrontendResume() {
 
 			<footer>
 				<span>Copyright &copy; Kaciras 2020</span>
-				<a id="qrcode" href="/qrcode.png">
-					<img alt="QR Code" src="/qrcode.png" />
-				</a>
+				<canvas id="qrcode" ref={qrcodeCanvas} />
 			</footer>
 		</>
 	);
