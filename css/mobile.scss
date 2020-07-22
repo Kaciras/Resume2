@@ -1,7 +1,7 @@
 @media screen and (max-width: 768px) {
 
 	section, header, footer {
-		padding: 32px 12px;
+		padding: 2.5rem 12px;
 	}
 
 	ul, ol {
@@ -23,5 +23,10 @@
 
 	#qrcode {
 		margin: 32px 0 0 0;
+	}
+
+	#name-group {
+		display: flex;
+		justify-content: center;
 	}
 }

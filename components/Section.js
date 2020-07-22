@@ -7,7 +7,7 @@ export default function Section({ title, subtitle, children }) {
 	if (title) {
 		header = (
 			<div className={style.header}>
-				<h1>{title}</h1>
+				<h1 className="h-top">{title}</h1>
 				{subtitle ? <h2>{subtitle}</h2> : null}
 			</div>
 		);
