@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback } from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 import QRCode from "qrcode";
@@ -15,17 +15,13 @@ const stack = {
 	operation: ["Nginx", "Debian"],
 };
 
-export default function FrontendResume() {
-	const qrcodeCanvas = useRef(null);
+const QRCodeConfig = {
+	margin: 0,
+	color: { light: "#00000000" },
+};
 
-	useEffect(() => {
-		QRCode.toCanvas(qrcodeCanvas.current, location.href, {
-			color: {
-				light: "#00000000",
-			},
-			margin: 0,
-		});
-	});
+export default function FrontendResume() {
+	const qrCodeRef = useCallback(canvas => QRCode.toCanvas(canvas, location.href, QRCodeConfig), []);
 
 	return (
 		<>
@@ -48,11 +44,7 @@ export default function FrontendResume() {
 
 				<TechLabels stack={stack} />
 
-				<img
-					className="screenshot"
-					alt="screenshot"
-					src={require("@/assets/screenshot.png")}
-				/>
+				<img className="screenshot" alt="screenshot" src={require("@/assets/screenshot.png")} />
 
 				<ReactMarkdown source={blogMarkdown} />
 			</Section>
@@ -63,7 +55,7 @@ export default function FrontendResume() {
 
 			<footer>
 				<span>Copyright &copy; Kaciras 2020</span>
-				<canvas id="qrcode" ref={qrcodeCanvas} />
+				<canvas id="qrcode" ref={qrCodeRef} />
 			</footer>
 		</>
 	);
