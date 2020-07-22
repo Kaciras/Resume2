@@ -15,4 +15,13 @@
 	#university {
 		display: none;
 	}
+
+	footer {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#qrcode {
+		margin: 32px 0 0 0;
+	}
 }
