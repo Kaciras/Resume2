@@ -15,13 +15,18 @@ const stack = {
 	operation: ["Nginx", "Debian"],
 };
 
-const QRCodeConfig = {
-	margin: 0,
-	color: { light: "#00000000" },
-};
+function createQRCode(canvas) {
+	const options = {
+		margin: 1,
+		color: { light: "#fafafaff" },
+	};
+	QRCode.toDataURL(canvas, location.href, options, (err, url) => {
+		canvas.onclick = () => window.open(url, "_blank");
+	});
+}
 
 export default function FrontendResume() {
-	const qrCodeRef = useCallback(canvas => QRCode.toCanvas(canvas, location.href, QRCodeConfig), []);
+	const qrCodeRef = useCallback(createQRCode, []);
 
 	return (
 		<>
