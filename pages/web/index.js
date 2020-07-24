@@ -59,7 +59,12 @@ export default function FrontendResume() {
 			</Section>
 
 			<footer>
-				<span>Copyright &copy; Kaciras 2020</span>
+				<div>
+					<p>Copyright &copy; Kaciras 2020</p>
+					<p>
+						<a href="https://github.com/Kaciras/Resume2">https://github.com/Kaciras/Resume2</a>
+					</p>
+				</div>
 				<canvas id="qrcode" ref={qrCodeRef} />
 			</footer>
 		</>

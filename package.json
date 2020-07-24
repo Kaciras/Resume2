@@ -5,7 +5,7 @@
 	"author": "Kaciras <Kaciras@outlook.com>",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kaciras-blog/website"
+		"url": "https://github.com/Kaciras/Resume2"
 	},
 	"scripts": {
 		"lint": "eslint --fix .",
