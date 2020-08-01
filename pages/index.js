@@ -9,7 +9,7 @@ function ResumeCard({ title, href, banner }) {
 	return (
 		<Link href={href}>
 			<a className={style.card}>
-				<img className={style.banner} alt="banner" src={banner}/>
+				<img className={style.banner} alt="banner" src={banner} />
 				<h2 className={style.title}>{title}</h2>
 			</a>
 		</Link>
@@ -19,11 +19,7 @@ function ResumeCard({ title, href, banner }) {
 export default function Home() {
 	return (
 		<div className={style.container}>
-			<ResumeCard
-				title="Web前端开发工程师"
-				href="/web/"
-				banner={require("../assets/website-design.svg")}
-			/>
+			<ResumeCard title="Web前端开发工程师" href="/web" banner={require("../assets/website-design.svg")} />
 		</div>
 	);
 }
