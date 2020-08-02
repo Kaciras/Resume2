@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 import QRCode from "qrcode";
@@ -26,7 +26,8 @@ function createQRCode(canvas) {
 }
 
 export default function FrontendResume() {
-	const qrCodeRef = useCallback(createQRCode, []);
+	const qrCodeRef = useRef(null);
+	useEffect(() => createQRCode(qrCodeRef.current), []);
 
 	return (
 		<>
