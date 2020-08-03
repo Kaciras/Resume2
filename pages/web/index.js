@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
-import QRCode from "qrcode";
 import Section from "../../components/Section";
 import ResumeHeader from "../../components/ResumeHeader";
 import TechLabels from "../../components/TechLabels";
+import Footer from "../../components/Footer";
 import blogMarkdown from "./Blog.md";
 import skillMarkdown from "./Skill.md";
 
@@ -15,20 +15,7 @@ const stack = {
 	operation: ["Nginx", "Debian"],
 };
 
-function createQRCode(canvas) {
-	const options = {
-		margin: 1,
-		color: { light: "#fafafaff" },
-	};
-	QRCode.toDataURL(canvas, location.href, options, (err, url) => {
-		canvas.onclick = () => window.open(url, "_blank");
-	});
-}
-
 export default function FrontendResume() {
-	const qrCodeRef = useRef(null);
-	useEffect(() => createQRCode(qrCodeRef.current), []);
-
 	return (
 		<>
 			<Head>
@@ -59,15 +46,7 @@ export default function FrontendResume() {
 				<ReactMarkdown source={skillMarkdown} />
 			</Section>
 
-			<footer>
-				<div>
-					<p>Copyright &copy; Kaciras 2020</p>
-					<p>
-						<a href="https://github.com/Kaciras/Resume2">https://github.com/Kaciras/Resume2</a>
-					</p>
-				</div>
-				<canvas id="qrcode" ref={qrCodeRef} />
-			</footer>
+			<Footer />
 		</>
 	);
 }

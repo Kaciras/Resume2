@@ -1,4 +1,6 @@
-@media screen and (max-width: 768px) {
+@import "mixins";
+
+@include mobile-layout {
 
 	section, header, footer {
 		padding: 2.5rem 12px;
