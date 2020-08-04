@@ -53,14 +53,22 @@
 
 .title {
 	position: absolute;
-	z-index: 3;
-
-	bottom: 32px;
-	right: 32px;
 	margin: 0;
 
-	font-size: 2.5em;
+	bottom: 15px;
+	right: 0;
+	left: 0;
+	z-index: 3;
+
+	text-align: center;
 	color: white !important;
+
+	@include pc-layout {
+		bottom: 32px;
+		right: 32px;
+		left: auto;
+		font-size: 2.5em;
+	}
 }
 
 .banner {
