@@ -11,6 +11,6 @@ function customWebpack(config) {
 
 module.exports = withOptimizedImages({
 	poweredByHeader: false,
-	exportTrailingSlash: true,
+	trailingSlash: true,
 	webpack: customWebpack,
 });
