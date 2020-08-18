@@ -10,8 +10,8 @@ import skillMarkdown from "./Skill.md";
 
 const stack = {
 	lang: ["JAVA", "TypeScript"],
-	frontend: ["NodeJS", "Webpack", "PWA", "Vue.js"],
-	backend: ["Spring Boot", "Redis", "MySQL"],
+	frontend: ["NodeJS", "Webpack", "PWA", "Vue.js", "Storybook"],
+	backend: ["Spring Boot", "Redis", "MySQL", "MyBatis"],
 	operation: ["Nginx", "Debian"],
 };
 
