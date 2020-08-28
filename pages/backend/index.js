@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../../components/Footer";
+import Footer from "@/components/Footer";
 import Head from "next/head";
-import ResumeHeader from "../../components/ResumeHeader";
-import Section from "../../components/Section";
+import ResumeHeader from "@/components/ResumeHeader";
+import Section from "@/components/Section";
 
 export default function BackendResume() {
 	return (

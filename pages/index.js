@@ -1,7 +1,7 @@
 import React from "react";
+import Head from "next/head";
 import Link from "next/link";
 import style from "./index.module.scss";
-import Head from "next/head";
 
 function ResumeCard({ title, href, background }) {
 	if (typeof location !== "undefined" && location.search) {
@@ -23,8 +23,8 @@ export default function Home() {
 			<Head>
 				<title>导航页 | 简历</title>
 			</Head>
-			<ResumeCard title="Web前端开发工程师" href="/web" background={require("../assets/frontend.png")} />
-			<ResumeCard title="JAVA开发工程师" href="/backend" background={require("../assets/java.png")} />
+			<ResumeCard title="Web前端开发工程师" href="/web" background={require("@/assets/frontend.png")} />
+			<ResumeCard title="JAVA开发工程师" href="/backend" background={require("@/assets/java.png")} />
 		</div>
 	);
 }
