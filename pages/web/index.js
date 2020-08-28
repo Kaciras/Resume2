@@ -7,6 +7,7 @@ import TechLabels from "../../components/TechLabels";
 import Footer from "../../components/Footer";
 import blogMarkdown from "./Blog.md";
 import skillMarkdown from "./Skill.md";
+import style from "./web.module.scss";
 
 const stack = {
 	lang: ["JAVA", "TypeScript"],
@@ -26,7 +27,7 @@ export default function FrontendResume() {
 			<ResumeHeader title="Web前端开发工程师" />
 
 			<Section title="项目展示" subtitle="编织有艺术感的代码">
-				<div className="project-header">
+				<div className={style.project}>
 					<h3>个人网站项目</h3>
 					<div>
 						<a href="https://blog.kaciras.com">blog.kaciras.com</a>
@@ -37,7 +38,7 @@ export default function FrontendResume() {
 
 				<TechLabels stack={stack} />
 
-				<img className="screenshot" alt="screenshot" src={require("@/assets/screenshot.png")} />
+				<img className={style.screenshot} alt="screenshot" src={require("@/assets/screenshot.png")} />
 
 				<ReactMarkdown source={blogMarkdown} />
 			</Section>

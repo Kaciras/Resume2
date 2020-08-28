@@ -1,25 +1,17 @@
+@import "../../css/mixins";
 
-.project-header {
+.project {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-li {
-	margin: 1em 0;
-}
-
-#qrcode {
-	margin-left: auto;
-	cursor: pointer;
-}
-
 .screenshot {
-	margin: 50px 0;
 	max-width: 100%;
+	margin: 50px 0;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
-}
 
-.h-top {
-	margin-top: 0;
+	@include mobile-layout {
+		margin: 1em 0;
+	}
 }

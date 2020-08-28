@@ -21,3 +21,12 @@ section, header, footer {
 footer {
 	display: flex;
 }
+
+li {
+	margin: 1em 0;
+}
+
+#qrcode {
+	margin-left: auto;
+	cursor: pointer;
+}
