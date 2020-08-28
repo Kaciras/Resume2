@@ -14,8 +14,8 @@ export default function TechLabels({ stack }) {
 		);
 	}
 
-	render("frontend");
 	render("lang");
+	render("frontend");
 	render("backend");
 	render("operation");
 
