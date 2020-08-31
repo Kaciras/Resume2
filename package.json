@@ -31,7 +31,7 @@
 		"imagemin-pngquant": "^9.0.0",
 		"imagemin-svgo": "^8.0.0",
 		"next-optimized-images": "^2.6.2",
-		"prettier": "^2.0.5",
+		"prettier": "^2.1.1",
 		"webp-loader": "^0.6.0"
 	}
 }
