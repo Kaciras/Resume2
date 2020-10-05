@@ -15,11 +15,9 @@
 	"dependencies": {
 		"next": "9.5.3",
 		"qrcode": "^1.4.4",
-		"raw-loader": "^4.0.1",
 		"react": "16.13.1",
 		"react-dom": "16.13.1",
 		"react-markdown": "^4.3.1",
-		"sass": "^1.26.11"
 	},
 	"devDependencies": {
 		"eslint": "^7.9.0",
@@ -31,6 +29,8 @@
 		"imagemin-svgo": "^8.0.0",
 		"next-optimized-images": "^2.6.2",
 		"prettier": "^2.1.2",
+		"raw-loader": "^4.0.1",
+		"sass": "^1.26.11",
 		"webp-loader": "^0.6.0"
 	}
 }
