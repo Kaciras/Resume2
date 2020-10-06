@@ -1,6 +1,6 @@
 import { join } from "path";
 import fs from "fs";
-import { decryptAESNode, encryptAESNode } from "../lib/encrypt.mjs";
+import { decryptNode, encryptNode } from "../lib/encrypt.mjs";
 
 if (process.argv.length !== 5) {
 	console.error("Arguments required, use: node script/secret-file.mjs mode filename password");
@@ -14,13 +14,13 @@ const distFile = filename + ".encrypt";
 
 switch (mode) {
 	case "encrypt": {
-		const data = encryptAESNode(password, fs.readFileSync(filename));
+		const data = encryptNode(password, fs.readFileSync(filename));
 		fs.writeFileSync(distFile, data);
 		break;
 	}
 	case "decrypt": {
 		const data = fs.readFileSync(distFile, { encoding: "utf8" });
-		console.log(decryptAESNode(password, data));
+		console.log(decryptNode(password, data));
 		break;
 	}
 	default:
