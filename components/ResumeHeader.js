@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import university from "@/assets/hbpu.jpg";
 import { decryptNode } from "@/lib/encrypt";
 import style from "./ResumeHeader.module.scss";
-import personData from "@/secret.json.encrypt";
+import encryptedData from "@/secret.json.encrypt";
 
 const Placeholder = {
 	name: "演示姓名",
@@ -14,7 +14,15 @@ const Placeholder = {
 	},
 };
 
-async function getAttributes() {
+/**
+ * 读取身份信息，用于展示在简历最上面一栏。
+ *
+ * 如果 URL 带有 key=[password] 参数则尝试解密真实的身份信息，
+ * 如果没有或者密码错误则使用演示信息（Placeholder）
+ *
+ * @return {Promise<object>} 身份信息
+ */
+async function getPersonalInfo() {
 	if (typeof window === "undefined") {
 		return Placeholder;
 	}
@@ -23,7 +31,7 @@ async function getAttributes() {
 		return Placeholder;
 	}
 	try {
-		return JSON.parse(decryptNode(key, personData));
+		return JSON.parse(decryptNode(key, encryptedData));
 	} catch (e) {
 		return Placeholder; // 密码错误，返回默认数据
 	}
@@ -34,7 +42,7 @@ export default function ResumeHeader({ title }) {
 	const { name, degree, addresses } = info;
 
 	useEffect(() => {
-		getAttributes().then(setInfo);
+		getPersonalInfo().then(setInfo);
 		return () => {};
 	}, []);
 
