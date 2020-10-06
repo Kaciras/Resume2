@@ -5,7 +5,7 @@ import style from "./ResumeHeader.module.scss";
 import personData from "@/secret.json.encrypt";
 
 const Placeholder = {
-	name: "姓名",
+	name: "演示姓名",
 	degree: ["某某大学", "本科"],
 	addresses: {
 		电话和微信: 12345678900,
@@ -22,7 +22,11 @@ async function getAttributes() {
 	if (!key) {
 		return Placeholder;
 	}
-	return JSON.parse(decryptNode(key, personData));
+	try {
+		return JSON.parse(decryptNode(key, personData));
+	} catch (e) {
+		return Placeholder; // 密码错误，返回默认数据
+	}
 }
 
 export default function ResumeHeader({ title }) {

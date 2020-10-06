@@ -12,10 +12,6 @@
 
 .name {
 	margin: 0 1rem 1rem 0;
-
-	@include mobile-layout {
-		margin-right: auto;
-	}
 }
 
 .addrGroup {
