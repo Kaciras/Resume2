@@ -10,9 +10,9 @@ import skillMarkdown from "./Skill.md";
 import style from "./web.module.scss";
 
 const stack = {
-	lang: ["JAVA", "TypeScript"],
+	lang: ["JAVA", "TypeScript", "C++"],
 	frontend: ["NodeJS", "Webpack", "PWA", "Vue.js", "Storybook"],
-	backend: ["Spring Boot", "Redis", "MySQL", "MyBatis"],
+	backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
 	operation: ["Nginx", "Debian"],
 };
 
@@ -28,7 +28,7 @@ export default function FrontendResume() {
 
 			<Section title="项目展示" subtitle="编织有艺术感的代码">
 				<div className={style.project}>
-					<h3>个人网站项目</h3>
+					<h3>个人网站</h3>
 					<div>
 						<a href="https://blog.kaciras.com">blog.kaciras.com</a>
 						&nbsp;|&nbsp;
