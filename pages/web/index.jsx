@@ -5,6 +5,7 @@ import Section from "@/components/Section";
 import ResumeHeader from "@/components/ResumeHeader";
 import TechLabels from "@/components/TechLabels";
 import Footer from "@/components/Footer";
+import screenshot from "@/assets/screenshot.png";
 import blogMarkdown from "./Blog.md";
 import skillMarkdown from "./Skill.md";
 import style from "./web.module.scss";
@@ -38,7 +39,7 @@ export default function FrontendResume() {
 
 				<TechLabels stack={stack} />
 
-				<img className={style.screenshot} alt="screenshot" src={require("@/assets/screenshot.png")} />
+				<img className={style.screenshot} alt="screenshot" src={screenshot} />
 
 				<ReactMarkdown source={blogMarkdown} />
 			</Section>

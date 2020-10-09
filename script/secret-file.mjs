@@ -5,6 +5,8 @@
  * node script/secret-file.mjs encrypt secret.json [password]
  *
  * 使用指定的密码加密根目录下的 secret.json -> secret.json.encrypt
+ *
+ * TODO: mjs 扩展名在 nextjs 热重载下有错误，暂时使用js扩展名
  */
 import { join } from "path";
 import fs from "fs";
