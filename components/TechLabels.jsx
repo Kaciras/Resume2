@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import style from "./TechLabels.module.scss";
 
 export default function TechLabels({ stack }) {
@@ -7,7 +8,7 @@ export default function TechLabels({ stack }) {
 	function render(type) {
 		(stack[type] || []).forEach(name =>
 			labels.push(
-				<span key={name} className={style.label + " " + style[type]}>
+				<span key={name} className={clsx(style.label, style[type])}>
 					{name}
 				</span>
 			)
