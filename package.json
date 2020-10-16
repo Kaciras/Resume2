@@ -1,5 +1,6 @@
 {
 	"name": "resume2",
+	"description": "个人简历网站",
 	"version": "0.1.0",
 	"license": "MIT",
 	"author": "Kaciras <Kaciras@outlook.com>",
@@ -14,24 +15,24 @@
 	},
 	"dependencies": {
 		"clsx": "^1.1.1",
-		"next": "9.5.4",
+		"next": "9.5.5",
 		"qrcode": "^1.4.4",
-		"react": "16.13.1",
-		"react-dom": "16.13.1",
+		"react": "16.14.0",
+		"react-dom": "16.14.0",
 		"react-markdown": "^4.3.1"
 	},
 	"devDependencies": {
-		"eslint": "^7.10.0",
+		"eslint": "^7.11.0",
 		"eslint-config-prettier": "^6.12.0",
 		"eslint-plugin-prettier": "^3.1.4",
-		"eslint-plugin-react": "^7.21.3",
+		"eslint-plugin-react": "^7.21.4",
 		"eslint-plugin-react-hooks": "^4.1.2",
 		"imagemin-pngquant": "^9.0.1",
 		"imagemin-svgo": "^8.0.0",
 		"next-optimized-images": "^2.6.2",
 		"prettier": "^2.1.2",
-		"raw-loader": "^4.0.1",
-		"sass": "^1.26.12",
+		"raw-loader": "^4.0.2",
+		"sass": "^1.27.0",
 		"webp-loader": "^0.6.0"
 	}
 }
