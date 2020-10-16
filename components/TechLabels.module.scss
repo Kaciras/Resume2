@@ -1,12 +1,27 @@
+.container {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+
+	// 通过伪元素抢占末尾空间实现最后一行不铺满
+	// https://stackoverflow.com/a/30307820/7065321
+	&::after {
+		content: "";
+		flex-grow: 10000;
+	}
+}
+
 .label {
-	display: inline-block;
 	margin: 4px;
 	padding: .4em .6em;
+	flex: 1;
+
+	text-align: center;
 	border-radius: 4px;
 }
 
 .frontend {
-	background: #fcfc72;
+	background: #fcfc5b;
 }
 
 .backend {
