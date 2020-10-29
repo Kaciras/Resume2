@@ -1,0 +1,14 @@
+@import "../css/mixins";
+
+.container {
+	background-color: #fafafa;
+}
+
+.qrcode {
+	margin-left: auto;
+	cursor: pointer;
+
+	@include mobile-layout {
+		margin: 32px 0 0 0;
+	}
+}

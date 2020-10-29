@@ -12,10 +12,6 @@ address {
 
 section, header, footer {
 	padding: 2.5rem 10vw;
-
-	&:nth-child(even) {
-		background: #fafafa;
-	}
 }
 
 footer {
@@ -24,9 +20,4 @@ footer {
 
 li {
 	margin: 1em 0;
-}
-
-#qrcode {
-	margin-left: auto;
-	cursor: pointer;
 }

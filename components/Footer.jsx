@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import QRCode from "qrcode";
+import styles from "./Footer.module.scss";
 
 function drawQRCode(canvas) {
 	const options = {
@@ -16,14 +17,14 @@ export default function Footer() {
 	useEffect(() => drawQRCode(qrCodeRef.current), []);
 
 	return (
-		<footer>
+		<footer className={styles.container}>
 			<div>
 				<p>Copyright &copy; Kaciras 2020</p>
 				<p>
 					<a href="https://github.com/Kaciras/Resume2">https://github.com/Kaciras/Resume2</a>
 				</p>
 			</div>
-			<canvas id="qrcode" ref={qrCodeRef} />
+			<canvas className={styles.qrcode} ref={qrCodeRef} />
 		</footer>
 	);
 }

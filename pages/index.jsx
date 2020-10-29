@@ -17,6 +17,7 @@ function ResumeCard({ title, href, background }) {
 	);
 }
 
+// TODO: 丑死了，得重新设计一下
 export default function Home() {
 	return (
 		<div className={style.container}>

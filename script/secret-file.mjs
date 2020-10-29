@@ -5,11 +5,13 @@
  * node script/secret-file.mjs encrypt secret.json [password]
  *
  * 使用指定的密码加密根目录下的 secret.json -> secret.json.encrypt
- *
- * TODO: mjs 扩展名在 nextjs 热重载下有错误，暂时使用js扩展名
  */
 import { join } from "path";
 import fs from "fs";
+
+// TODO: mjs 扩展名在 nextjs 热重载下有错误，暂时使用js扩展名
+//  如果要执行此文件请将 lib/encrypt.js 扩展名改为 .mjs
+//  https://github.com/vercel/next.js/issues/17806
 import { decryptNode, encryptNode } from "../lib/encrypt.mjs";
 
 if (process.argv.length !== 5) {
