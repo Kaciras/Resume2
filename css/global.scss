@@ -4,6 +4,7 @@
 
 body {
 	margin: 0;
+	line-height: 1.5;
 }
 
 address {
@@ -18,6 +19,7 @@ footer {
 	display: flex;
 }
 
+// 嵌套的列表没有间距分布，需要手动指定
 li {
 	margin: 1em 0;
 }

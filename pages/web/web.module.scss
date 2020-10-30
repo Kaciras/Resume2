@@ -4,14 +4,23 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	& > h3 {
+		font-size: 1.25rem;
+	}
+
+	@include mobile-layout {
+		flex-direction: column;
+		margin-bottom: 1em;
+	}
 }
 
 .screenshot {
 	max-width: 100%;
-	margin: 50px 0;
-	box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+	margin: 1.5rem 0;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, .5);
 
 	@include mobile-layout {
-		margin: 1em 0;
+		display: block; // 使下间距重叠
 	}
 }
