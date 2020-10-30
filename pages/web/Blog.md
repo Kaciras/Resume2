@@ -1,7 +1,5 @@
 - **独立完成整个项目，包括页面设计、前端、后端、运维部署**
 
-- 前端是使用 Vue 开发的 SPA 应用，由 NodeJS + Koa.js + TypeScript 构建资源服务器，后端使用 SpringBoot。
-
 - **响应式布局，能够适配各种宽度的屏幕**
 
 - 组件化的开发模式，将常用的代码封装为通用的组件，使用StoryBook对组件进行独立地开发和展示
@@ -15,6 +13,7 @@
   - [纯CSS实现居中+换行+左对齐](https://blog.kaciras.com/article/14/use-pure-CSS-to-implement-center+wrap+left-alignment-layout)
 
 - **实现了图片上传后自动优化、压缩，转码为WebP格式的功能**，节约了79.7%的流量（根据文章里的图片计算）
+  - [Web图片优化（一）：压缩方案简介](https://blog.kaciras.com/article/19/Introduction-to-Web-Image-Formats)
 
 - **支持PWA技术**，拥有自己编写的 ServiceWorker 提升加载速度，支持离线访问，还可以添加到手机桌面
 

@@ -1,6 +1,6 @@
-- 掌握多种编程语言：C#，JavaScript，TypeScript，Python，JAVA
-  
-- 做过多种：编写爬虫、浏览器插件开发
+- 掌握多种编程语言：C/C++，C#，JavaScript，TypeScript，Python，JAVA
+
+- 其它技能：浏览器插件开发、NodeJS扩展开发
 
 - 了解 Linux 的基本操作，了解 Nginx 作为反向代理的配置方法
 

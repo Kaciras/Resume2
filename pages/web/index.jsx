@@ -6,16 +6,35 @@ import ResumeHeader from "@/components/ResumeHeader";
 import TechLabels from "@/components/TechLabels";
 import Footer from "@/components/Footer";
 import screenshot from "@/assets/screenshot.png";
-import blogMarkdown from "./Blog.md";
-import skillMarkdown from "./Skill.md";
 import style from "./web.module.scss";
+import blogMarkdown from "./Blog.md";
+import icAnalyzeMarkdown from "./ICAnalyze.md";
+import skillMarkdown from "./Skill.md";
 
-const stack = {
-	lang: ["JAVA", "TypeScript", "C++"],
+const blogStack = {
+	lang: ["JAVA", "TypeScript"],
 	frontend: ["NodeJS", "Webpack", "PWA", "Vue.js", "Storybook"],
 	backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
-	operation: ["Nginx", "Debian"],
+	operation: ["Nginx", "Debian", "Travis CI"],
 };
+
+const icaStack = {
+	lang: ["TypeScript", "C++", "WebAssembly"],
+	frontend: ["React", "Webpack", "WebWorker", "Echarts"],
+	operation: ["GitHub Actions"],
+};
+
+/**
+ * 简化一下第三方跳转的链接元素，设置一些通用属性并默认使用域名作为内容。
+ */
+function OutLink(props) {
+	const content = props.children || new URL(props.href).hostname;
+	return (
+		<a {...props} target="_blank" rel="noopener">
+			{content}
+		</a>
+	);
+}
 
 export default function FrontendResume() {
 	return (
@@ -27,21 +46,32 @@ export default function FrontendResume() {
 
 			<ResumeHeader title="Web前端开发工程师" />
 
-			<Section title="项目展示" subtitle="编织有艺术感的代码">
+			<Section title="项目展示" subtitle="编织有艺术感的代码" type="project">
 				<div className={style.project}>
 					<h3>个人网站</h3>
 					<div>
-						<a href="https://blog.kaciras.com">blog.kaciras.com</a>
+						<OutLink href="https://blog.kaciras.com" />
 						&nbsp;|&nbsp;
-						<a href="https://github.com/kaciras-blog">GitHub</a>
+						<OutLink href="https://github.com/kaciras-blog">GitHub</OutLink>
 					</div>
 				</div>
 
-				<TechLabels stack={stack} />
-
+				<TechLabels stack={blogStack} />
 				<img className={style.screenshot} alt="screenshot" src={screenshot} />
-
 				<ReactMarkdown source={blogMarkdown} />
+
+				<div className={style.project}>
+					<h3 className={style.projectName}>在线图片编码分析工具</h3>
+					<div>
+						<OutLink href="https://ic-analyze.kaciras.com" />
+						&nbsp;|&nbsp;
+						<OutLink href="https://github.com/Kaciras/ICAnalyze">GitHub</OutLink>
+					</div>
+				</div>
+
+				<TechLabels stack={icaStack} />
+				<img className={style.screenshot} alt="screenshot" src={screenshot} />
+				<ReactMarkdown source={icAnalyzeMarkdown} />
 			</Section>
 
 			<Section title="拥有全栈技能树" subtitle="广泛的知识不惧任何挑战">
