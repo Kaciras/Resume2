@@ -25,7 +25,7 @@ export default function Footer() {
 					<OutLink href="https://github.com/Kaciras/Resume2"/>
 				</p>
 			</div>
-			<canvas className={styles.qrcode} ref={qrCodeRef} />
+			<canvas title="本页的二维码" className={styles.qrcode} ref={qrCodeRef}/>
 		</footer>
 	);
 }
