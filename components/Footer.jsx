@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import QRCode from "qrcode";
 import styles from "./Footer.module.scss";
+import OutLink from "@/components/OutLink";
 
 function drawQRCode(canvas) {
 	const options = {
@@ -21,7 +22,7 @@ export default function Footer() {
 			<div>
 				<p>Copyright &copy; Kaciras 2020</p>
 				<p>
-					<a href="https://github.com/Kaciras/Resume2">https://github.com/Kaciras/Resume2</a>
+					<OutLink href="https://github.com/Kaciras/Resume2"/>
 				</p>
 			</div>
 			<canvas className={styles.qrcode} ref={qrCodeRef} />
