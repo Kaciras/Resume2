@@ -64,13 +64,11 @@ export default function ResumeHeader({ title }) {
 				</div>
 				<div className={style.degree}>
 					毕业于：
-					{degree.map(p => (
-						<span key={p}>{p}</span>
-					))}
+					{degree.map(p => <span key={p}>{p}</span>)}
 				</div>
 				<div className={style.addrGroup}>{addrRow}</div>
 			</div>
-			<img className={style.university} src={university} alt="university" />
+			<img className={style.university} src={university} alt="university"/>
 		</header>
 	);
 }

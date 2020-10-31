@@ -13,13 +13,9 @@ export default function TechLabels({ stack }) {
 
 	function render(type) {
 		const clazz = clsx(styles.label, styles[type]);
-		(stack[type] || []).forEach(name =>
-			labels.push(
-				<span key={name} className={clazz}>
-					{name}
-				</span>
-			)
-		);
+		(stack[type] || []).forEach(name => {
+			labels.push(<span key={name} className={clazz}>{name}</span>);
+		});
 	}
 
 	render("lang");
