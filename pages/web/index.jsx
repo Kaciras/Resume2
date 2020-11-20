@@ -4,8 +4,8 @@ import Head from "next/head";
 import Section from "@/components/Section";
 import ResumeHeader from "@/components/ResumeHeader";
 import TechLabels from "@/components/TechLabels";
-import Footer from "@/components/Footer";
 import OutLink from "@/components/OutLink";
+import PageLayout from "@/components/PageLayout";
 import screenshot from "@/assets/screenshot.png";
 import style from "./web.module.scss";
 import blogMarkdown from "./Blog.md";
@@ -27,7 +27,7 @@ const icaStack = {
 
 export default function FrontendResume() {
 	return (
-		<>
+		<PageLayout>
 			<Head>
 				<title>前端工程师 | 简历</title>
 				<base target="_blank"/>
@@ -84,8 +84,6 @@ export default function FrontendResume() {
 					<ReactMarkdown>{skillMarkdown}</ReactMarkdown>
 				</div>
 			</Section>
-
-			<Footer/>
-		</>
+		</PageLayout>
 	);
 }
