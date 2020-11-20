@@ -1,0 +1,16 @@
+@import "mixins";
+
+// 使用 calc 同时实现类似 margin: auto 的居中效果和 max-width。
+// 使用 max 确保屏幕宽于手机但又不足 1200px 时的边距。
+.content {
+	$breakpoint: $max-content + 64px * 2;
+	padding: 2.5rem 12px;
+
+	@include pc-layout {
+		padding: 2.5rem 64px;
+	}
+
+	@media screen and (min-width: $breakpoint) {
+		padding: 2.5rem calc(50% - #{$max-content / 2});
+	}
+}

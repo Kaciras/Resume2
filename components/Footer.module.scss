@@ -1,6 +1,7 @@
 @import "../css/mixins";
 
 .container {
+	composes: content from global;
 	background-color: #fafafa;
 }
 

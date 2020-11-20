@@ -16,10 +16,8 @@ export default function Section(props) {
 
 	return (
 		<section className={styles[type]}>
-			<div className={styles.content}>
-				{header}
-				{children}
-			</div>
+			{header}
+			{children}
 		</section>
 	);
 }
