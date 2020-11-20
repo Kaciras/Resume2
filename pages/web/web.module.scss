@@ -1,11 +1,19 @@
 @import "css/mixins";
 
-.project {
+.project:not(:first-of-type) {
+	margin-top: 2rem;
+	border-top: solid 1px #ddd;
+}
+
+.projectHeader {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
+	margin: 2rem 0 1rem 0;
+
 	& > h3 {
+		margin: 0;
 		font-size: 1.25rem;
 	}
 
@@ -22,5 +30,11 @@
 
 	@include mobile-layout {
 		display: block; // 使下间距重叠
+	}
+}
+
+.markdown {
+	@include pc-layout {
+		padding: 0 2rem;
 	}
 }

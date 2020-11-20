@@ -5,6 +5,7 @@
 }
 
 body {
+	color: #222;
 	margin: 0;
 	line-height: 1.5;
 }
@@ -25,7 +26,7 @@ footer {
 
 // 嵌套的列表没有间距分布，需要手动指定
 li {
-	margin: 1em 0;
+	margin: .5em 0;
 }
 
 ul, ol {

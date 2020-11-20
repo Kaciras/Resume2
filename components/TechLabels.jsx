@@ -14,7 +14,7 @@ export default function TechLabels({ stack }) {
 	function render(type) {
 		const clazz = clsx(styles.label, styles[type]);
 		(stack[type] || []).forEach(name => {
-			labels.push(<span key={name} className={clazz}>{name}</span>);
+			labels.push(<li key={name} className={clazz}>{name}</li>);
 		});
 	}
 
@@ -23,5 +23,5 @@ export default function TechLabels({ stack }) {
 	render("backend");
 	render("operation");
 
-	return <div className={styles.container}>{labels}</div>;
+	return <ul className={styles.container}>{labels}</ul>;
 }

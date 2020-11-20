@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import styles from "./Section.module.scss";
 
 export default function Section(props) {
@@ -15,7 +16,7 @@ export default function Section(props) {
 	}
 
 	return (
-		<section className={styles[type]}>
+		<section className={clsx("content", styles[type])}>
 			{header}
 			{children}
 		</section>

@@ -35,36 +35,54 @@ export default function FrontendResume() {
 
 			<ResumeHeader title="Web前端开发工程师"/>
 
-			<Section title="项目展示" subtitle="编织有艺术感的代码" type="project">
-				<div className={style.project}>
-					<h3>个人网站</h3>
-					<div>
-						<OutLink href="https://blog.kaciras.com">blog.kaciras.com</OutLink>
-						&nbsp;|&nbsp;
-						<OutLink href="https://github.com/kaciras-blog">GitHub</OutLink>
+			<Section title="项目展示" subtitle="编织有艺术感的代码" type="projects">
+
+				<section className={style.project}>
+					<div className={style.projectHeader}>
+						<h3>个人网站</h3>
+						<div>
+							<OutLink href="https://blog.kaciras.com">blog.kaciras.com</OutLink>
+							&nbsp;|&nbsp;
+							<OutLink href="https://github.com/kaciras-blog">GitHub</OutLink>
+						</div>
 					</div>
-				</div>
-
-				<TechLabels stack={blogStack}/>
-				<img className={style.screenshot} alt="screenshot" src={screenshot}/>
-				<ReactMarkdown source={blogMarkdown}/>
-
-				<div className={style.project}>
-					<h3 className={style.projectName}>在线图片编码分析工具</h3>
-					<div>
-						<OutLink href="https://ic-analyze.kaciras.com">ic-analyze.kaciras.com</OutLink>
-						&nbsp;|&nbsp;
-						<OutLink href="https://github.com/Kaciras/ICAnalyze">GitHub</OutLink>
+					<TechLabels stack={blogStack}/>
+					<img
+						src={screenshot}
+						alt="screenshot"
+						className={style.screenshot}
+					/>
+					<div className={style.markdown}>
+						<ReactMarkdown>{blogMarkdown}</ReactMarkdown>
 					</div>
-				</div>
+				</section>
 
-				<TechLabels stack={icaStack}/>
-				<img className={style.screenshot} alt="screenshot" src={screenshot}/>
-				<ReactMarkdown source={icAnalyzeMarkdown}/>
+				<section className={style.project}>
+					<div className={style.projectHeader}>
+						<h3 className={style.projectName}>在线图片编码分析工具</h3>
+						<div>
+							<OutLink href="https://ic-analyze.kaciras.com">ic-analyze.kaciras.com</OutLink>
+							&nbsp;|&nbsp;
+							<OutLink href="https://github.com/Kaciras/ICAnalyze">GitHub</OutLink>
+						</div>
+					</div>
+
+					<TechLabels stack={icaStack}/>
+					<img
+						src={screenshot}
+						alt="screenshot"
+						className={style.screenshot}
+					/>
+					<div className={style.markdown}>
+						<ReactMarkdown>{icAnalyzeMarkdown}</ReactMarkdown>
+					</div>
+				</section>
 			</Section>
 
 			<Section title="拥有全栈技能树" subtitle="广泛的知识不惧任何挑战">
-				<ReactMarkdown source={skillMarkdown}/>
+				<div className={style.markdown}>
+					<ReactMarkdown>{skillMarkdown}</ReactMarkdown>
+				</div>
 			</Section>
 
 			<Footer/>

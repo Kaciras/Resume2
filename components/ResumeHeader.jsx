@@ -56,11 +56,11 @@ export default function ResumeHeader({ title }) {
 	}
 
 	return (
-		<header className={style.container}>
+		<section className={style.container}>
 			<div>
 				<div className={style.nameGroup}>
 					<h1 className={style.name}>{name}</h1>
-					<span>{title}</span>
+					<h2 className={style.title}>{title}</h2>
 				</div>
 				<div className={style.degree}>
 					毕业于：
@@ -69,6 +69,6 @@ export default function ResumeHeader({ title }) {
 				<div className={style.addrGroup}>{addrRow}</div>
 			</div>
 			<img className={style.university} src={university} alt="university"/>
-		</header>
+		</section>
 	);
 }

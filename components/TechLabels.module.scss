@@ -3,6 +3,10 @@
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
 	// 通过伪元素抢占末尾空间实现最后一行不铺满
 	// https://stackoverflow.com/a/30307820/7065321
 	&::after {
@@ -12,7 +16,7 @@
 }
 
 .label {
-	margin: 4px;
+	margin: .25rem;
 	padding: .4em .6em;
 	flex: 1;
 
@@ -22,12 +26,12 @@
 }
 
 .frontend {
-	background: #fcfc5b;
+	background: #fbfb00;
 }
 
 .backend {
 	color: white;
-	background: #00b131;
+	background: #008a17;
 }
 
 .operation {
