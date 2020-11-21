@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import university from "@/assets/hbpu.jpg";
-import { decryptNode } from "@/lib/encrypt";
 import style from "./ResumeHeader.module.scss";
 import encryptedData from "@/secret.json.encrypt";
 
