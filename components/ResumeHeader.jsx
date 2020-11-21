@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import university from "@/assets/hbpu.jpg";
 import style from "./ResumeHeader.module.scss";
 import encryptedData from "@/secret.json.encrypt";
+import * as webCrypto from "@/lib/encrypt-web";
 
 /** 用于演示的身份信息 */
 const Placeholder = {
@@ -14,7 +15,7 @@ const Placeholder = {
 	},
 };
 
-function tryUseRealData(callback) {
+async function tryUseRealData(callback) {
 	if (typeof window === "undefined") {
 		return;
 	}
@@ -23,8 +24,13 @@ function tryUseRealData(callback) {
 		return;
 	}
 	try {
-		const data = decryptNode(key, encryptedData);
-		callback(JSON.parse(data));
+		if("subtle" in window.crypto) {
+			const data = await webCrypto.decrypt(key, encryptedData);
+			callback(JSON.parse(new TextDecoder().decode(data)));
+		} else {
+			const nodeCrypto = await import("@/lib/encrypt-node");
+			callback(JSON.parse(nodeCrypto.decrypt(key, encryptedData)));
+		}
 	} catch (e) {
 		console.error("参数错误，无法解密个人信息");
 	}
@@ -46,7 +52,7 @@ export default function ResumeHeader({ title }) {
 	const [info, setInfo] = useState(Placeholder);
 	const { name, degree, addresses } = info;
 
-	useEffect(() => tryUseRealData(setInfo), []);
+	useEffect(() => { tryUseRealData(setInfo); }, []);
 
 	const addrRow = [];
 	for (const [k, v] of Object.entries(addresses)) {
