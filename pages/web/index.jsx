@@ -38,14 +38,14 @@ export default function FrontendResume() {
 			<Section title="项目展示" subtitle="编织有艺术感的代码" type="projects">
 
 				<section className={style.project}>
-					<div className={style.projectHeader}>
+					<header className={style.projectHeader}>
 						<h3>个人网站</h3>
 						<div>
 							<OutLink href="https://blog.kaciras.com">blog.kaciras.com</OutLink>
 							&nbsp;|&nbsp;
 							<OutLink href="https://github.com/kaciras-blog">GitHub</OutLink>
 						</div>
-					</div>
+					</header>
 					<TechLabels stack={blogStack}/>
 					<img
 						src={screenshot}
@@ -58,14 +58,14 @@ export default function FrontendResume() {
 				</section>
 
 				<section className={style.project}>
-					<div className={style.projectHeader}>
+					<header className={style.projectHeader}>
 						<h3 className={style.projectName}>在线图片编码分析工具</h3>
 						<div>
 							<OutLink href="https://ic-analyze.kaciras.com">ic-analyze.kaciras.com</OutLink>
 							&nbsp;|&nbsp;
 							<OutLink href="https://github.com/Kaciras/ICAnalyze">GitHub</OutLink>
 						</div>
-					</div>
+					</header>
 
 					<TechLabels stack={icaStack}/>
 					<img

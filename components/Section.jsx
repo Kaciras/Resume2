@@ -8,10 +8,10 @@ export default function Section(props) {
 	let header = null;
 	if (title) {
 		header = (
-			<div className={styles.header}>
+			<header className={styles.header}>
 				<h1>{title}</h1>
 				{subtitle && <h2>{subtitle}</h2>}
-			</div>
+			</header>
 		);
 	}
 

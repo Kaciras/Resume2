@@ -58,10 +58,10 @@ export default function ResumeHeader({ title }) {
 	return (
 		<section className={style.container}>
 			<div>
-				<div className={style.nameGroup}>
+				<header className={style.nameGroup}>
 					<h1 className={style.name}>{name}</h1>
 					<h2 className={style.title}>{title}</h2>
-				</div>
+				</header>
 				<div className={style.degree}>
 					毕业于：
 					{degree.map(p => <span key={p}>{p}</span>)}
