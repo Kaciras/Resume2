@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "./Footer";
+import PageFooter from "./PageFooter";
 
 export default function PageLayout({ children }) {
-	return <>{children}<Footer/></>;
+	return <>{children}<PageFooter/></>;
 }

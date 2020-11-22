@@ -1,7 +1,7 @@
 import React from "react";
-import Footer from "@/components/Footer";
+import PageFooter from "@/components/PageFooter";
 import Head from "next/head";
-import ResumeHeader from "@/components/ResumeHeader";
+import PersonalDetails from "@/components/PersonalDetails";
 import Section from "@/components/Section";
 
 export default function BackendResume() {
@@ -11,9 +11,9 @@ export default function BackendResume() {
 				<title>JAVA工程师 | 简历</title>
 				<base target="_blank" />
 			</Head>
-			<ResumeHeader title="JAVA工程师" />
+			<PersonalDetails title="JAVA工程师" />
 			<Section title="TODO" subtitle="编织有艺术感的代码" />
-			<Footer />
+			<PageFooter />
 		</>
 	);
 }

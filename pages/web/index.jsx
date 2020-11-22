@@ -2,9 +2,9 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 import Section from "@/components/Section";
-import ResumeHeader from "@/components/ResumeHeader";
+import PersonalDetails from "@/components/PersonalDetails";
 import TechLabels from "@/components/TechLabels";
-import OutLink from "@/components/OutLink";
+import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
 import screenshot from "@/assets/screenshot.png";
 import style from "./web.module.scss";
@@ -25,6 +25,31 @@ const icaStack = {
 	operation: ["GitHub Actions"],
 };
 
+function ProjectIntro(props) {
+	const { name, links, techStack, banner, content } = props;
+	return (
+		<section className={style.project}>
+			<header className={style.projectHeader}>
+				<h3>个人网站</h3>
+				<div>
+					<ExternalLink href="https://blog.kaciras.com">blog.kaciras.com</ExternalLink>
+					&nbsp;|&nbsp;
+					<ExternalLink href="https://github.com/kaciras-blog">GitHub</ExternalLink>
+				</div>
+			</header>
+			<TechLabels stack={blogStack}/>
+			<img
+				src={screenshot}
+				alt="screenshot"
+				className={style.screenshot}
+			/>
+			<div className={style.markdown}>
+				<ReactMarkdown>{blogMarkdown}</ReactMarkdown>
+			</div>
+		</section>
+	);
+}
+
 export default function FrontendResume() {
 	return (
 		<PageLayout>
@@ -33,7 +58,7 @@ export default function FrontendResume() {
 				<base target="_blank"/>
 			</Head>
 
-			<ResumeHeader title="Web前端开发工程师"/>
+			<PersonalDetails title="Web前端开发工程师"/>
 
 			<Section title="项目展示" subtitle="编织有艺术感的代码" type="projects">
 
@@ -41,9 +66,9 @@ export default function FrontendResume() {
 					<header className={style.projectHeader}>
 						<h3>个人网站</h3>
 						<div>
-							<OutLink href="https://blog.kaciras.com">blog.kaciras.com</OutLink>
+							<ExternalLink href="https://blog.kaciras.com">blog.kaciras.com</ExternalLink>
 							&nbsp;|&nbsp;
-							<OutLink href="https://github.com/kaciras-blog">GitHub</OutLink>
+							<ExternalLink href="https://github.com/kaciras-blog">GitHub</ExternalLink>
 						</div>
 					</header>
 					<TechLabels stack={blogStack}/>
@@ -61,9 +86,9 @@ export default function FrontendResume() {
 					<header className={style.projectHeader}>
 						<h3 className={style.projectName}>在线图片编码分析工具</h3>
 						<div>
-							<OutLink href="https://ic-analyze.kaciras.com">ic-analyze.kaciras.com</OutLink>
+							<ExternalLink href="https://ic-analyze.kaciras.com">ic-analyze.kaciras.com</ExternalLink>
 							&nbsp;|&nbsp;
-							<OutLink href="https://github.com/Kaciras/ICAnalyze">GitHub</OutLink>
+							<ExternalLink href="https://github.com/Kaciras/ICAnalyze">GitHub</ExternalLink>
 						</div>
 					</header>
 

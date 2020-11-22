@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import QRCode from "qrcode";
-import styles from "./Footer.module.scss";
-import OutLink from "@/components/OutLink";
+import styles from "./PageFooter.module.scss";
+import ExternalLink from "@/components/ExternalLink";
 
 function drawQRCode(canvas) {
 	const options = {
@@ -13,7 +13,7 @@ function drawQRCode(canvas) {
 	});
 }
 
-export default function Footer() {
+export default function PageFooter() {
 	const qrCodeRef = useRef(null);
 	useEffect(() => drawQRCode(qrCodeRef.current), []);
 
@@ -22,7 +22,7 @@ export default function Footer() {
 			<div>
 				<p>Copyright &copy; Kaciras 2020</p>
 				<p>
-					<OutLink href="https://github.com/Kaciras/Resume2"/>
+					<ExternalLink href="https://github.com/Kaciras/Resume2"/>
 				</p>
 			</div>
 			<canvas title="本页的二维码" className={styles.qrcode} ref={qrCodeRef}/>
