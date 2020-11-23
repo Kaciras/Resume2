@@ -32,11 +32,11 @@ const DecryptState = {
  * @param password 密码
  * @returns {Promise<string|undefined>} 解密的数据，如果密码错误则为 undefined
  */
-async function decrypt(data, password) {
+async function decrypt(password, data) {
 	try {
 		if ("subtle" in window.crypto) {
-			const data = await webCrypto.decrypt(password, data);
-			return new TextDecoder().decode(data);
+			const decrypted = await webCrypto.decrypt(password, data);
+			return new TextDecoder().decode(decrypted);
 		} else {
 			const nodeCrypto = await import("@/lib/crypto-node");
 			return nodeCrypto.decrypt(password, data);
@@ -76,10 +76,10 @@ export default function PersonalDetails({ title }) {
 			return;
 		}
 		setState(DecryptState.Running);
-		decrypt(params.get("key"), realInfo).then(data => {
-			if (data) {
+		decrypt(params.get("key"), realInfo).then(json => {
+			if (json) {
 				setState(DecryptState.Success);
-				setInfo(data);
+				setInfo(JSON.parse(json));
 			} else {
 				setState(DecryptState.Failed);
 			}

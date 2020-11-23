@@ -8,7 +8,7 @@
  */
 import { join } from "path";
 import fs from "fs";
-import { decrypt, encrypt } from "../lib/encrypt-node.mjs";
+import { decrypt, encrypt } from "../lib/crypto-node.mjs";
 
 if (process.argv.length !== 5) {
 	console.error("Arguments required, usage: node script/secret-file.mjs mode filename password");
