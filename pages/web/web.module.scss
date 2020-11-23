@@ -23,7 +23,12 @@
 	}
 }
 
-.screenshot {
+.delimiter {
+	user-select: none;
+	margin: 0 .25em;
+}
+
+.banner {
 	max-width: 100%;
 	margin: 1.5rem 0;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, .5);
