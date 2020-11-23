@@ -6,10 +6,7 @@
 }
 
 .qrcode {
-	margin-left: auto;
-	cursor: pointer;
-
-	@include mobile-layout {
-		margin: 32px 0 0 0;
+	@include pc-layout {
+		margin-left: auto;
 	}
 }
