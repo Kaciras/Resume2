@@ -5,10 +5,33 @@
 
 	display: flex;
 	justify-content: center;
+	position: relative;
 }
 
 .indicator {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	background-color: white;
+}
+
+.failed {
+	composes: indicator;
+	color: red;
+}
+
+.spinner {
+	--size: 80px;
+	margin-bottom: 1em;
+	color: deeppink;
 }
 
 .nameGroup {

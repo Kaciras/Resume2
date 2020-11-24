@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import university from "@/assets/hbpu.jpg";
-import style from "./PersonalDetails.module.scss";
-import realInfo from "@/secret.json.encrypt";
 import * as webCrypto from "@/lib/crypto-web";
+import AtomSpinner from "@/components/AtomSpinner";
+import university from "@/assets/hbpu.jpg";
+import realInfo from "@/secret.json.encrypt";
+import style from "./PersonalDetails.module.scss";
 
 /** 用于演示的身份信息 */
 const Placeholder = {
@@ -16,9 +17,9 @@ const Placeholder = {
 };
 
 const DecryptState = {
-	Success: 0,
-	Failed: 1,
-	Running: 2,
+	Free: 0,
+	Running: 1,
+	Failed: 2,
 };
 
 /**
@@ -46,12 +47,32 @@ async function decrypt(password, data) {
 	}
 }
 
-function DecryptIndicator({ state }) {
-	if (state === DecryptState.Success) {
+/**
+ * 解密指示器，用于提示用户等待解密完成再看。
+ *
+ * 虽然不太可能在解密上卡很久，但还是指示下保险些。
+ */
+function DecryptingIndicator({ state }) {
+	if (state === DecryptState.Free) {
 		return null;
 	}
-	const message = state === DecryptState.Failed ? "个人信息加载失败" : "正在加载个人信息";
-	return (<div className={style.indicator}>{message}</div>);
+	if (state === DecryptState.Failed) {
+		return <div className={style.failed}>个人信息加载失败！</div>;
+	}
+	return (
+		<div className={style.indicator}>
+			<AtomSpinner className={style.spinner}/>
+			正在加载个人信息...
+		</div>
+	);
+}
+
+function initState() {
+	if (typeof window === "undefined") {
+		return DecryptState.Free;
+	}
+	return new URLSearchParams(location.search).has("key")
+		? DecryptState.Running : DecryptState.Free;
 }
 
 /**
@@ -67,8 +88,8 @@ function DecryptIndicator({ state }) {
  * 这么一来要求客户端不能禁用JS，否则只能看到演示信息。
  */
 export default function PersonalDetails({ title }) {
+	const [state, setState] = useState(initState);
 	const [info, setInfo] = useState(Placeholder);
-	const [state, setState] = useState(DecryptState.Success);
 
 	function tryUseRealData() {
 		const params = new URLSearchParams(location.search);
@@ -78,7 +99,7 @@ export default function PersonalDetails({ title }) {
 		setState(DecryptState.Running);
 		decrypt(params.get("key"), realInfo).then(json => {
 			if (json) {
-				setState(DecryptState.Success);
+				setState(DecryptState.Free);
 				setInfo(JSON.parse(json));
 			} else {
 				setState(DecryptState.Failed);
@@ -96,8 +117,10 @@ export default function PersonalDetails({ title }) {
 	}
 
 	return (
-		<section className={style.container}>
-			<DecryptIndicator state={state}/>
+		<section
+			suppressHydrationWarning={true}
+			className={style.container}
+		>
 			<div>
 				<header className={style.nameGroup}>
 					<h1 className={style.name}>{name}</h1>
@@ -114,6 +137,7 @@ export default function PersonalDetails({ title }) {
 				alt="university"
 				className={style.university}
 			/>
+			<DecryptingIndicator state={state}/>
 		</section>
 	);
 }
