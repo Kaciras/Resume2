@@ -11,12 +11,13 @@ import fs from "fs";
 import { decrypt, encrypt } from "../lib/crypto-node.mjs";
 
 if (process.argv.length !== 5) {
-	console.error("Arguments required, usage: node script/secret-file.mjs mode filename password");
+	console.error("Arguments required, usage: node script/secret-file.mjs [en|de]crypt filename password");
 	process.exit(1);
 }
 
 const [, self, mode, filename, password] = process.argv;
 
+// ES Module 模式下没有 __dirname 变量，所以只能用参数里的。
 process.chdir(join(self, "../.."));
 const distFile = filename + ".encrypt";
 
@@ -32,6 +33,6 @@ switch (mode) {
 		break;
 	}
 	default:
-		console.error(`Unknown mode: ${mode}, use "encrypt" or "decrypt"`);
+		console.error(`Unknown mode: ${mode}, allow "encrypt" or "decrypt"`);
 		process.exit(2);
 }

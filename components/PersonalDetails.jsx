@@ -67,7 +67,7 @@ function DecryptingIndicator({ state }) {
 	);
 }
 
-function initState() {
+function initDecryptState() {
 	if (typeof window === "undefined") {
 		return DecryptState.Free;
 	}
@@ -88,7 +88,7 @@ function initState() {
  * 这么一来要求客户端不能禁用JS，否则只能看到演示信息。
  */
 export default function PersonalDetails({ title }) {
-	const [state, setState] = useState(initState);
+	const [state, setState] = useState(initDecryptState);
 	const [info, setInfo] = useState(Placeholder);
 
 	function tryUseRealData() {
@@ -112,8 +112,8 @@ export default function PersonalDetails({ title }) {
 	const { name, degree, addresses } = info;
 	const addrRow = [];
 	for (const [k, v] of Object.entries(addresses)) {
-		addrRow.push(<span key={k}>{k}</span>);
-		addrRow.push(<address key={v}>{v}</address>);
+		addrRow.push(<dt key={k}>{k}</dt>);
+		addrRow.push(<dd key={v}>{v}</dd>);
 	}
 
 	return (
@@ -130,7 +130,7 @@ export default function PersonalDetails({ title }) {
 					毕业于：
 					{degree.map(p => <span key={p}>{p}</span>)}
 				</div>
-				<div className={style.addrGroup}>{addrRow}</div>
+				<dl className={style.addrGroup}>{addrRow}</dl>
 			</div>
 			<img
 				src={university}

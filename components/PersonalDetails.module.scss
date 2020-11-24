@@ -56,16 +56,16 @@
 
 	margin-top: 1em;
 
-	& > span {
+	& > dt {
 		&::after {
 			content: "："
 		}
-
 		grid-column: 1;
 		justify-self: end;
 	}
 
-	& > address {
+	& > dd {
+		margin-left: 0;
 		grid-column: 2;
 	}
 }
