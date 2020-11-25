@@ -5,10 +5,12 @@ import university from "@/assets/hbpu.jpg";
 import realInfo from "@/secret.json.encrypt";
 import style from "./PersonalDetails.module.scss";
 
-/** 用于演示的身份信息 */
+/**
+ * 用于演示的身份信息，尽量保证与真实信息渲染出来的高度一样，以避免布局移动。
+ */
 const Placeholder = {
 	name: "演示姓名",
-	degree: ["某某大学", "本科"],
+	degree: ["某某大学", "本科", "2018-2022"],
 	addresses: {
 		电话和微信: 12345678900,
 		QQ: 100000000,
