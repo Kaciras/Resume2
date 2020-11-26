@@ -1,5 +1,7 @@
 # 2020年简历
 
+[![Build Status](https://travis-ci.org/Kaciras/Resume2.svg?branch=master)](https://travis-ci.org/Kaciras/Resume2)
+
 个人简历网站，可以在线浏览：
 
 [Web前端开发工程师](https://resume.kaciras.com/web)

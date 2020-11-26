@@ -48,14 +48,14 @@ const ICAnalyze = {
 	],
 	techStack: {
 		lang: ["TypeScript", "C++", "WebAssembly"],
-		frontend: ["React", "Webpack", "WebWorker", "Echarts"],
+		frontend: ["React", "Webpack", "WebWorker", "SCSS", "Echarts"],
 		operation: ["GitHub Actions"],
 	},
 	banner: screenshot,
 	content: icAnalyzeMarkdown,
 };
 
-// 因为在链接内用伪元素能够点击，所以还是单独用元素做分隔
+// 因为在链接内的伪元素能够点击，所以还是单独用元素禁用选中来做分隔。
 function Delimiter() {
 	return <span className={style.delimiter} role="separator">|</span>;
 }
@@ -103,7 +103,7 @@ export default function FrontendResume() {
 	return (
 		<PageLayout>
 			<Head>
-				<title>前端工程师 | 简历</title>
+				<title>Web 前端开发工程师 | 简历</title>
 				<base target="_blank"/>
 			</Head>
 
