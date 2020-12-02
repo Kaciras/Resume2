@@ -1,4 +1,6 @@
+const withPlugins = require("next-compose-plugins");
 const withOptimizedImages = require("next-optimized-images");
+const withBundlerAnalyzer = require("@next/bundle-analyzer");
 
 function customWebpack(config) {
 	config.module.rules.push({
@@ -16,7 +18,10 @@ function customWebpack(config) {
 	return config;
 }
 
-module.exports = withOptimizedImages({
+module.exports = withPlugins([
+	withOptimizedImages,
+	withBundlerAnalyzer({ enabled: process.env.ANALYZE === "true" }),
+], {
 	poweredByHeader: false,
 	trailingSlash: true,
 	webpack: customWebpack,
