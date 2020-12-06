@@ -33,19 +33,14 @@ const DecryptState = {
  *
  * @param data 加密的数据
  * @param password 密码
- * @returns {Promise<string|undefined>} 解密的数据，如果密码错误则为 undefined
+ * @returns {Promise<BufferSource>} 解密的数据，如果密码错误则为 undefined
  */
 async function decrypt(password, data) {
-	try {
-		if ("subtle" in window.crypto) {
-			const decrypted = await webCrypto.decrypt(password, data);
-			return new TextDecoder().decode(decrypted);
-		} else {
-			const nodeCrypto = await import("@/lib/crypto-node");
-			return nodeCrypto.decrypt(password, data);
-		}
-	} catch (e) {
-		console.error(`错误的密码（${password}），无法解密个人信息`);
+	if ("subtle" in window.crypto) {
+		return webCrypto.decrypt(password, data);
+	} else {
+		const nodeCrypto = await import("@/lib/crypto-node");
+		return nodeCrypto.decrypt(password, data);
 	}
 }
 
@@ -94,18 +89,18 @@ export default function PersonalDetails({ title }) {
 	const [info, setInfo] = useState(Placeholder);
 
 	function tryUseRealData() {
-		const params = new URLSearchParams(location.search);
-		if (!params.has("key")) {
+		const password = new URLSearchParams(location.search).get("key");
+		if (!password) {
 			return;
 		}
 		setState(DecryptState.Running);
-		decrypt(params.get("key"), realInfo).then(json => {
-			if (json) {
-				setState(DecryptState.Free);
-				setInfo(JSON.parse(json));
-			} else {
-				setState(DecryptState.Failed);
-			}
+
+		decrypt(password, realInfo).then(json => {
+			setInfo(JSON.parse(new TextDecoder().decode(json)));
+			setState(DecryptState.Free);
+		}).catch(() => {
+			console.error(`错误的密码（${password}），无法解密个人信息`);
+			setState(DecryptState.Failed);
 		});
 	}
 

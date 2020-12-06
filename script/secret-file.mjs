@@ -2,9 +2,11 @@
  * 该脚本用于加密敏感数据，比如个人信息，以免在开源平台泄漏。
  *
  * 【使用方法】
- * node script/secret-file.mjs encrypt secret.json [password]
- *
+ * node script/secret-file.mjs encrypt secret.json <password>
  * 使用指定的密码加密根目录下的 secret.json -> secret.json.encrypt
+ *
+ * node script/secret-file.mjs encrypt secret.json.encrypt <password>
+ * 解密根目录下的 secret.json.encrypt 文件，在控制台输出其内容。
  */
 import { join } from "path";
 import fs from "fs";
@@ -15,12 +17,12 @@ if (process.argv.length !== 5) {
 	process.exit(1);
 }
 
-const [, self, mode, filename, password] = process.argv;
+const [, __filename, mode, filename, password] = process.argv;
 
-// ES Module 模式下没有 __dirname 变量，所以只能用参数里的。
-process.chdir(join(self, "../.."));
+// ES Module 模式下没有 __dirname，只能用运行参数。
+process.chdir(join(__filename, "../.."));
+
 const distFile = filename + ".encrypt";
-
 switch (mode) {
 	case "encrypt": {
 		const data = encrypt(password, fs.readFileSync(filename));
@@ -29,7 +31,7 @@ switch (mode) {
 	}
 	case "decrypt": {
 		const data = fs.readFileSync(distFile, { encoding: "utf8" });
-		console.log(decrypt(password, data));
+		console.log(decrypt(password, data).toString());
 		break;
 	}
 	default:
