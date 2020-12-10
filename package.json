@@ -8,6 +8,9 @@
 		"type": "git",
 		"url": "https://github.com/Kaciras/Resume2"
 	},
+	"engines": {
+		"node": ">=15"
+	},
 	"scripts": {
 		"lint": "eslint --fix .",
 		"dev": "next dev",
@@ -24,8 +27,6 @@
 	"devDependencies": {
 		"@next/bundle-analyzer": "^10.0.3",
 		"eslint": "^7.14.0",
-		"eslint-config-prettier": "^6.15.0",
-		"eslint-plugin-prettier": "^3.1.4",
 		"eslint-plugin-react": "^7.21.5",
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"imagemin-pngquant": "^9.0.1",
