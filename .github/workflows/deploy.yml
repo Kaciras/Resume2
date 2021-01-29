@@ -18,8 +18,6 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v2
-        with:
-          submodules: true
 
       # https://pnpm.js.org/en/continuous-integration#github-actions
       - name: Cache ~/.pnpm-store
@@ -37,10 +35,11 @@ jobs:
       - name: Install pnpm
         run: npm i -g pnpm
 
-      - name: Build application
-        run: |
-          pnpm i
-          pnpm run build
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Build
+        run: pnpm run build
 
       - name: Configure GitHub pages
         run: |
