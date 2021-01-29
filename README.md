@@ -1,6 +1,6 @@
 # 2020年简历
 
-[![Build Status](https://travis-ci.org/Kaciras/Resume2.svg?branch=master)](https://travis-ci.org/Kaciras/Resume2)
+![Deploy](https://github.com/Kaciras/Resume2/workflows/Deploy/badge.svg)
 
 个人简历网站，可以在线浏览：
 

@@ -38,7 +38,9 @@ jobs:
         run: npm i -g pnpm
 
       - name: Build application
-        run: pnpm run build
+        run: |
+          pnpm i
+          pnpm run build
 
       - name: Configure GitHub pages
         run: |
