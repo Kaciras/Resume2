@@ -10,7 +10,7 @@ import style from "./PersonalDetails.module.scss";
  */
 const Placeholder = {
 	name: "演示姓名",
-	degree: ["某某大学", "本科", "2018-2022"],
+	degree: ["某某大学 本科 某某很强的专业 2018-2022"],
 	addresses: {
 		电话和微信: 12345678900,
 		QQ: 100000000,
