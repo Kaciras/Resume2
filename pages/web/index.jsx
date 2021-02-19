@@ -7,7 +7,7 @@ import TechLabels from "@/components/TechLabels";
 import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
 import screenshot from "@/assets/screenshot.png";
-import style from "./web.module.scss";
+import styles from "./web.module.scss";
 import blogMarkdown from "./Blog.md";
 import icAnalyzeMarkdown from "./ICAnalyze.md";
 import skillMarkdown from "./Skill.md";
@@ -57,7 +57,7 @@ const ICAnalyze = {
 
 // 因为在链接内的伪元素能够点击，所以还是单独用元素禁用选中来做分隔。
 function Delimiter() {
-	return <span className={style.delimiter} role="separator">|</span>;
+	return <span className={styles.delimiter} role="separator">|</span>;
 }
 
 function ProjectIntro(props) {
@@ -81,18 +81,20 @@ function ProjectIntro(props) {
 	items.push(linkNodes[linkNodes.length - 1]);
 
 	return (
-		<section className={style.project}>
-			<header className={style.projectHeader}>
-				<h3>{name}</h3>
+		<section className={styles.project}>
+			<header className={styles.projectHeader}>
+				<h2 className={styles.name}>
+					{name}
+				</h2>
 				<div>{items}</div>
 			</header>
 			<TechLabels stack={techStack}/>
 			<img
 				src={banner}
 				alt="banner"
-				className={style.banner}
+				className={styles.banner}
 			/>
-			<div className={style.markdown}>
+			<div className={styles.markdown}>
 				<ReactMarkdown>{content}</ReactMarkdown>
 			</div>
 		</section>
@@ -122,7 +124,7 @@ export default function FrontendResume() {
 				title="拥有全栈技能树"
 				subtitle="广泛的知识不惧任何挑战"
 			>
-				<div className={style.markdown}>
+				<div className={styles.markdown}>
 					<ReactMarkdown>{skillMarkdown}</ReactMarkdown>
 				</div>
 			</Section>

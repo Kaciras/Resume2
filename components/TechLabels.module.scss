@@ -1,6 +1,6 @@
+// 子元素有 flex: 1 无需 space-evenly 也能充满一行
 .container {
 	display: flex;
-	justify-content: space-evenly;
 	flex-wrap: wrap;
 
 	list-style: none;

@@ -10,15 +10,11 @@ export default function Section(props) {
 		header = (
 			<header className={styles.header}>
 				<h1>{title}</h1>
-				{subtitle && <h2>{subtitle}</h2>}
+				{subtitle && <span>{subtitle}</span>}
 			</header>
 		);
 	}
 
-	return (
-		<section className={clsx("content", styles[type])}>
-			{header}
-			{children}
-		</section>
-	);
+	const clazz = clsx("content", styles[type]);
+	return <section className={clazz}>{header}{children}</section>;
 }
