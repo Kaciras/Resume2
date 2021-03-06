@@ -18,21 +18,21 @@
 	},
 	"dependencies": {
 		"clsx": "^1.1.1",
-		"next": "10.0.7",
+		"next": "10.0.8",
 		"qrcode": "^1.4.4",
 		"react": "17.0.1",
 		"react-dom": "17.0.1",
 		"react-markdown": "^5.0.3"
 	},
 	"devDependencies": {
-		"@next/bundle-analyzer": "^10.0.7",
-		"eslint": "^7.20.0",
+		"@next/bundle-analyzer": "^10.0.8",
+		"eslint": "^7.21.0",
 		"eslint-plugin-react": "^7.22.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
-		"imagemin-pngquant": "^9.0.1",
+		"imagemin-pngquant": "^9.0.2",
 		"next-compose-plugins": "^2.2.1",
 		"next-optimized-images": "^2.6.2",
 		"raw-loader": "^4.0.2",
-		"sass": "^1.32.7"
+		"sass": "^1.32.8"
 	}
 }
