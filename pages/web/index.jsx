@@ -7,10 +7,11 @@ import TechLabels from "@/components/TechLabels";
 import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
 import screenshot from "@/assets/screenshot.png";
+import icAnalyze from "@/assets/icAnalyze.png";
 import styles from "./web.module.scss";
 import blogMarkdown from "./Blog.md";
 import icAnalyzeMarkdown from "./ICAnalyze.md";
-import skillMarkdown from "./Skill.md";
+import skillMarkdown from "./Skills.md";
 
 const blogProject = {
 	name: "个人网站",
@@ -35,7 +36,7 @@ const blogProject = {
 };
 
 const ICAnalyze = {
-	name: "图片编码分析工具",
+	name: "图片压缩分析工具",
 	links: [
 		{
 			href: "https://ic-analyze.kaciras.com",
@@ -51,7 +52,7 @@ const ICAnalyze = {
 		frontend: ["React", "Webpack", "WebWorker", "SCSS", "Echarts"],
 		operation: ["GitHub Actions"],
 	},
-	banner: screenshot,
+	banner: icAnalyze,
 	content: icAnalyzeMarkdown,
 };
 
