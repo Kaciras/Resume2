@@ -18,15 +18,15 @@
 	},
 	"dependencies": {
 		"clsx": "^1.1.1",
-		"next": "10.0.8",
+		"next": "10.0.9",
 		"qrcode": "^1.4.4",
 		"react": "17.0.1",
 		"react-dom": "17.0.1",
 		"react-markdown": "^5.0.3"
 	},
 	"devDependencies": {
-		"@next/bundle-analyzer": "^10.0.8",
-		"eslint": "^7.21.0",
+		"@next/bundle-analyzer": "^10.0.9",
+		"eslint": "^7.22.0",
 		"eslint-plugin-react": "^7.22.0",
 		"eslint-plugin-react-hooks": "^4.2.0",
 		"imagemin-pngquant": "^9.0.2",
