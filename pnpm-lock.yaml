@@ -13,7 +13,6 @@ devDependencies:
   imagemin-pngquant: 9.0.2
   next-compose-plugins: 2.2.1
   next-optimized-images: 2.6.2
-  raw-loader: 4.0.2
   sass: 1.32.8
 lockfileVersion: 5.2
 packages:
@@ -347,10 +346,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
-  /@types/json-schema/7.0.7:
-    dev: true
-    resolution:
-      integrity: sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==
   /@types/mdast/3.0.3:
     dependencies:
       '@types/unist': 2.0.3
@@ -1501,14 +1496,14 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-KPTbnGQ1JeEMQyO1iYXoagsI6so/C96HZiFyByU3T6iAzpXn8EGEvct6unm1ZGoed8ByO2oirxgwxBmqKF9haA==
-  /domutils/2.4.4:
+  /domutils/2.5.0:
     dependencies:
       dom-serializer: 1.2.0
       domelementtype: 2.1.0
       domhandler: 4.0.0
     dev: false
     resolution:
-      integrity: sha512-jBC0vOsECI4OMdD0GC9mGn7NXPLb+Qt6KW1YDQzeQYRUFKmNG8lh7mO5HiELfr+lLQE7loDVI4QcAxV80HS+RA==
+      integrity: sha512-Ho16rzNMOFk2fPwChGh3D2D9OEHAfG19HgmRR2l+WLSsIstNsAYBzePH412bL0y5T44ejABIVfTHQ8nqi/tBCg==
   /download/6.2.5:
     dependencies:
       caw: 2.0.1
@@ -2590,7 +2585,7 @@ packages:
     dependencies:
       domelementtype: 2.1.0
       domhandler: 3.3.0
-      domutils: 2.4.4
+      domutils: 2.5.0
       entities: 2.2.0
     dev: false
     resolution:
@@ -3142,6 +3137,7 @@ packages:
   /json5/2.2.0:
     dependencies:
       minimist: 1.2.5
+    dev: false
     engines:
       node: '>=6'
     hasBin: true
@@ -3237,16 +3233,6 @@ packages:
       node: '>=4.0.0'
     resolution:
       integrity: sha512-qH0WSMBtn/oHuwjy/NucEgbx5dbxxnxup9s4PVXJUDHZBQY+s0NWA9rJf53RBnQZxfch7euUui7hpoAPvALZdA==
-  /loader-utils/2.0.0:
-    dependencies:
-      big.js: 5.2.2
-      emojis-list: 3.0.0
-      json5: 2.2.0
-    dev: true
-    engines:
-      node: '>=8.9.0'
-    resolution:
-      integrity: sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==
   /locate-path/3.0.0:
     dependencies:
       p-locate: 3.0.0
@@ -4417,17 +4403,6 @@ packages:
       webpack: ^4.3.0
     resolution:
       integrity: sha512-kZnO5MoIyrojfrPWqrhFNLZemIAX8edMOCp++yC5RKxzFB3m92DqKNhKlU6+FvpOhWtvyh3jOaD7J6/9tpdIKg==
-  /raw-loader/4.0.2:
-    dependencies:
-      loader-utils: 2.0.0
-      schema-utils: 3.0.0
-    dev: true
-    engines:
-      node: '>= 10.13.0'
-    peerDependencies:
-      webpack: ^4.0.0 || ^5.0.0
-    resolution:
-      integrity: sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==
   /react-dom/17.0.2_react@17.0.2:
     dependencies:
       loose-envify: 1.4.0
@@ -4706,16 +4681,6 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==
-  /schema-utils/3.0.0:
-    dependencies:
-      '@types/json-schema': 7.0.7
-      ajv: 6.12.6
-      ajv-keywords: 3.5.2_ajv@6.12.6
-    dev: true
-    engines:
-      node: '>= 10.13.0'
-    resolution:
-      integrity: sha512-6D82/xSzO094ajanoOSbe4YvXWMfn2A//8Y1+MUqFAJul5Bs+yn36xbK9OtNDcRVSBJ9jjeoXftM6CfztsjOAA==
   /seek-bzip/1.0.6:
     dependencies:
       commander: 2.20.3
@@ -5523,10 +5488,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==
-  /unist-util-is/4.0.4:
+  /unist-util-is/4.1.0:
     dev: false
     resolution:
-      integrity: sha512-3dF39j/u423v4BBQrk1AQ2Ve1FxY5W3JKwXxVFzBODQ6WEvccguhgp802qQLKSnxPODE6WuRZtV+ohlUg4meBA==
+      integrity: sha512-ZOQSsnce92GrxSqlnEEseX0gi7GH9zTJZ0p9dtu87WRb/37mMPO2Ilx1s/t9vBHrFhbgweUwb+t7cIn5dxPhZg==
   /unist-util-stringify-position/2.0.3:
     dependencies:
       '@types/unist': 2.0.3
@@ -5540,14 +5505,14 @@ packages:
   /unist-util-visit-parents/3.1.1:
     dependencies:
       '@types/unist': 2.0.3
-      unist-util-is: 4.0.4
+      unist-util-is: 4.1.0
     dev: false
     resolution:
       integrity: sha512-1KROIZWo6bcMrZEwiH2UrXDyalAa0uqzWCxCJj6lPOvTve2WkfgCytoDTPaMnodXh1WrXOq0haVYHj99ynJlsg==
   /unist-util-visit/2.0.3:
     dependencies:
       '@types/unist': 2.0.3
-      unist-util-is: 4.0.4
+      unist-util-is: 4.1.0
       unist-util-visit-parents: 3.1.1
     dev: false
     resolution:
@@ -5876,7 +5841,6 @@ specifiers:
   next-compose-plugins: ^2.2.1
   next-optimized-images: ^2.6.2
   qrcode: ^1.4.4
-  raw-loader: ^4.0.2
   react: 17.0.2
   react-dom: 17.0.2
   react-markdown: ^5.0.3

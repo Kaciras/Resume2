@@ -5,7 +5,7 @@ const withBundlerAnalyzer = require("@next/bundle-analyzer");
 function customWebpack(config) {
 	config.module.rules.push({
 		test: /\.(?:md|encrypt)$/,
-		use: "raw-loader",
+		type: "asset/source",
 	});
 
 	// https://github.com/vercel/next.js/issues/17806
@@ -22,6 +22,9 @@ module.exports = withPlugins([
 	withOptimizedImages,
 	withBundlerAnalyzer({ enabled: process.env.ANALYZE === "true" }),
 ], {
+	future: {
+		webpack5: true,
+	},
 	poweredByHeader: false,
 	trailingSlash: true,
 	webpack: customWebpack,

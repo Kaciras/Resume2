@@ -32,7 +32,6 @@
 		"imagemin-pngquant": "^9.0.2",
 		"next-compose-plugins": "^2.2.1",
 		"next-optimized-images": "^2.6.2",
-		"raw-loader": "^4.0.2",
 		"sass": "^1.32.8"
 	}
 }
