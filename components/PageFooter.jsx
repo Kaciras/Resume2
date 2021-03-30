@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import QRCode from "qrcode";
 import ExternalLink from "./ExternalLink";
 import styles from "./PageFooter.module.scss";

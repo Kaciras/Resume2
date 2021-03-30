@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import * as webCrypto from "@/lib/crypto-web";
 import AtomSpinner from "@/components/AtomSpinner";
 import university from "@/assets/hbpu.jpg";

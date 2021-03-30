@@ -1,4 +1,3 @@
-import React from "react";
 import PageFooter from "@/components/PageFooter";
 import Head from "next/head";
 import PersonalDetails from "@/components/PersonalDetails";

@@ -6,10 +6,10 @@ dependencies:
   react-dom: 17.0.2_react@17.0.2
   react-markdown: 5.0.3_react@17.0.2
 devDependencies:
+  '@kaciras/eslint-config-core': 1.2.0_eslint@7.23.0
+  '@kaciras/eslint-config-react': 1.2.0_eslint@7.23.0
   '@next/bundle-analyzer': 10.1.1
   eslint: 7.23.0
-  eslint-plugin-react: 7.23.1_eslint@7.23.0
-  eslint-plugin-react-hooks: 4.2.0_eslint@7.23.0
   imagemin-pngquant: 9.0.2
   next-compose-plugins: 2.2.1
   next-optimized-images: 2.6.2
@@ -256,6 +256,28 @@ packages:
     dev: false
     resolution:
       integrity: sha512-CAEbWH7OIur6jEOzaai83jq3FmKmv4PmX1JYfs9IrYcGEVI/lyL1EXJGCj7eFVJ0bg5QR8LMxBlEtA+xKiLpFw==
+  /@kaciras/eslint-config-core/1.2.0_eslint@7.23.0:
+    dependencies:
+      eslint: 7.23.0
+    dev: true
+    engines:
+      node: '>=15.11.0'
+    peerDependencies:
+      eslint: ^7.22.0
+    resolution:
+      integrity: sha512-nS4OCFsTBGyHSgHlGlZ9DIF7yRUb7sxZ1TYw3Awb4t9gztBZ2Xl3y4WPwRz7LtH39MavnRtN3a+ZKD2ZgEBuMA==
+  /@kaciras/eslint-config-react/1.2.0_eslint@7.23.0:
+    dependencies:
+      eslint: 7.23.0
+      eslint-plugin-react: 7.23.1_eslint@7.23.0
+      eslint-plugin-react-hooks: 4.2.0_eslint@7.23.0
+    dev: true
+    engines:
+      node: '>=15.11.0'
+    peerDependencies:
+      eslint: ^7.22.0
+    resolution:
+      integrity: sha512-01PkKnI3RlCXM0XaMOsWRC+yv92r31FIBU4oCOj/yBbJ8FzmGACg9hSzEDv24rN4apn2uXMIGaTJ/L+xTVYyMg==
   /@mrmlnc/readdir-enhanced/2.2.1:
     dependencies:
       call-me-maybe: 1.0.1
@@ -5831,11 +5853,11 @@ packages:
     resolution:
       integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 specifiers:
+  '@kaciras/eslint-config-core': ^1.2.0
+  '@kaciras/eslint-config-react': ^1.2.0
   '@next/bundle-analyzer': ^10.1.1
   clsx: ^1.1.1
   eslint: ^7.23.0
-  eslint-plugin-react: ^7.23.1
-  eslint-plugin-react-hooks: ^4.2.0
   imagemin-pngquant: ^9.0.2
   next: 10.1.1
   next-compose-plugins: ^2.2.1

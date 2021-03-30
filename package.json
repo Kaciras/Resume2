@@ -25,10 +25,10 @@
 		"react-markdown": "^5.0.3"
 	},
 	"devDependencies": {
+		"@kaciras/eslint-config-core": "^1.2.0",
+		"@kaciras/eslint-config-react": "^1.2.0",
 		"@next/bundle-analyzer": "^10.1.1",
 		"eslint": "^7.23.0",
-		"eslint-plugin-react": "^7.23.1",
-		"eslint-plugin-react-hooks": "^4.2.0",
 		"imagemin-pngquant": "^9.0.2",
 		"next-compose-plugins": "^2.2.1",
 		"next-optimized-images": "^2.6.2",
