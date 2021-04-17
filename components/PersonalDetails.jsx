@@ -130,6 +130,7 @@ export default function PersonalDetails({ title }) {
 				<dl className={style.addrGroup}>{addrRow}</dl>
 			</div>
 			<img
+				title="感觉这里要有张图，但不知道放什么好"
 				src={university}
 				alt="university"
 				className={style.university}

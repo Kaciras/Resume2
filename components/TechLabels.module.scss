@@ -1,3 +1,5 @@
+@import "../css/mixins";
+
 // 子元素有 flex: 1 无需 space-evenly 也能充满一行
 .container {
 	display: flex;
@@ -13,10 +15,14 @@
 		content: "";
 		flex-grow: 10000;
 	}
+
+	@include mobile-layout {
+		font-size: .875em;
+	}
 }
 
 .label {
-	margin: .25rem;
+	margin: .25em;
 	padding: .4em .6em;
 	flex: 1;
 
