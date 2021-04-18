@@ -1,7 +1,7 @@
-**独立完成整个项目，包括页面设计、前端、后端、运维部署、文章编写。**
+**独立完成整个项目，包括设计、前端、后端、运维。**
 
 **功能完整**，具有评论系统、后台、文章编辑器等 CMS 所需的功能；**性能强大**，Lighthouse 接近满分。
-  - [Kaciras 的博客第一版简介](https://blog.kaciras.com/article/20/kaciras-blog-v1-release-note)
+  - [更详细的介绍](https://blog.kaciras.com/article/20/kaciras-blog-v1-release-note)
 
 组件化的开发模式，将常用的代码封装为通用的组件，使用 StoryBook 对组件进行独立地开发和调试。
   - [StoryBook 展示页面](https://kaciras-blog.github.io/uikit)

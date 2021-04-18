@@ -5,12 +5,12 @@ import PersonalDetails from "@/components/PersonalDetails";
 import TechLabels from "@/components/TechLabels";
 import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
-import screenshot from "@/assets/screenshot.png";
+import blog from "@/assets/blog.png";
 import icAnalyze from "@/assets/icAnalyze.png";
 import styles from "./web.module.scss";
-import blogMarkdown from "./Blog.md";
-import icAnalyzeMarkdown from "./ICAnalyze.md";
-import skillMarkdown from "./Skills.md";
+import blogDescription from "./Blog.md";
+import icAnalyzeDescription from "./ICAnalyze.md";
+import skills from "./Skills.md";
 
 const blogProject = {
 	name: "个人网站",
@@ -30,8 +30,8 @@ const blogProject = {
 		backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
 		operation: ["Nginx", "Debian", "Travis CI"],
 	},
-	banner: screenshot,
-	content: blogMarkdown,
+	banner: blog,
+	content: blogDescription,
 };
 
 const ICAnalyze = {
@@ -48,11 +48,11 @@ const ICAnalyze = {
 	],
 	techStack: {
 		lang: ["TypeScript", "C++", "WebAssembly"],
-		frontend: ["React", "Webpack", "WebWorker", "SCSS", "Echarts"],
+		frontend: ["React", "Webpack", "WebWorker", "SCSS", "Highcharts"],
 		operation: ["GitHub Actions"],
 	},
 	banner: icAnalyze,
-	content: icAnalyzeMarkdown,
+	content: icAnalyzeDescription,
 };
 
 // 因为在链接内的伪元素能够点击，所以还是单独用元素禁用选中来做分隔。
@@ -72,7 +72,7 @@ function ProjectIntro(props) {
 		</ExternalLink>
 	));
 
-	// 可惜数组的 join 不能使用函数，还得自己循环做。
+	// 可惜数组的 join 不能使用函数，还得循环做。
 	const items = [];
 	for (let i = 0; i < linkNodes.length - 1; i++) {
 		items.push(linkNodes[i]);
@@ -125,7 +125,7 @@ export default function FrontendResume() {
 				subtitle="广泛的知识不惧任何挑战"
 			>
 				<div className={styles.markdown}>
-					<ReactMarkdown>{skillMarkdown}</ReactMarkdown>
+					<ReactMarkdown>{skills}</ReactMarkdown>
 				</div>
 			</Section>
 		</PageLayout>
