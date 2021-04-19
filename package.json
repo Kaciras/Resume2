@@ -14,6 +14,7 @@
 	"scripts": {
 		"lint": "eslint --fix .",
 		"dev": "next dev",
+		"test": "jest",
 		"build": "next build && next export"
 	},
 	"dependencies": {
