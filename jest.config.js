@@ -2,16 +2,11 @@ module.exports = {
 	clearMocks: true,
 	testEnvironment: "node",
 	transform: {
-		"^.+\\.jsx?$": "babel-jest",
-		"^.+\\.mjs$": "babel-jest",
+		"^.+\\.mjs$": ["babel-jest", { configFile: "./babel.jest.js" }],
 	},
 	testMatch: [
-		"**/__tests__/**/*.?(m)[jt]s?(x)",
-		"**/?(*.)+(spec|test).?(m)[tj]s?(x)",
+		"**/__tests__/**/*.?(m)[jt]s",
+		"**/?(*.)+(spec|test).?(m)[tj]s",
 	],
-	moduleFileExtensions: [
-		"ts", "tsx",
-		"mjs", "js", "jsx",
-		"json", "node",
-	],
+	moduleFileExtensions: ["ts", "tsx", "mjs", "js", "jsx", "json", "node"],
 };
