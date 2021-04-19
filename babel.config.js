@@ -1,3 +1,8 @@
 module.exports = {
-	presets: ["next/babel"],
+	presets: [
+		["@babel/preset-env", { targets: { "node": "current" } }],
+	],
+	plugins: [
+		["@babel/plugin-transform-modules-commonjs", { spec: true }],
+	],
 };

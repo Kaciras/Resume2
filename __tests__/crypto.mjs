@@ -8,5 +8,5 @@ const data = fs.readFileSync(join(__dirname, "fixtures/data.json"));
 it("should ", async () => {
 	const encrypted = nodeCrypto.encrypt("foo+bar", data);
 	const decrypted = await webCrypto.decrypt("foo+bar", encrypted);
-	expect(decrypted).toEqual(data);
+	expect(decrypted).toEqual(Array.from(data));
 });
