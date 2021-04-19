@@ -1,4 +1,3 @@
-import React from "react";
 import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 import Section from "@/components/Section";
@@ -6,11 +5,12 @@ import PersonalDetails from "@/components/PersonalDetails";
 import TechLabels from "@/components/TechLabels";
 import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
-import screenshot from "@/assets/screenshot.png";
-import style from "./web.module.scss";
-import blogMarkdown from "./Blog.md";
-import icAnalyzeMarkdown from "./ICAnalyze.md";
-import skillMarkdown from "./Skill.md";
+import blog from "@/assets/blog.png";
+import icAnalyze from "@/assets/icAnalyze.png";
+import styles from "./web.module.scss";
+import blogDescription from "./Blog.md";
+import icAnalyzeDescription from "./ICAnalyze.md";
+import skills from "./Skills.md";
 
 const blogProject = {
 	name: "个人网站",
@@ -30,12 +30,12 @@ const blogProject = {
 		backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
 		operation: ["Nginx", "Debian", "Travis CI"],
 	},
-	banner: screenshot,
-	content: blogMarkdown,
+	banner: blog,
+	content: blogDescription,
 };
 
 const ICAnalyze = {
-	name: "图片编码分析工具",
+	name: "图片压缩分析工具",
 	links: [
 		{
 			href: "https://ic-analyze.kaciras.com",
@@ -48,16 +48,16 @@ const ICAnalyze = {
 	],
 	techStack: {
 		lang: ["TypeScript", "C++", "WebAssembly"],
-		frontend: ["React", "Webpack", "WebWorker", "Echarts"],
+		frontend: ["React", "Webpack", "WebWorker", "SCSS", "Highcharts"],
 		operation: ["GitHub Actions"],
 	},
-	banner: screenshot,
-	content: icAnalyzeMarkdown,
+	banner: icAnalyze,
+	content: icAnalyzeDescription,
 };
 
-// 因为在链接内用伪元素能够点击，所以还是单独用元素做分隔
+// 因为在链接内的伪元素能够点击，所以还是单独用元素禁用选中来做分隔。
 function Delimiter() {
-	return <span className={style.delimiter} role="separator">|</span>;
+	return <span className={styles.delimiter} role="separator">|</span>;
 }
 
 function ProjectIntro(props) {
@@ -72,7 +72,7 @@ function ProjectIntro(props) {
 		</ExternalLink>
 	));
 
-	// 可惜数组的 join 不能使用函数，还得自己循环做。
+	// 可惜数组的 join 不能使用函数，还得循环做。
 	const items = [];
 	for (let i = 0; i < linkNodes.length - 1; i++) {
 		items.push(linkNodes[i]);
@@ -81,18 +81,20 @@ function ProjectIntro(props) {
 	items.push(linkNodes[linkNodes.length - 1]);
 
 	return (
-		<section className={style.project}>
-			<header className={style.projectHeader}>
-				<h3>{name}</h3>
+		<section className={styles.project}>
+			<header className={styles.projectHeader}>
+				<h2 className={styles.name}>
+					{name}
+				</h2>
 				<div>{items}</div>
 			</header>
 			<TechLabels stack={techStack}/>
 			<img
 				src={banner}
 				alt="banner"
-				className={style.banner}
+				className={styles.banner}
 			/>
-			<div className={style.markdown}>
+			<div className={styles.markdown}>
 				<ReactMarkdown>{content}</ReactMarkdown>
 			</div>
 		</section>
@@ -103,7 +105,7 @@ export default function FrontendResume() {
 	return (
 		<PageLayout>
 			<Head>
-				<title>前端工程师 | 简历</title>
+				<title>Web 前端开发工程师 | 简历</title>
 				<base target="_blank"/>
 			</Head>
 
@@ -122,8 +124,8 @@ export default function FrontendResume() {
 				title="拥有全栈技能树"
 				subtitle="广泛的知识不惧任何挑战"
 			>
-				<div className={style.markdown}>
-					<ReactMarkdown>{skillMarkdown}</ReactMarkdown>
+				<div className={styles.markdown}>
+					<ReactMarkdown>{skills}</ReactMarkdown>
 				</div>
 			</Section>
 		</PageLayout>
