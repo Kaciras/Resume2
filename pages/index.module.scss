@@ -1,77 +1,46 @@
 @import "css/mixins";
 
-.container {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
+.header {
+	display: flex;
+	padding: 100px 100px 180px;
+	background: #d48d00;
+	background-size: cover;
+	color: white;
+}
 
-	@include mobile-layout {
-		grid-template-columns: 1fr;
-	}
+.avatar {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+}
+
+.sub {
+	font-size: 1rem;
+	font-weight: normal;
+}
+
+.info {
+	margin-left: 24px;
+}
+
+.cardList {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: center;
+	transform: translateY(-96px);
 }
 
 .card {
-	position: relative;
-	overflow: hidden;
+	margin: 20px;
+	width: 470px;
+	height: 470px;
 
-	background: #6db1ee;
-	text-decoration: none !important;
-
-	&::before {
-		content: "";
-		display: block;
-		padding-top: 56.25%;
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: 2;
-
-		background-color: hsla(0, 0%, 100%, .6);
-		transform: scale3d(1.9, 1.4, 1) rotate(45deg) translate3d(0, -120%, 0);
-
-		transition: transform .5s;
-		will-change: transform;
-	}
-
-	&:hover::after {
-		transform: scale3d(1.9, 1.4, 1) rotate(45deg) translate3d(0, 120%, 0);
-	}
-}
-
-.background {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+	border-radius: 20px;
+	box-shadow: 0 13px 30px rgba(0, 0, 0, 0.1);
 }
 
 .title {
-	position: absolute;
-	margin: 0;
-
-	bottom: 15px;
-	right: 0;
-	left: 0;
-	z-index: 3;
-
-	text-align: center;
-	color: white !important;
-
-	@include pc-layout {
-		bottom: 32px;
-		right: 32px;
-		left: auto;
-		font-size: 2.5em;
-	}
-}
-
-.banner {
-	width: 200px;
-	height: 200px;
+	font-size: 42px;
+	color: white;
+	text-decoration: none;
 }
