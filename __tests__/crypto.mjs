@@ -5,8 +5,14 @@ import * as webCrypto from "../lib/crypto-web";
 
 const data = fs.readFileSync(join(__dirname, "fixtures/data.json"));
 
-it("should ", async () => {
+it("should support node encrypt and web decrypt", async () => {
 	const encrypted = nodeCrypto.encrypt("foo+bar", data);
 	const decrypted = await webCrypto.decrypt("foo+bar", encrypted);
-	expect(decrypted).toEqual(Array.from(data));
+	expect(Buffer.from(decrypted)).toEqual(data);
+});
+
+it("should support web encrypt and node decrypt", async () => {
+	const encrypted = await webCrypto.encrypt("foo+bar", data);
+	const decrypted = nodeCrypto.decrypt("foo+bar", encrypted);
+	expect(Buffer.from(decrypted)).toEqual(data);
 });
