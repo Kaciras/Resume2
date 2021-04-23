@@ -9,6 +9,8 @@
 	margin: 0;
 	padding: 0;
 
+	font-family: system-ui, -apple-system, sans-serif;
+
 	// 通过伪元素抢占末尾空间实现最后一行不铺满
 	// https://stackoverflow.com/a/30307820/7065321
 	&::after {

@@ -37,6 +37,11 @@
 .nameGroup {
 	display: flex;
 	align-items: baseline;
+
+	@include mobile-layout {
+		align-items: center;
+		flex-direction: column;
+	}
 }
 
 .name {

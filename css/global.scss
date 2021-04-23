@@ -5,9 +5,12 @@
 }
 
 body {
+	line-height: 1.6;
 	color: #222;
 	margin: 0;
-	line-height: 1.5;
+
+	// 微软雅黑的英文太粗无法跟加粗区分，换个细的。
+	font-family: Arial, sans-serif;
 }
 
 address {
