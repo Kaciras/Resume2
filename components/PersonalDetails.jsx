@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import * as webCrypto from "@/lib/crypto-web";
 import AtomSpinner from "@/components/AtomSpinner";
-import university from "@/assets/hbpu.jpg";
 import realInfo from "@/secret.json.encrypt";
 import style from "./PersonalDetails.module.scss";
 
@@ -84,7 +83,7 @@ function initDecryptState() {
  *
  * 这么一来要求客户端不能禁用JS，否则只能看到演示信息。
  */
-export default function PersonalDetails({ title }) {
+export default function PersonalDetails({ title, logo }) {
 	const [state, setState] = useState(initDecryptState);
 	const [info, setInfo] = useState(Placeholder);
 
@@ -130,10 +129,9 @@ export default function PersonalDetails({ title }) {
 				<dl className={style.addrGroup}>{addrRow}</dl>
 			</div>
 			<img
-				title="感觉这里要有张图，但不知道放什么好"
-				src={university}
-				alt="university"
-				className={style.university}
+				className={style.logo}
+				src={logo}
+				alt="logo"
 			/>
 			<DecryptingIndicator state={state}/>
 		</section>

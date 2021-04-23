@@ -5,8 +5,9 @@ import PersonalDetails from "@/components/PersonalDetails";
 import TechLabels from "@/components/TechLabels";
 import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
+import logo from "@/assets/web-logo.svg";
 import blog from "@/assets/blog.png";
-import icAnalyze from "@/assets/icAnalyze.png";
+import icAnalyze from "@/assets/ic-analyze.png";
 import styles from "./web.module.scss";
 import blogDescription from "./Blog.md";
 import icAnalyzeDescription from "./ICAnalyze.md";
@@ -49,7 +50,7 @@ const ICAnalyze = {
 	techStack: {
 		lang: ["TypeScript", "C++", "WebAssembly"],
 		frontend: ["React", "Webpack", "WebWorker", "SCSS", "Highcharts"],
-		operation: ["GitHub Actions"],
+		operation: ["GitHub Actions", "GitHub Pages"],
 	},
 	banner: icAnalyze,
 	content: icAnalyzeDescription,
@@ -109,7 +110,7 @@ export default function FrontendResume() {
 				<base target="_blank"/>
 			</Head>
 
-			<PersonalDetails title="Web 前端开发工程师"/>
+			<PersonalDetails title="Web 前端开发工程师" logo={logo}/>
 
 			<Section
 				title="项目展示"

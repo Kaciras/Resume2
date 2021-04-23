@@ -5,6 +5,8 @@
 
 	display: flex;
 	justify-content: center;
+	align-items: flex-start;
+
 	position: relative;
 }
 
@@ -79,10 +81,8 @@
 	margin-right: .5em;
 }
 
-.university {
+.logo {
 	margin-left: auto;
-	width: 150px;
-	height: 150px;
 
 	@include mobile-layout {
 		display: none;
