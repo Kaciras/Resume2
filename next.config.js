@@ -26,6 +26,5 @@ module.exports = withPlugins([
 		webpack5: true,
 	},
 	poweredByHeader: false,
-	trailingSlash: true,
 	webpack: customWebpack,
 });
