@@ -9,7 +9,7 @@ import style from "./PersonalDetails.module.scss";
  */
 const Placeholder = {
 	name: "演示姓名",
-	degree: ["某某大学 本科 某某很强的专业 2018-2022"],
+	degree: "某某大学，本科，某某很强的专业，2018-2022",
 	addresses: {
 		电话和微信: 12345678900,
 		QQ: 100000000,
@@ -63,6 +63,11 @@ function DecryptingIndicator({ state }) {
 	);
 }
 
+/**
+ * 初始解密状态，SSR 时为 Free，客户端若有密码则为 Running。
+ *
+ * @return {number} 状态
+ */
 function initDecryptState() {
 	if (typeof window === "undefined") {
 		return DecryptState.Free;
@@ -77,11 +82,10 @@ function initDecryptState() {
  * 如果 URL 带有 key=[password] 参数则尝试解密真实的身份，
  * 如果没有或者密码错误则使用演示信息（Placeholder）
  *
- * 【静态站与禁用JS】
+ * <h2>静态站与禁用JS</h2>
  * 如果使用静态构建并部署到开源平台（比如 GitHub），那么预渲染的结果会包含真实信息，
  * 所以这种情况下只能构建含演示信息的版本，真实信息在客户端解密。
- *
- * 这么一来要求客户端不能禁用JS，否则只能看到演示信息。
+ * 这么一来要求客户端不能禁用JS，否则无法解密。
  */
 export default function PersonalDetails({ title, logo }) {
 	const [state, setState] = useState(initDecryptState);
@@ -106,12 +110,14 @@ export default function PersonalDetails({ title, logo }) {
 	useEffect(tryUseRealData, []);
 
 	const { name, degree, addresses } = info;
-	const addrRow = [];
+	const addressRows = [];
 	for (const [k, v] of Object.entries(addresses)) {
-		addrRow.push(<dt key={k}>{k}</dt>);
-		addrRow.push(<dd key={v}>{v}</dd>);
+		addressRows.push(<dt key={k}>{k}</dt>);
+		addressRows.push(<dd key={v}>{v}</dd>);
 	}
 
+	// 解密后的内容与示例内容不同，会显示一个预渲染警告，
+	// 又因为加密内容不能预渲染，所以只能 suppressHydrationWarning。
 	return (
 		<section
 			suppressHydrationWarning={true}
@@ -122,11 +128,11 @@ export default function PersonalDetails({ title, logo }) {
 					<h1 className={style.name}>{name}</h1>
 					<h2 className={style.title}>{title}</h2>
 				</header>
-				<div className={style.degree}>
-					毕业于：
-					{degree.map(p => <span key={p}>{p}</span>)}
-				</div>
-				<dl className={style.addrGroup}>{addrRow}</dl>
+				<dl className={style.addrGroup}>
+					<dt>毕业于</dt>
+					<dd>{degree}</dd>
+					{addressRows}
+				</dl>
 			</div>
 			<img
 				className={style.logo}
