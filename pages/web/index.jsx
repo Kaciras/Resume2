@@ -13,6 +13,13 @@ import blogDescription from "./Blog.md";
 import icAnalyzeDescription from "./ICAnalyze.md";
 import skills from "./Skills.md";
 
+/*
+ * 为什么不用新出的 next/image？
+ * 1）它使用了一个 div 容器包裹图片，但不支持给容器设置类名。
+ * 2）它不支持自定义转码选项比如 SharpYUV，且默认不开启，导致图片质量很差。
+ * 3）防布局移动虽然好，但却要求写明宽高，没法自动检测，实在麻烦。
+ */
+
 const blogProject = {
 	name: "个人网站",
 	links: [
