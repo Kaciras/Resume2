@@ -7,10 +7,10 @@ import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
 import logo from "@/assets/web-logo.svg";
 import blog from "@/assets/blog.png";
-import icAnalyze from "@/assets/ic-analyze.png";
+import icAnalyzer from "@/assets/ic-analyzer.png";
 import styles from "./web.module.scss";
 import blogDescription from "./Blog.md";
-import icAnalyzeDescription from "./ICAnalyze.md";
+import icAnalyzerDescription from "./ICAnalyze.md";
 import skills from "./Skills.md";
 
 /*
@@ -34,9 +34,9 @@ const blogProject = {
 	],
 	techStack: {
 		lang: ["JAVA", "TypeScript"],
-		frontend: ["NodeJS", "Webpack", "PWA", "Vue.js", "Storybook"],
+		frontend: ["NodeJS", "Webpack", "PWA", "Vue", "Storybook"],
 		backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
-		operation: ["Nginx", "Debian", "Travis CI"],
+		operation: ["Nginx", "Debian", "GitHub Actions", "Travis CI"],
 	},
 	banner: blog,
 	content: blogDescription,
@@ -46,24 +46,24 @@ const ICAnalyze = {
 	name: "图片压缩分析工具",
 	links: [
 		{
-			href: "https://ic-analyze.kaciras.com",
-			text: "ic-analyze.kaciras.com",
+			href: "https://ic-analyzer.kaciras.com",
+			text: "ic-analyzer.kaciras.com",
 		},
 		{
-			href: "https://github.com/Kaciras/ICAnalyze",
+			href: "https://github.com/Kaciras/ICAnalyzer",
 			text: "GitHub",
 		},
 	],
 	techStack: {
 		lang: ["TypeScript", "C++", "WebAssembly"],
-		frontend: ["React", "Webpack", "WebWorker", "SCSS", "Highcharts"],
-		operation: ["GitHub Actions", "GitHub Pages"],
+		frontend: ["React", "Webpack", "Emscripten", "SCSS", "Highcharts"],
+		operation: ["Vercel", "GitHub Actions", "GitHub Pages"],
 	},
-	banner: icAnalyze,
-	content: icAnalyzeDescription,
+	banner: icAnalyzer,
+	content: icAnalyzerDescription,
 };
 
-// 因为在链接内的伪元素能够点击，所以还是单独用元素禁用选中来做分隔。
+// 因为在链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
 function Delimiter() {
 	return <span className={styles.delimiter} role="separator">|</span>;
 }
