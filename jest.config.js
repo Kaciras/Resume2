@@ -5,8 +5,7 @@ module.exports = {
 		"^.+\\.mjs$": ["babel-jest", { configFile: "./babel.jest.js" }],
 	},
 	testMatch: [
-		"**/__tests__/**/*.?(m)[jt]s",
-		"**/?(*.)+(spec|test).?(m)[tj]s",
+		"**/__tests__/**/*.?(m)js",
 	],
-	moduleFileExtensions: ["ts", "tsx", "mjs", "js", "jsx", "json", "node"],
+	moduleFileExtensions: ["mjs", "js", "jsx", "json", "node"],
 };
