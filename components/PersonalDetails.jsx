@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as webCrypto from "@/lib/crypto-web";
-import AtomSpinner from "@/components/AtomSpinner";
 import realInfo from "@/secret.json.encrypt";
+import AtomSpinner from "@/components/AtomSpinner";
 import style from "./PersonalDetails.module.scss";
 
 /**
@@ -9,7 +9,7 @@ import style from "./PersonalDetails.module.scss";
  */
 const Placeholder = {
 	name: "演示姓名",
-	degree: "某某大学，本科，某某很强的专业，2018-2022",
+	degree: "某某大学，本科，某某很强的专业，2014-2018",
 	addresses: {
 		电话和微信: 12345678900,
 		QQ: 100000000,

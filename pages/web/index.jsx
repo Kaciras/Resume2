@@ -8,10 +8,10 @@ import PageLayout from "@/components/PageLayout";
 import logo from "@/assets/web-logo.svg";
 import blog from "@/assets/blog.png";
 import icAnalyzer from "@/assets/ic-analyzer.png";
-import styles from "./web.module.scss";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyze.md";
 import skills from "./Skills.md";
+import styles from "./web.module.scss";
 
 /*
  * 为什么不用新出的 next/image？

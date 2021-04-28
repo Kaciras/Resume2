@@ -45,7 +45,7 @@ export default function Home() {
 				</div>
 			</section>
 			<section className={styles.cardList}>
-				<ResumeCard href="/web" title="前端开发" image={require("@/assets/frontend.png")}/>
+				<ResumeCard href="/web" title="TODO" image={require("@/assets/frontend.png")}/>
 				<ResumeCard href="/web" title="JAVA 工程师" image={require("@/assets/frontend.png")}/>
 				<ResumeCard href="/web" title="JAVA 工程师" image={require("@/assets/frontend.png")}/>
 			</section>
