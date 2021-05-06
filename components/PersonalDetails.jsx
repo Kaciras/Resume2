@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import * as webCrypto from "@/lib/crypto-web";
-import realInfo from "@/secret.json.encrypt";
 import AtomSpinner from "@/components/AtomSpinner";
 import style from "./PersonalDetails.module.scss";
 
@@ -24,7 +23,7 @@ const DecryptState = {
 };
 
 /**
- * 解密由 script/secret-file 加密的敏感数据。
+ * 解密由 script/secret-file.mjs 加密的敏感数据。
  *
  * 【性能优化】
  * 优先使用浏览器原生的加密API，如果浏览器不支持则回退到 Polyfill。
@@ -91,23 +90,34 @@ export default function PersonalDetails({ title, logo }) {
 	const [state, setState] = useState(initDecryptState);
 	const [info, setInfo] = useState(Placeholder);
 
-	function tryUseRealData() {
-		const password = new URLSearchParams(location.search).get("key");
-		if (!password) {
-			return;
-		}
+	async function tryUseRealData(password) {
 		setState(DecryptState.Running);
+		const response = await fetch("/secret.json.aes");
 
-		decrypt(password, realInfo).then(json => {
+		if (response.status === 404) {
+			return setState(DecryptState.Free);
+		} else if (!response.ok) {
+			console.error("用户信息加载失败，status=" + response.status);
+			return setState(DecryptState.Failed);
+		}
+		const data = await response.text();
+
+		try {
+			const json = await decrypt(password, data);
 			setInfo(JSON.parse(new TextDecoder().decode(json)));
 			setState(DecryptState.Free);
-		}).catch(() => {
-			console.error(`错误的密码（${password}），无法解密个人信息`);
+		} catch (e) {
 			setState(DecryptState.Failed);
-		});
+			console.error(`用户信息解密失败：密码错误（${password}）`);
+		}
 	}
 
-	useEffect(tryUseRealData, []);
+	function refreshPersonalInfo() {
+		const key = new URLSearchParams(location.search).get("key");
+		key && tryUseRealData(key).catch(e => console.error(e));
+	}
+
+	useEffect(refreshPersonalInfo, []);
 
 	const { name, degree, addresses } = info;
 	const addressRows = [];

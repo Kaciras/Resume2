@@ -22,7 +22,7 @@ const [, __filename, mode, filename, password] = process.argv;
 // ES Module 模式下没有 __dirname，只能用运行参数。
 process.chdir(join(__filename, "../.."));
 
-const distFile = filename + ".encrypt";
+const distFile = `public/${filename}.aes`;
 switch (mode) {
 	case "encrypt": {
 		const data = encrypt(password, fs.readFileSync(filename));
