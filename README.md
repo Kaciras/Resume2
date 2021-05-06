@@ -13,6 +13,12 @@ pnpm install
 pnpm run dev
 ```
 
+构建项目：
+
+```shell
+pnpm run build
+```
+
 # 个人信息加密
 
 本项目支持对敏感信息加密，仅在 URL 参数带有正确的密钥时才显示，否则显示演示信息。
@@ -31,10 +37,10 @@ pnpm run dev
 }
 ```
 
-该文件被`.gitignore`所排除，也不会包含在构建的输出里。 对其使用`AES-128-GCM`加密，指定一个密码：
+该文件被`.gitignore`所排除，也不会包含在构建的输出里，对其使用`AES-128-GCM`加密，指定一个密码：
 
 ```shell script
 node script/secret-file.mjs encrypt secret.json <password>
 ```
 
-该命令将生成`public/secret.json.aes`文件，包含了加密后的内容，该文件被包含在构建输出中并上传到公共仓库。访问时在URL里带上`key=<password>`参数解密该文件，将其内容显示在个人信息栏。
+该命令将生成`public/secret.json.aes`文件，它被包含在构建输出中并上传到公共仓库，访问时在 URL 里带上`key=<password>`参数解密，将其内容显示在个人信息栏。
