@@ -35,6 +35,8 @@ jobs:
       - run: pnpm test
 
       - run: pnpm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
 
       - name: Configure GitHub pages
         run: |
