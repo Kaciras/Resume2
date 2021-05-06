@@ -15,7 +15,7 @@ pnpm run dev
 
 # 个人信息加密
 
-本项目支持对敏感信息加密，仅在URL参数带有正确的密钥时才显示，否则显示演示信息。
+本项目支持对敏感信息加密，仅在 URL 参数带有正确的密钥时才显示，否则显示演示信息。
 
 在项目目录下创建`secret.json`并填写个人信息：
 
@@ -37,4 +37,4 @@ pnpm run dev
 node script/secret-file.mjs encrypt secret.json <password>
 ```
 
-该命令将生成`secret.json.encrypt`文件，包含了加密后的内容，该文件被包含在构建输出里并上传到公共仓库。访问网站时在URL里带上`key=<password>`参数将解密该文件，将其内容显示在个人信息栏。
+该命令将生成`public/secret.json.aes`文件，包含了加密后的内容，该文件被包含在构建输出中并上传到公共仓库。访问时在URL里带上`key=<password>`参数解密该文件，将其内容显示在个人信息栏。

@@ -21,11 +21,12 @@ jobs:
 
       # https://pnpm.io/continuous-integration#github-actions
       - name: Cache .pnpm-store
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-node${{ matrix.node-version }}-${{ hashFiles('**/pnpm-lock.yaml') }}
 
+      # 官网上的示例用 CURL 下载不跨平台，所以还是选择 npm 来安装。
       - name: Install pnpm
         run: npm i -g pnpm
 

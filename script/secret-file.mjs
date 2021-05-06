@@ -3,10 +3,13 @@
  *
  * 【使用方法】
  * node script/secret-file.mjs encrypt secret.json <password>
- * 使用指定的密码加密根目录下的 secret.json -> secret.json.encrypt
+ * 使用指定的密码加密根目录下的 secret.json -> public/secret.json.aes
  *
- * node script/secret-file.mjs encrypt secret.json.encrypt <password>
- * 解密根目录下的 secret.json.encrypt 文件，在控制台输出其内容。
+ * node script/secret-file.mjs decrypt secret.json <password>
+ * 解密 secret.json.aes 文件，在控制台输出其内容。
+ *
+ * 【加密后的编码】
+ * 加密的文件使用 base64 编码，这虽然多了一步，但 base64 文本在 webpack 打包时更具扩展性。
  */
 import { join } from "path";
 import fs from "fs";
