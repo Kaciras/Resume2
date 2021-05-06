@@ -38,15 +38,14 @@ jobs:
         env:
           NEXT_TELEMETRY_DISABLED: 1
 
-      - name: Configure GitHub pages
+      - name: Configure GitHub Pages
         run: |
           echo "resume.kaciras.com" > out/CNAME
           touch out/.nojekyll
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CLEAN: true
-          BRANCH: gh-pages
-          FOLDER: out
+          clean: true
+          branch: gh-pages
+          folder: out
