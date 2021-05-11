@@ -4,7 +4,7 @@ const withBundlerAnalyzer = require("@next/bundle-analyzer");
 
 function customWebpack(config) {
 	config.module.rules.push({
-		test: /\.(?:md|encrypt)$/,
+		test: /\.(md|aes)$/,
 		type: "asset/source",
 	});
 
