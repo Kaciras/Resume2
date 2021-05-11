@@ -3,7 +3,7 @@
 	"description": "个人简历网站",
 	"version": "0.1.0",
 	"license": "MIT",
-	"author": "Kaciras <Kaciras@outlook.com>",
+	"author": "Kaciras <Kaciras@protonmail.com>",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Kaciras/Resume2"
@@ -12,7 +12,7 @@
 		"node": ">=16"
 	},
 	"scripts": {
-		"lint": "eslint --fix .",
+		"lint": "eslint --ext mjs,js,jsx --fix .",
 		"dev": "next dev",
 		"test": "jest",
 		"build": "next build && next export"
