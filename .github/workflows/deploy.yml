@@ -44,9 +44,10 @@ jobs:
           touch out/.nojekyll
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           silent: true
           clean: true
           branch: gh-pages
           folder: out
+          single-commit: true
