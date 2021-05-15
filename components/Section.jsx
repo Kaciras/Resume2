@@ -4,16 +4,17 @@ import styles from "./Section.module.scss";
 export default function Section(props) {
 	const { title, subtitle, children, type } = props;
 
-	let header = null;
-	if (title) {
-		header = (
-			<header className={styles.header}>
-				<h1>{title}</h1>
-				{subtitle && <span>{subtitle}</span>}
-			</header>
-		);
-	}
+	const header = (
+		<header className={styles.header}>
+			<h1 className={styles.h1}>{title}</h1>
+			{
+				subtitle &&
+				<h2 className={styles.h2}>{subtitle}</h2>
+			}
+		</header>
+	);
 
 	const clazz = clsx("content", styles[type]);
+
 	return <section className={clazz}>{header}{children}</section>;
 }

@@ -4,16 +4,18 @@
 
 .header {
 	text-align: center;
+	margin-bottom: 2rem;
+}
 
-	& > h1 {
-		margin-top: 0;
-		font-size: 2.5rem;
-		font-weight: normal;
-	}
+.h1 {
+	margin: 0;
+	font-size: 2.5rem;
+	font-weight: normal;
+}
 
-	& > span {
-		font-size: 1.8rem;
-		font-weight: normal;
-		color: #667;
-	}
+.h2 {
+	margin: 1rem 0 0 0;
+	font-size: 1.75rem;
+	font-weight: normal;
+	color: #667;
 }
