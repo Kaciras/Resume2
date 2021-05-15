@@ -92,7 +92,7 @@ export default function PersonalDetails({ title, children }) {
 
 	async function tryUseRealData(password) {
 		setState(DecryptState.Running);
-		const response = await fetch("/secret.json.aes");
+		const response = await fetch("/info.json.aes");
 
 		if (response.status === 404) {
 			return setState(DecryptState.Free);
