@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import * as webCrypto from "@/lib/crypto-web";
 import AtomSpinner from "@/components/AtomSpinner";
-import style from "./PersonalDetails.module.scss";
+import styles from "./PersonalDetails.module.scss";
 
 /**
  * 用于演示的身份信息，尽量保证与真实信息渲染出来的高度一样，以避免布局移动。
@@ -52,11 +52,11 @@ function DecryptingIndicator({ state }) {
 		return null;
 	}
 	if (state === DecryptState.Failed) {
-		return <div className={style.failed}>个人信息加载失败！</div>;
+		return <div className={styles.failed}>个人信息加载失败！</div>;
 	}
 	return (
-		<div className={style.indicator}>
-			<AtomSpinner className={style.spinner}/>
+		<div className={styles.indicator}>
+			<AtomSpinner className={styles.spinner}/>
 			正在加载个人信息...
 		</div>
 	);
@@ -131,18 +131,18 @@ export default function PersonalDetails({ title, children }) {
 	return (
 		<section
 			suppressHydrationWarning={true}
-			className={style.container}
+			className={styles.container}
 		>
-			<div className={style.info}>
-				<header className={style.nameGroup}>
-					<h1 className={style.name}>
+			<div className={styles.info}>
+				<header className={styles.nameGroup}>
+					<h1 className={styles.name}>
 						{name}
 					</h1>
-					<h2 className={style.title}>
+					<h2 className={styles.title}>
 						{title}
 					</h2>
 				</header>
-				<dl className={style.addrGroup}>
+				<dl className={styles.addrGroup}>
 					<dt>毕业于</dt>
 					<dd>{degree}</dd>
 					{addressRows}

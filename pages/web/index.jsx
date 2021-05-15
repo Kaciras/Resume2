@@ -13,7 +13,7 @@ import FileDownloadIcon from "@/assets/icon/file-download.svg";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
-import styles from "./web.module.scss";
+import styles from "./index.module.scss";
 
 /*
  * 为什么不用新出的 next/image？

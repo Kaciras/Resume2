@@ -24,6 +24,7 @@
 }
 
 .label {
+	// Safari 14.1 之前不支持 flex-gap
 	margin: .25em;
 	padding: .4em .6em;
 	flex: 1;
