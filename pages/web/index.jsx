@@ -5,14 +5,15 @@ import PersonalDetails from "@/components/PersonalDetails";
 import TechLabels from "@/components/TechLabels";
 import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
+import Attachment from "@/components/Attachment";
 import logo from "@/assets/web-logo.svg";
 import blog from "@/assets/blog.png";
 import icAnalyzer from "@/assets/ic-analyzer.png";
+import FileDownloadIcon from "@/assets/icon/file-download.svg";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
 import styles from "./web.module.scss";
-import Attachment from "@/components/Attachment";
 
 /*
  * 为什么不用新出的 next/image？
@@ -121,7 +122,7 @@ export default function FrontendResume() {
 			<PersonalDetails title="Web 前端开发工程师">
 				<div className={styles.custom}>
 					<img
-						className="hide-mobile"
+						className={styles.logo}
 						alt="logo"
 						src={logo}
 					/>
@@ -130,6 +131,7 @@ export default function FrontendResume() {
 						type="application/json"
 						encrypted={true}
 					>
+						<FileDownloadIcon className={styles.buttonIcon}/>
 						下载 PDF 版简历
 					</Attachment>
 					<Attachment
@@ -137,6 +139,7 @@ export default function FrontendResume() {
 						type="application/json"
 						encrypted={true}
 					>
+						<FileDownloadIcon className={styles.buttonIcon}/>
 						下载 Word 版简历
 					</Attachment>
 				</div>
@@ -152,7 +155,7 @@ export default function FrontendResume() {
 			</Section>
 
 			<Section
-				title="拥有全栈技能树"
+				title="全栈技能树"
 				subtitle="广泛的知识不惧任何挑战"
 			>
 				<div className={styles.markdown}>

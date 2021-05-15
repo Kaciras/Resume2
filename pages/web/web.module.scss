@@ -4,12 +4,19 @@
 	display: grid;
 	grid-template-columns: auto;
 	grid-gap: 1rem;
-	justify-items: end;
 
-	@include mobile-layout {
-		justify-content: center;
-		justify-items: stretch;
-	}
+	// for mobile
+	justify-content: center;
+}
+
+.logo {
+	composes: hide-mobile from global;
+	justify-self: end;
+}
+
+.buttonIcon {
+	font-size: 27px;
+	margin-right: 4px;
 }
 
 .project:not(:first-of-type) {

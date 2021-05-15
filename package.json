@@ -32,6 +32,7 @@
 		"@kaciras/eslint-config-jest": "^1.4.0",
 		"@kaciras/eslint-config-react": "^1.4.0",
 		"@next/bundle-analyzer": "^10.2.0",
+		"@svgr/webpack": "^5.5.0",
 		"babel-jest": "^26.6.3",
 		"eslint": "^7.25.0",
 		"imagemin-pngquant": "^9.0.2",
