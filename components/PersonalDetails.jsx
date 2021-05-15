@@ -86,7 +86,7 @@ function initDecryptState() {
  * 所以这种情况下只能构建含演示信息的版本，真实信息在客户端解密。
  * 这么一来要求客户端不能禁用JS，否则无法解密。
  */
-export default function PersonalDetails({ title, logo }) {
+export default function PersonalDetails({ title, children }) {
 	const [state, setState] = useState(initDecryptState);
 	const [info, setInfo] = useState(Placeholder);
 
@@ -133,10 +133,14 @@ export default function PersonalDetails({ title, logo }) {
 			suppressHydrationWarning={true}
 			className={style.container}
 		>
-			<div>
+			<div className={style.info}>
 				<header className={style.nameGroup}>
-					<h1 className={style.name}>{name}</h1>
-					<h2 className={style.title}>{title}</h2>
+					<h1 className={style.name}>
+						{name}
+					</h1>
+					<h2 className={style.title}>
+						{title}
+					</h2>
 				</header>
 				<dl className={style.addrGroup}>
 					<dt>毕业于</dt>
@@ -144,11 +148,9 @@ export default function PersonalDetails({ title, logo }) {
 					{addressRows}
 				</dl>
 			</div>
-			<img
-				className={style.logo}
-				src={logo}
-				alt="logo"
-			/>
+
+			{children}
+
 			<DecryptingIndicator state={state}/>
 		</section>
 	);

@@ -9,9 +9,10 @@ import logo from "@/assets/web-logo.svg";
 import blog from "@/assets/blog.png";
 import icAnalyzer from "@/assets/ic-analyzer.png";
 import blogDescription from "./Blog.md";
-import icAnalyzerDescription from "./ICAnalyze.md";
+import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
 import styles from "./web.module.scss";
+import Attachment from "@/components/Attachment";
 
 /*
  * 为什么不用新出的 next/image？
@@ -117,7 +118,29 @@ export default function FrontendResume() {
 				<base target="_blank"/>
 			</Head>
 
-			<PersonalDetails title="Web 前端开发工程师" logo={logo}/>
+			<PersonalDetails title="Web 前端开发工程师">
+				<div className={styles.custom}>
+					<img
+						className="hide-mobile"
+						alt="logo"
+						src={logo}
+					/>
+					<Attachment
+						name="secret.json"
+						type="application/json"
+						encrypted={true}
+					>
+						下载 PDF 版简历
+					</Attachment>
+					<Attachment
+						name="secret.json"
+						type="application/json"
+						encrypted={true}
+					>
+						下载 Word 版简历
+					</Attachment>
+				</div>
+			</PersonalDetails>
 
 			<Section
 				title="项目展示"

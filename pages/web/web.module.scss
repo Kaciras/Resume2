@@ -1,5 +1,17 @@
 @import "css/mixins";
 
+.custom {
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 1rem;
+	justify-items: end;
+
+	@include mobile-layout {
+		justify-content: center;
+		justify-items: stretch;
+	}
+}
+
 .project:not(:first-of-type) {
 	margin-top: 2rem;
 	border-top: solid 1px #ccc;
