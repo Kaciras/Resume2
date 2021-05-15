@@ -3,6 +3,7 @@ $stripeWidth: 32px;
 .button {
 	--color: #0776df;
 	--color-shadow: rgba(0, 112, 217, 0.5);
+	--color-light: #2596ff;
 
 	display: inline-flex;
 	align-items: center;
@@ -37,6 +38,7 @@ $stripeWidth: 32px;
 	&, &:hover {
 		background-color: var(--color);
 		background-size: $stripeWidth $stripeWidth;
+		color: white;
 	}
 
 	background-image: linear-gradient(-45deg,

@@ -11,7 +11,7 @@
  * 【加密后的编码】
  * 加密的文件使用 base64 编码，这虽然多了一步，但 base64 文本在 webpack 打包时更具扩展性。
  */
-import { join } from "path";
+import { dirname, join } from "path";
 import fs from "fs";
 import { decrypt, encrypt } from "../lib/crypto-node.mjs";
 
@@ -23,25 +23,28 @@ if (process.argv.length < 4) {
 const [, __filename, mode, password, filename] = process.argv;
 
 // ES Module 模式下没有 __dirname，只能用运行参数。
-process.chdir(join(__filename, "../../secret"));
+const root = dirname(dirname(__filename));
+const input_dir = join(root, "secret");
+const output_dir = join(root, "public");
 
-function encryptFiles(path) {
-	const stat = fs.statSync(path);
-	if (stat.isDirectory()) {
+function encryptFiles(name) {
+	const path = join(input_dir, name);
+	if (fs.statSync(path).isDirectory()) {
 		fs.readdirSync(path).forEach(encryptFiles);
 	} else {
 		let data = fs.readFileSync(path);
 		data = encrypt(password, data);
-		fs.writeFileSync(`public/${path}.aes`, data);
+		fs.writeFileSync(`${output_dir}/${name}.aes`, data);
 	}
 }
 
-function decryptFile(path) {
-	if (!path) {
+function decryptFile(name) {
+	if (!name) {
 		console.error("File name needed for decryption.");
 		process.exit(2);
 	}
-	const data = fs.readFileSync(`public/${path}.aes`, "utf8");
+	const path = join(output_dir, name + ".aes");
+	const data = fs.readFileSync(path, "utf8");
 	process.stdout.write(decrypt(password, data).toString());
 }
 

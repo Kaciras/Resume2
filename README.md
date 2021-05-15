@@ -21,9 +21,9 @@ pnpm run build
 
 # 个人信息加密
 
-本项目支持对敏感信息加密，仅在 URL 参数带有正确的密钥时才显示，否则显示演示信息。
+本项目支持对敏感信息加密，需要加密的文件放在`/secret`目录下，该目录被`.gitignore`所排除，也不会包含在构建的输出里。
 
-在项目目录下创建`secret.json`并填写个人信息：
+例如创建`secret/info.json`并填写个人信息：
 
 ```json
 {
@@ -37,10 +37,10 @@ pnpm run build
 }
 ```
 
-该文件被`.gitignore`所排除，也不会包含在构建的输出里，对其使用`AES-128-GCM`加密，指定一个密码：
+调用以下命令，对`/secret`里所有的文件用`AES-128-GCM`加密：
 
 ```shell script
-node script/secret-file.mjs encrypt secret.json <password>
+node script/secret-files.mjs encrypt <password>
 ```
 
-该命令将生成`public/secret.json.aes`文件，它被包含在构建输出中并上传到公共仓库，访问时在 URL 里带上`key=<password>`参数解密，将其内容显示在个人信息栏。
+加密后的文件被保存到`/public`目录，它将包含在构建输出中并上传，当 URL 存在`key=<password>`参数并且密码正确时才能加载这些文件。
