@@ -127,20 +127,12 @@ export default function FrontendResume() {
 						src={logo}
 					/>
 					<Attachment
-						name="secret.json"
-						type="application/json"
+						name="前端.pdf"
+						type="application/pdf"
 						encrypted={true}
 					>
 						<FileDownloadIcon className={styles.buttonIcon}/>
 						下载 PDF 版简历
-					</Attachment>
-					<Attachment
-						name="secret.json"
-						type="application/json"
-						encrypted={true}
-					>
-						<FileDownloadIcon className={styles.buttonIcon}/>
-						下载 Word 版简历
 					</Attachment>
 				</div>
 			</PersonalDetails>
