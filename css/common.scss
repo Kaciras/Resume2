@@ -4,6 +4,7 @@
 // 使用 max 确保屏幕宽于手机但又不足 1200px 时的边距。
 .content {
 	$breakpoint: $max-content + 64px * 2;
+
 	padding: 1.5rem 12px;
 
 	@include pc-layout {
@@ -11,7 +12,7 @@
 	}
 
 	@media screen and (min-width: $breakpoint) {
-		padding: 2.5rem calc(50% - #{$max-content / 2});
+		padding: 2.5rem calc(50% - #{$max-content} / 2);
 	}
 }
 
