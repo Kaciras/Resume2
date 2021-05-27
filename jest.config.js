@@ -1,6 +1,5 @@
 module.exports = {
 	clearMocks: true,
-	testEnvironment: "node",
 	transform: {
 		"^.+\\.mjs$": ["babel-jest", { configFile: "./babel.jest.js" }],
 	},
