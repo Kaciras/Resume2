@@ -1,14 +1,22 @@
 @import "mixins";
 
-// 使用 calc 同时实现类似 margin: auto 的居中效果和 max-width。
-// 使用 max 确保屏幕宽于手机但又不足 1200px 时的边距。
+/*
+ * 使用 calc 让 padding 实现 margin: auto 的居中效果和 max-width。
+ * 因为内容区间有背景所以要占满一行，不能使用 margin。
+ *
+ * 当屏幕宽度为：
+ * 手机 -> 左右边距固定为 12px。
+ * 大于手机小于宽屏 -> 左右边距为 64px。
+ * 宽屏 -> 内容宽度固定，边距自动。
+ */
 .content {
-	$breakpoint: $max-content + 64px * 2;
+	$margin-wide: 64px;
+	$breakpoint: $max-content + $margin-wide * 2;
 
 	padding: 1.5rem 12px;
 
 	@include pc-layout {
-		padding: 2.5rem 64px;
+		padding: 2.5rem $margin-wide;
 	}
 
 	@media screen and (min-width: $breakpoint) {
@@ -17,7 +25,5 @@
 }
 
 .hide-mobile {
-	@include mobile-layout {
-		display: none;
-	}
+	@include mobile-layout { display: none; }
 }

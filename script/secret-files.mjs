@@ -24,17 +24,20 @@ const [, __filename, mode, password, filename] = process.argv;
 
 // ES Module 模式下没有 __dirname，只能用运行参数。
 const root = dirname(dirname(__filename));
-const input_dir = join(root, "secret");
-const output_dir = join(root, "public");
+const inputDir = join(root, "secret");
+const outputDir = join(root, "public");
 
+/**
+ * 加密 inputDir 下的文件，如果是目录则递归，结果保存到 outputDir。
+ */
 function encryptFiles(name) {
-	const path = join(input_dir, name);
+	const path = join(inputDir, name);
 	if (fs.statSync(path).isDirectory()) {
 		fs.readdirSync(path).forEach(encryptFiles);
 	} else {
 		let data = fs.readFileSync(path);
 		data = encrypt(password, data);
-		fs.writeFileSync(`${output_dir}/${name}.aes`, data);
+		fs.writeFileSync(`${outputDir}/${name}.aes`, data);
 	}
 }
 
@@ -43,7 +46,7 @@ function decryptFile(name) {
 		console.error("File name needed for decryption.");
 		process.exit(2);
 	}
-	const path = join(output_dir, name + ".aes");
+	const path = join(outputDir, name + ".aes");
 	const data = fs.readFileSync(path, "utf8");
 	process.stdout.write(decrypt(password, data).toString());
 }
