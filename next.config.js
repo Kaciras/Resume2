@@ -42,9 +42,12 @@ module.exports = withPlugins([
 	withOptimizedImages,
 	withBundlerAnalyzer({ enabled: process.env.ANALYZE === "true" }),
 ], {
-	future: {
-		webpack5: true,
-	},
 	poweredByHeader: false,
 	webpack: customWebpack,
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
+	images: {
+		disableStaticImages: true,
+	},
 });
