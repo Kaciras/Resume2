@@ -2,9 +2,10 @@ const { join } = require("path");
 const withPlugins = require("next-compose-plugins");
 const withOptimizedImages = require("next-optimized-images");
 const withBundlerAnalyzer = require("@next/bundle-analyzer");
+const aliasConfig = require("./alias.idea");
 
 function customWebpack(config) {
-	config.resolve.alias["@"] = __dirname;
+	Object.assign(config.resolve.alias, aliasConfig.resolve.alias);
 
 	// https://github.com/vercel/next.js/issues/17806
 	config.module.rules.push({
