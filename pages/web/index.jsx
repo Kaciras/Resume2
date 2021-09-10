@@ -2,10 +2,9 @@ import ReactMarkdown from "react-markdown";
 import Head from "next/head";
 import Section from "@/components/Section";
 import PersonalDetails from "@/components/PersonalDetails";
-import TechLabels from "@/components/TechLabels";
-import ExternalLink from "@/components/ExternalLink";
 import PageLayout from "@/components/PageLayout";
 import Attachment from "@/components/Attachment";
+import ProjectIntro from "@/components/ProjectIntro";
 import logo from "@/assets/web-logo.svg";
 import blog from "@/assets/blog.png";
 import icAnalyzer from "@/assets/ic-analyzer.png";
@@ -65,52 +64,6 @@ const ICAnalyze = {
 	content: icAnalyzerDescription,
 };
 
-// 因为在链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
-function Delimiter() {
-	return <span className={styles.delimiter} role="separator">|</span>;
-}
-
-function ProjectIntro(props) {
-	const { name, links, techStack, banner, content } = props;
-
-	const linkNodes = links.map(link => (
-		<ExternalLink
-			key={link.href}
-			href={link.href}
-		>
-			{link.text}
-		</ExternalLink>
-	));
-
-	// 可惜数组的 join 不能使用函数，还得循环做。
-	const items = [];
-	for (let i = 0; i < linkNodes.length - 1; i++) {
-		items.push(linkNodes[i]);
-		items.push(<Delimiter key={i}/>);
-	}
-	items.push(linkNodes[linkNodes.length - 1]);
-
-	return (
-		<section className={styles.project}>
-			<header className={styles.projectHeader}>
-				<h2 className={styles.name}>
-					{name}
-				</h2>
-				<div>{items}</div>
-			</header>
-			<TechLabels stack={techStack}/>
-			<img
-				src={banner}
-				alt="banner"
-				className={styles.banner}
-			/>
-			<div className={styles.markdown}>
-				<ReactMarkdown>{content}</ReactMarkdown>
-			</div>
-		</section>
-	);
-}
-
 export default function FrontendResume() {
 	return (
 		<PageLayout>
@@ -142,8 +95,8 @@ export default function FrontendResume() {
 				subtitle="编织有艺术感的代码"
 				type="projects"
 			>
-				{ProjectIntro(blogProject)}
-				{ProjectIntro(ICAnalyze)}
+				<ProjectIntro>{blogProject}</ProjectIntro>
+				<ProjectIntro>{ICAnalyze}</ProjectIntro>
 			</Section>
 
 			<Section
