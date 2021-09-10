@@ -16,22 +16,22 @@ export default function ProjectIntro(props) {
 	const { children } = props;
 	const { name, links, techStack, banner, content } = children;
 
-	const linkNodes = links.map(link =>
-		<ExternalLink
-			key={link.href}
-			href={link.href}
-		>
-			{link.text}
-		</ExternalLink>,
-	);
-
 	// 可惜数组的 join 不能使用函数，还得循环做。
 	const items = [];
-	for (let i = 0; i < linkNodes.length - 1; i++) {
-		items.push(linkNodes[i]);
+	for (let i = 0; i < links.length; i++) {
+		const { href, text } = links[i];
+		items.push(
+			<ExternalLink
+				key={href}
+				href={href}
+			>
+				{text}
+			</ExternalLink>,
+		);
 		items.push(<Delimiter key={i}/>);
 	}
-	items.push(linkNodes[linkNodes.length - 1]);
+
+	items.pop(); // 去掉末尾的分隔符。
 
 	return (
 		<section className={styles.container}>

@@ -21,7 +21,7 @@ export default function PageFooter() {
 	return (
 		<footer className={styles.container}>
 			<div>
-				<p>Copyright &copy; Kaciras 2020</p>
+				<p>Copyright &copy; Kaciras 2020-2021</p>
 				<p>
 					<ExternalLink href="https://github.com/Kaciras/Resume2"/>
 				</p>

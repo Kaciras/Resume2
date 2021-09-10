@@ -49,22 +49,19 @@ export default function PersonalDetails({ title, children }) {
 	const [running, setRunning] = useState(!!key);
 	const [info, setInfo] = useState(Placeholder);
 
-	async function tryUseRealData() {
-		if (!key) {
+	function tryUseRealData() {
+		if (key === undefined) {
 			return;
 		}
 		setRunning(true);
-		try {
-			const json = await downloadSecret("/info.json.aes", key);
-			setInfo(JSON.parse(new TextDecoder().decode(json)));
-		} catch (e) {
-			alert(`用户信息解密失败，${e.message}`);
-		} finally {
-			setRunning(false);
-		}
+		downloadSecret("/info.json.aes", key)
+			.then(json => JSON.parse(new TextDecoder().decode(json)))
+			.then(setInfo)
+			.catch(e => alert(`用户信息解密失败，${e.message}`))
+			.finally(() => setRunning(false))
 	}
 
-	useEffect(() => void tryUseRealData(), [key]);
+	useEffect(tryUseRealData, [key]);
 
 	const { name, degree, addresses } = info;
 	const addressRows = [];
@@ -89,7 +86,7 @@ export default function PersonalDetails({ title, children }) {
 						{title}
 					</h2>
 				</header>
-				<dl className={styles.addrGroup}>
+				<dl className={styles.attributes}>
 					<dt>毕业于</dt>
 					<dd>{degree}</dd>
 					{addressRows}
