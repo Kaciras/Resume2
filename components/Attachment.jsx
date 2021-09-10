@@ -1,47 +1,45 @@
 import clsx from "clsx";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { downloadSecret } from "@/lib/common.mjs";
 import styles from "./Attachment.module.scss";
 
-function triggerDownload(url, filename) {
-	const a = document.createElement("a");
-	a.download = filename;
-	a.href = url;
-	document.body.append(a);
-	a.click();
-	document.body.removeChild(a);
-}
-
 export default function Attachment(props) {
 	const { className, name, type, encrypted, children } = props;
 
-	const router = useRouter();
+	const { key } = useRouter().query;
 	const [running, setRunning] = useState(false);
-	const objectUrl = useRef(null);
+	const [url, setUrl] = useState();
 
-	useEffect(() => () => URL.revokeObjectURL(objectUrl.current), []);
+	useEffect(() => () => URL.revokeObjectURL(url), [url]);
 
-	const { key } = router.query;
-
-	if (encrypted && !key) {
+	if (encrypted && key === undefined) {
 		return null;
 	}
 
-	async function handleClick() {
-		if (!objectUrl.current) {
-			setRunning(true);
-			try {
-				const buffer = await downloadSecret(`/${name}.aes`, key);
-				const blob = new Blob([buffer], { type });
-				objectUrl.current = URL.createObjectURL(blob);
-			} catch (e) {
-				return alert(`下载失败，${e.message}`);
-			} finally {
-				setRunning(false);
-			}
+	async function loadResource() {
+		const buffer = await downloadSecret(`/${name}.aes`, key);
+		setUrl(URL.createObjectURL(new Blob([buffer], { type })));
+	}
+
+	async function handleClick(event) {
+		const { target } = event;
+
+		// 已经设置了 href，直接走默认点击流程。
+		if (url) return;
+
+		event.preventDefault();
+		setRunning(true);
+		try {
+			await loadResource();
+
+			// 似乎 React 能立即更新 DOM 啊
+			target.click();
+		} catch (e) {
+			alert(`下载失败，${e.message}`);
+		} finally {
+			setRunning(false);
 		}
-		triggerDownload(objectUrl.current, name);
 	}
 
 	const clazz = clsx(
@@ -50,5 +48,5 @@ export default function Attachment(props) {
 		{ [styles.busy]: running },
 	);
 
-	return <button className={clazz} type="button" onClick={handleClick}>{children}</button>;
+	return <a className={clazz} download={name} href={url} onClick={handleClick}>{children}</a>;
 }
