@@ -12,7 +12,7 @@
  * 加密的文件使用 base64 编码，这虽然多了一步，但 base64 文本在 webpack 打包时更具扩展性。
  */
 import { dirname, join } from "path";
-import fs from "fs";
+import { readdirSync, readFileSync, statSync, writeFileSync } from "fs";
 import { decrypt, encrypt } from "../lib/crypto-node.mjs";
 
 if (process.argv.length < 4) {
@@ -32,12 +32,13 @@ const outputDir = join(root, "public");
  */
 function encryptFiles(name) {
 	const path = join(inputDir, name);
-	if (fs.statSync(path).isDirectory()) {
-		fs.readdirSync(path).forEach(encryptFiles);
+
+	if (statSync(path).isDirectory()) {
+		readdirSync(path).forEach(encryptFiles);
 	} else {
-		let data = fs.readFileSync(path);
+		let data = readFileSync(path);
 		data = encrypt(password, data);
-		fs.writeFileSync(`${outputDir}/${name}.aes`, data);
+		writeFileSync(`${outputDir}/${name}.aes`, data);
 	}
 }
 
@@ -47,7 +48,7 @@ function decryptFile(name) {
 		process.exit(2);
 	}
 	const path = join(outputDir, name + ".aes");
-	const data = fs.readFileSync(path, "utf8");
+	const data = readFileSync(path, "utf8");
 	process.stdout.write(decrypt(password, data).toString());
 }
 

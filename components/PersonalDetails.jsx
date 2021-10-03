@@ -58,7 +58,7 @@ export default function PersonalDetails({ title, children }) {
 			.then(json => JSON.parse(new TextDecoder().decode(json)))
 			.then(setInfo)
 			.catch(e => alert(`用户信息解密失败，${e.message}`))
-			.finally(() => setRunning(false))
+			.finally(() => setRunning(false));
 	}
 
 	useEffect(tryUseRealData, [key]);

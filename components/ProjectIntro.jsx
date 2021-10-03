@@ -1,9 +1,9 @@
+import ReactMarkdown from "react-markdown";
 import ExternalLink from "@/components/ExternalLink";
 import TechLabels from "@/components/TechLabels";
-import ReactMarkdown from "react-markdown";
 import styles from "./ProjectIntro.module.scss";
 
-// 因为在链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
+// 因为链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
 function Delimiter() {
 	return <span className={styles.delimiter} role="separator">|</span>;
 }

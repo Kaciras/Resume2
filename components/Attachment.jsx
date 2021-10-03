@@ -1,5 +1,5 @@
-import clsx from "clsx";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 import { useRouter } from "next/router";
 import { downloadSecret } from "@/lib/common.mjs";
 import styles from "./Attachment.module.scss";
