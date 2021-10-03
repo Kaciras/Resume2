@@ -4,6 +4,7 @@
 .container {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 8px;
 
 	list-style: none;
 	margin: 0;
@@ -24,8 +25,7 @@
 }
 
 .label {
-	// Safari 14.1 之前不支持 flex-gap
-	margin: .25em;
+	margin: 0;
 	padding: .4em .6em;
 	flex: 1;
 
