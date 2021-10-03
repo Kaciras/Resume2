@@ -6,8 +6,11 @@
 
 body {
 	line-height: 1.6;
-	color: #222;
 	margin: 0;
+	color: #222;
+
+	// 似乎对一些手机浏览器无效。
+	//font-size: 16px;
 
 	// 微软雅黑的英文太粗无法跟加粗区分，换个细的。
 	font-family: Arial, sans-serif;

@@ -13,7 +13,7 @@
 	$margin-wide: 64px;
 	$breakpoint: $max-content + $margin-wide * 2;
 
-	padding: 1.5rem 12px;
+	padding: 1.5rem $margin-mobile;
 
 	@include pc-layout {
 		padding: 2.5rem $margin-wide;

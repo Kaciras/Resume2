@@ -4,7 +4,9 @@
 .container {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px;
+
+	// 兼容性不太好，等反馈再看看要不要回退。
+	gap: 0.5em;
 
 	list-style: none;
 	margin: 0;
@@ -29,6 +31,7 @@
 	padding: .4em .6em;
 	flex: 1;
 
+	color: white;
 	white-space: nowrap;
 	text-align: center;
 	border-radius: 4px;
@@ -36,20 +39,18 @@
 
 // 这个亮色的真难调
 .frontend {
+	color: black;
 	background: #f7f700;
 }
 
 .backend {
-	color: white;
 	background: #058a00;
 }
 
 .operation {
-	color: white;
-	background: #0067c1;
+	background: #0053c7;
 }
 
 .lang {
-	color: white;
 	background: #d40000;
 }

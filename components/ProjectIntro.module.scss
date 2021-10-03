@@ -35,10 +35,25 @@
 .banner {
 	max-width: 100%;
 	margin: 1.5rem 0;
+
+	// 阴影不受负间距的影响，但结果还可以接受
 	box-shadow: 0 8px 16px rgba(0, 0, 0, .5);
 
 	@include mobile-layout {
-		display: block; // 使下间距重叠
+		// 手机上使下间距重叠，更紧凑些。
+		display: block;
+
+		/*
+		 * 与我的博客不同，这里到边距元素隔了两层，父元素不等于屏幕宽，
+		 * 所以无法使用 100% 而只能换 vw。
+		 *
+		 * 然而 vw 有个问题是包含了滚动条，好在手机的滚动条都是浮动的，
+		 * 只有 PC 缩到手机宽以下才会溢出，这并不常见。
+		 */
+		max-width: 100vw;
+
+		margin-left: -$margin-mobile;
+		margin-right: -$margin-mobile;
 	}
 }
 

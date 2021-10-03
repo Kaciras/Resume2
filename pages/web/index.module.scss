@@ -18,3 +18,10 @@
 	font-size: 27px;
 	margin-right: 4px;
 }
+
+// 跟 ProjectIntro 里的重复了
+.markdown {
+	@include pc-layout {
+		padding: 0 2rem;
+	}
+}

@@ -4,6 +4,12 @@
 
 个人简历网站，在线浏览：[Web前端开发工程师](https://resume.kaciras.com/web)
 
+浏览器支持：
+* Firefox >= 63
+* Chrome / Edge >= 84
+* Safari >= 14.7
+* 国产浏览器未知，请用最新版。
+
 # 构建
 
 本项目使用`pnpm`作为依赖管理器，运行以下命令安装依赖并启动开发服务器：
