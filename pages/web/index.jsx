@@ -103,9 +103,7 @@ export default function FrontendResume() {
 				title="全栈技能树"
 				subtitle="广泛的知识不惧任何挑战"
 			>
-				<div className={styles.markdown}>
-					<ReactMarkdown>{skills}</ReactMarkdown>
-				</div>
+				<ReactMarkdown>{skills}</ReactMarkdown>
 			</Section>
 		</PageLayout>
 	);
