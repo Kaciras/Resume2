@@ -1,5 +1,4 @@
 import ReactMarkdown from "react-markdown";
-import Head from "next/head";
 import Section from "@/components/Section";
 import PersonalDetails from "@/components/PersonalDetails";
 import PageLayout from "@/components/PageLayout";
@@ -66,12 +65,7 @@ const ICAnalyze = {
 
 export default function FrontendResume() {
 	return (
-		<PageLayout>
-			<Head>
-				<title>Web 前端开发工程师 | 简历</title>
-				<base target="_blank"/>
-			</Head>
-
+		<PageLayout title="Web 前端开发工程师">
 			<PersonalDetails title="Web 前端开发工程师">
 				<div className={styles.custom}>
 					<img

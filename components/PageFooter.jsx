@@ -3,7 +3,9 @@ import QRCode from "qrcode";
 import ExternalLink from "./ExternalLink";
 import styles from "./PageFooter.module.scss";
 
-export default function PageFooter() {
+const ProjectURL = "https://github.com/Kaciras/Resume2";
+
+export default function PageFooter({ url }) {
 	const [qrCodeUrl, setQRCodeUrl] = useState(null);
 	const qrCodeRef = useRef(null);
 
@@ -13,17 +15,17 @@ export default function PageFooter() {
 			margin: 1,
 			color: { light: "#fafafaff" },
 		};
-		QRCode.toDataURL(canvas, location.href, options).then(setQRCodeUrl);
+		QRCode.toDataURL(canvas, url, options).then(setQRCodeUrl);
 	}
 
-	useEffect(drawQRCode, []);
+	useEffect(drawQRCode, [url]);
 
 	return (
 		<footer className={styles.container}>
 			<div>
 				<p>Copyright &copy; Kaciras 2020-2021</p>
 				<p>
-					<ExternalLink href="https://github.com/Kaciras/Resume2"/>
+					<ExternalLink href={ProjectURL}/>
 				</p>
 			</div>
 			<a href={qrCodeUrl} className={styles.qrcode}>

@@ -1,6 +1,5 @@
-import Head from "next/head";
 import Link from "next/link";
-import PageFooter from "@/components/PageFooter";
+import PageLayout from "@/components/PageLayout";
 import styles from "./index.module.scss";
 
 /*
@@ -27,10 +26,7 @@ function ResumeCard({ title, href, image }) {
 
 export default function Home() {
 	return (
-		<>
-			<Head>
-				<title>导航页 | 简历</title>
-			</Head>
+		<PageLayout title="首页">
 			<section className={styles.header}>
 				<img
 					className={styles.avatar}
@@ -49,7 +45,6 @@ export default function Home() {
 				<ResumeCard href="/web" title="JAVA 工程师" image={require("@/assets/frontend.png")}/>
 				<ResumeCard href="/web" title="JAVA 工程师" image={require("@/assets/frontend.png")}/>
 			</section>
-			<PageFooter/>
-		</>
+		</PageLayout>
 	);
 }
