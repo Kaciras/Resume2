@@ -11,7 +11,7 @@ export default function PageLayout(props) {
 				<base target="_blank"/>
 			</Head>
 			{children}
-			<PageFooter url={location.href}/>
+			<PageFooter/>
 		</>
 	);
 }

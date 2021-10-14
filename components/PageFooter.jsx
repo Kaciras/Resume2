@@ -5,7 +5,7 @@ import styles from "./PageFooter.module.scss";
 
 const ProjectURL = "https://github.com/Kaciras/Resume2";
 
-export default function PageFooter({ url }) {
+export default function PageFooter() {
 	const [qrCodeUrl, setQRCodeUrl] = useState(null);
 	const qrCodeRef = useRef(null);
 
@@ -15,10 +15,10 @@ export default function PageFooter({ url }) {
 			margin: 1,
 			color: { light: "#fafafaff" },
 		};
-		QRCode.toDataURL(canvas, url, options).then(setQRCodeUrl);
+		QRCode.toDataURL(canvas, location.href, options).then(setQRCodeUrl);
 	}
 
-	useEffect(drawQRCode, [url]);
+	useEffect(drawQRCode, []);
 
 	return (
 		<footer className={styles.container}>
