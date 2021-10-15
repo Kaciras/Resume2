@@ -13,12 +13,13 @@ const Placeholder = {
 	addresses: {
 		电话和微信: 12345678900,
 		QQ: 100000000,
-		Email: "foobar@example.com",
+		Email: "Kaciras@protonmail.com",
+		注意: "为防骚扰，上述信息只有邮箱是真的",
 	},
 };
 
 /**
- * 解密指示器，用于提示用户等待解密完成再看。
+ * 解密指示器，用于提示用户等待解密完成。
  *
  * 虽然不太可能在解密上卡很久，但还是指示下保险些。
  */
