@@ -1,0 +1,33 @@
+.card {
+	display: block;
+	padding: 20px;
+
+	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+	background: white;
+	border-radius: 8px;
+
+	text-decoration: none;
+	color: inherit;
+
+	transition: .25s;
+	transition-property: transform, box-shadow;
+
+	&:hover, &:focus-visible {
+		transform: translateY(-4px);
+		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+	}
+}
+
+.header {
+	display: flex;
+	margin-bottom: 1rem;
+}
+
+.name {
+	margin: 0;
+}
+
+.icon {
+	margin-left: auto;
+	font-size: 36px;
+}

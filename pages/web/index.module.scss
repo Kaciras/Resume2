@@ -25,3 +25,15 @@
 		padding: 0 2rem;
 	}
 }
+
+.h1 {
+	display: block;
+	text-align: center;
+	font-size: 2rem;
+}
+
+.cards {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}

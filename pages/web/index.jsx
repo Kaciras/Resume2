@@ -12,6 +12,7 @@ import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
 import styles from "./index.module.scss";
+import ProjectCard from "@/components/ProjectCard";
 
 /*
  * 为什么不用新出的 next/image？
@@ -91,6 +92,27 @@ export default function FrontendResume() {
 			>
 				<ProjectIntro>{icAnalyzer}</ProjectIntro>
 				<ProjectIntro>{blogProject}</ProjectIntro>
+
+				<section>
+					<h1 className={styles.h1}>其它项目</h1>
+					<div className={styles.cards}>
+						<ProjectCard
+							name="deasync"
+							description="一个能将异步代码转为同步的 NodeJS 库。"
+							url="https://github.com/Kaciras/deasync"
+						/>
+						<ProjectCard
+							name="pac-maker"
+							description="自动代理配置（PAC）文件生成 & 维护工具。"
+							url="https://github.com/Kaciras/pac-maker"
+						/>
+						<ProjectCard
+							name="browser-theme"
+							description="仿 Firefox 的新标签页，使用 WebComponent 构建和 Rollup 打包。"
+							url="https://github.com/Kaciras/browser-theme"
+						/>
+					</div>
+				</section>
 			</Section>
 
 			<Section
