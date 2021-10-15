@@ -5,9 +5,9 @@
 个人简历网站，在线浏览：[Web前端开发工程师](https://resume.kaciras.com/web)
 
 浏览器支持：
-* Firefox >= 63
-* Chrome / Edge >= 84
-* Safari >= 14.7
+* Firefox >= 72
+* Chrome / Edge >= 80
+* Safari >= 13.1
 * 国产浏览器未知，请用最新版。
 
 # 构建
