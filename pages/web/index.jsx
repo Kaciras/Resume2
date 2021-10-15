@@ -6,7 +6,7 @@ import Attachment from "@/components/Attachment";
 import ProjectIntro from "@/components/ProjectIntro";
 import logo from "@/assets/web-logo.svg";
 import blog from "@/assets/blog.png";
-import icAnalyzer from "@/assets/ic-analyzer.png";
+import ICAnalyzerImage from "@/assets/ic-analyzer.png";
 import FileDownloadIcon from "@/assets/icon/file-download.svg";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
@@ -42,7 +42,7 @@ const blogProject = {
 	content: blogDescription,
 };
 
-const ICAnalyze = {
+const icAnalyzer = {
 	name: "图片压缩分析工具",
 	links: [
 		{
@@ -59,7 +59,7 @@ const ICAnalyze = {
 		frontend: ["React", "Webpack", "Emscripten", "SCSS", "Highcharts"],
 		operation: ["Vercel", "GitHub Actions", "GitHub Pages"],
 	},
-	banner: icAnalyzer,
+	banner: ICAnalyzerImage,
 	content: icAnalyzerDescription,
 };
 
@@ -89,8 +89,8 @@ export default function FrontendResume() {
 				subtitle="编织有艺术感的代码"
 				type="projects"
 			>
+				<ProjectIntro>{icAnalyzer}</ProjectIntro>
 				<ProjectIntro>{blogProject}</ProjectIntro>
-				<ProjectIntro>{ICAnalyze}</ProjectIntro>
 			</Section>
 
 			<Section
