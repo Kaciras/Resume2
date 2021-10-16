@@ -4,7 +4,7 @@
 
 个人简历网站，在线浏览：[Web前端开发工程师](https://resume.kaciras.com/web)
 
-浏览器支持：
+浏览器支持（以 Nullish coalescing operator 为基准）：
 * Firefox >= 72
 * Chrome / Edge >= 80
 * Safari >= 13.1
@@ -27,7 +27,7 @@ pnpm run build
 
 # 个人信息加密
 
-本项目支持对敏感信息加密，需要加密的文件放在`/secret`目录下，该目录被`.gitignore`所排除，也不会包含在构建的输出里。
+本项目支持对个人信息加密，需要加密的文件放在`/secret`目录下，该目录被`.gitignore`所排除，也不会包含在构建的输出里。
 
 例如创建`secret/info.json`并填写个人信息：
 
@@ -37,7 +37,6 @@ pnpm run build
 	"degree": "某某学校，专业，本科，2014-2018",
 	"addresses": {
 		"电话和微信": 66666,
-		"QQ": 88888,
 		"Email": "example@example.com"
 	}
 }
@@ -49,4 +48,4 @@ pnpm run build
 node script/secret-files.mjs encrypt <password>
 ```
 
-加密后的文件被保存到`/public`目录，它将包含在构建输出中并上传，当 URL 存在`key=<password>`参数并且密码正确时才能加载这些文件。
+加密后的文件被保存到`/public`目录，它将包含在构建中并上传，当 URL 存在`key=<password>`参数且密码正确时才能加载这些文件。

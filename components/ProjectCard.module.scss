@@ -9,12 +9,12 @@
 	text-decoration: none;
 	color: inherit;
 
-	transition: .25s;
+	transition: .3s;
 	transition-property: transform, box-shadow;
 
 	&:hover, &:focus-visible {
 		transform: translateY(-4px);
-		box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
 	}
 }
 

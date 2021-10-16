@@ -12,7 +12,6 @@ const Placeholder = {
 	degree: "某某大学，本科，某某很强的专业，2014-2018",
 	addresses: {
 		电话和微信: 12345678900,
-		QQ: 100000000,
 		Email: "Kaciras@protonmail.com",
 		注意: "为防骚扰，上述信息只有邮箱是真的",
 	},
