@@ -1,7 +1,7 @@
 const { join } = require("path");
 const withPlugins = require("next-compose-plugins");
 const withOptimizedImages = require("next-optimized-images");
-const withBundlerAnalyzer = require("@next/bundle-analyzer");
+const withBundleAnalyzer = require("@next/bundle-analyzer");
 const aliasConfig = require("./alias.idea");
 
 function customWebpack(config) {
@@ -41,10 +41,11 @@ function customWebpack(config) {
 
 module.exports = withPlugins([
 	withOptimizedImages,
-	withBundlerAnalyzer({ enabled: process.env.ANALYZE === "true" }),
+	withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" }),
 ], {
-	poweredByHeader: false,
 	webpack: customWebpack,
+	poweredByHeader: false,
+	swcMinify: true,
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
