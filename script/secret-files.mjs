@@ -22,7 +22,7 @@ if (process.argv.length < 4) {
 
 const [, __filename, mode, password, filename] = process.argv;
 
-// ES Module 模式下没有 __dirname，只能用运行参数。
+// ES Module 模式下没有 __dirname，用运行参数代替。
 const root = dirname(dirname(__filename));
 const inputDir = join(root, "secret");
 const outputDir = join(root, "public");

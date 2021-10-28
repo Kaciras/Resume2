@@ -4,22 +4,15 @@ import PersonalDetails from "@/components/PersonalDetails";
 import PageLayout from "@/components/PageLayout";
 import Attachment from "@/components/Attachment";
 import ProjectIntro from "@/components/ProjectIntro";
+import ProjectCard from "@/components/ProjectCard";
 import logo from "@/assets/web-logo.svg";
-import blog from "@/assets/blog.png";
+import blogScreenshot from "@/assets/blog.png";
 import ICAnalyzerImage from "@/assets/ic-analyzer.png";
 import FileDownloadIcon from "@/assets/icon/file-download.svg";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
 import styles from "./index.module.scss";
-import ProjectCard from "@/components/ProjectCard";
-
-/*
- * 为什么不用新出的 next/image？
- * 1）它使用了一个 div 容器包裹图片，但不支持给容器设置类名。
- * 2）它不支持自定义转码选项比如 SharpYUV，且默认不开启，导致图片质量很差。
- * 3）防布局移动虽然好，但却要求写明宽高，没法自动检测，实在麻烦。
- */
 
 const blogProject = {
 	name: "个人网站",
@@ -39,7 +32,7 @@ const blogProject = {
 		backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
 		operation: ["Nginx", "Debian", "GitHub Actions", "Travis CI"],
 	},
-	banner: blog,
+	banner: blogScreenshot,
 	content: blogDescription,
 };
 
