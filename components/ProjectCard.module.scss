@@ -2,7 +2,7 @@
 	display: block;
 	padding: 20px;
 
-	box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
 	background: white;
 	border-radius: 8px;
 
@@ -14,7 +14,7 @@
 
 	&:hover, &:focus-visible {
 		transform: translateY(-4px);
-		box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 	}
 }
 

@@ -37,7 +37,7 @@ const blogProject = {
 };
 
 const icAnalyzer = {
-	name: "图片压缩分析工具",
+	name: "ICAnalyzer",
 	links: [
 		{
 			href: "https://ic-analyzer.kaciras.com",
