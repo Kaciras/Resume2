@@ -2,6 +2,7 @@ import ReactMarkdown from "react-markdown";
 import ExternalLink from "@/components/ExternalLink";
 import TechLabels from "@/components/TechLabels";
 import styles from "./ProjectIntro.module.scss";
+import StaticImg from "@/components/StaticImg";
 
 // 因为链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
 function Delimiter() {
@@ -42,7 +43,7 @@ export default function ProjectIntro(props) {
 				<div>{items}</div>
 			</header>
 			<TechLabels stack={techStack}/>
-			<img
+			<StaticImg
 				src={banner}
 				alt="banner"
 				className={styles.banner}

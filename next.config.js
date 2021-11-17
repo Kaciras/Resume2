@@ -1,6 +1,5 @@
 const { join } = require("path");
 const withPlugins = require("next-compose-plugins");
-const withOptimizedImages = require("next-optimized-images");
 const withBundleAnalyzer = require("@next/bundle-analyzer");
 const aliasConfig = require("./alias.idea");
 
@@ -36,6 +35,10 @@ function customWebpack(config) {
 			use: "@svgr/webpack",
 		},
 		{
+			test: /\.(png|jpg|svg)$/,
+			use: "./lib/image-loader.js",
+		},
+		{
 			rules: config.module.rules,
 		},
 	];
@@ -45,7 +48,6 @@ function customWebpack(config) {
 }
 
 module.exports = withPlugins([
-	withOptimizedImages,
 	withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" }),
 ], {
 	webpack: customWebpack,
