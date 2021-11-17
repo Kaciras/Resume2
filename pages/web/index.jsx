@@ -3,6 +3,7 @@ import Section from "@/components/Section";
 import PersonalDetails from "@/components/PersonalDetails";
 import PageLayout from "@/components/PageLayout";
 import Attachment from "@/components/Attachment";
+import StaticImg from "@/components/StaticImg";
 import ProjectIntro from "@/components/ProjectIntro";
 import ProjectCard from "@/components/ProjectCard";
 import logo from "@/assets/web-logo.svg";
@@ -62,7 +63,7 @@ export default function FrontendResume() {
 		<PageLayout title="Web 前端开发工程师">
 			<PersonalDetails title="Web 前端开发工程师">
 				<div className={styles.custom}>
-					<img
+					<StaticImg
 						className={styles.logo}
 						alt="logo"
 						src={logo}

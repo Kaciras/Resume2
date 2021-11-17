@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import styles from "./index.module.scss";
+import testImage from "@/assets/frontend.png";
 
 /*
  * TODO: 首页正在设计中，反正目前用不上慢慢搞了。
@@ -41,9 +42,9 @@ export default function Home() {
 				</div>
 			</section>
 			<section className={styles.cardList}>
-				<ResumeCard href="/web" title="TODO" image={require("@/assets/frontend.png")}/>
-				<ResumeCard href="/web" title="JAVA 工程师" image={require("@/assets/frontend.png")}/>
-				<ResumeCard href="/web" title="JAVA 工程师" image={require("@/assets/frontend.png")}/>
+				<ResumeCard href="/web" title="TODO" image={testImage}/>
+				<ResumeCard href="/web" title="JAVA 工程师" image={testImage}/>
+				<ResumeCard href="/web" title="JAVA 工程师" image={testImage}/>
 			</section>
 		</PageLayout>
 	);
