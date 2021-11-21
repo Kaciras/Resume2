@@ -1,10 +1,10 @@
-import fs from "fs";
+import { readFileSync } from "fs";
 import { join } from "path";
 import * as nodeCrypto from "../lib/crypto-node";
 import * as webCrypto from "../lib/crypto-web";
 
-const plain = fs.readFileSync(join(__dirname, "fixtures/data.json"));
-const encrypted = fs.readFileSync(join(__dirname, "fixtures/data.aes"), { encoding: "utf8" });
+const plain = readFileSync(join(__dirname, "fixtures/data.json"));
+const encrypted = readFileSync(join(__dirname, "fixtures/data.aes"), { encoding: "utf8" });
 
 it("should support web encrypt", async () => {
 	expect(await webCrypto.encrypt("foo+bar", plain)).toEqual(encrypted);
