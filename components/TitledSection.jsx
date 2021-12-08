@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import styles from "./Section.module.scss";
+import styles from "./TitledSection.module.scss";
 
-export default function Section(props) {
+export default function TitledSection(props) {
 	const { title, subtitle, children, type } = props;
 
 	const header = (

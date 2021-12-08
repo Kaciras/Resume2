@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import Section from "@/components/Section";
+import TitledSection from "@/components/TitledSection";
 import PersonalDetails from "@/components/PersonalDetails";
 import PageLayout from "@/components/PageLayout";
 import Attachment from "@/components/Attachment";
@@ -79,7 +79,7 @@ export default function FrontendResume() {
 				</div>
 			</PersonalDetails>
 
-			<Section
+			<TitledSection
 				title="项目展示"
 				subtitle="编织有艺术感的代码"
 				type="projects"
@@ -107,16 +107,16 @@ export default function FrontendResume() {
 						/>
 					</div>
 				</section>
-			</Section>
+			</TitledSection>
 
-			<Section
+			<TitledSection
 				title="全栈技能树"
 				subtitle="广泛的知识不惧任何挑战"
 			>
 				<div className={styles.markdown}>
 					<ReactMarkdown>{skills}</ReactMarkdown>
 				</div>
-			</Section>
+			</TitledSection>
 		</PageLayout>
 	);
 }
