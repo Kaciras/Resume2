@@ -19,26 +19,26 @@
 	},
 	"dependencies": {
 		"clsx": "^1.1.1",
-		"next": "^12.0.8",
+		"next": "^12.0.9",
 		"qrcode": "^1.5.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
-		"react-markdown": "^7.1.2"
+		"react-markdown": "^8.0.0"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.16.7",
-		"@babel/preset-env": "^7.16.8",
-		"@kaciras/eslint-config-core": "^2.2.0",
-		"@kaciras/eslint-config-jest": "^2.2.0",
-		"@kaciras/eslint-config-react": "^2.2.0",
-		"@next/bundle-analyzer": "^12.0.8",
+		"@babel/core": "^7.16.12",
+		"@babel/preset-env": "^7.16.11",
+		"@kaciras/eslint-config-core": "^2.3.0",
+		"@kaciras/eslint-config-jest": "^2.3.0",
+		"@kaciras/eslint-config-react": "^2.3.0",
+		"@next/bundle-analyzer": "^12.0.9",
 		"@svgr/webpack": "^6.2.0",
 		"babel-jest": "^27.4.6",
-		"eslint": "^8.6.0",
+		"eslint": "^8.7.0",
 		"jest": "^27.4.7",
 		"loader-utils": "^3.2.0",
 		"next-compose-plugins": "^2.2.1",
-		"sass": "^1.48.0",
+		"sass": "^1.49.0",
 		"sharp": "^0.29.3",
 		"svgo": "^2.8.0"
 	}
