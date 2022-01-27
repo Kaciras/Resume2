@@ -8,6 +8,7 @@ specifiers:
   '@kaciras/eslint-config-react': ^2.3.0
   '@next/bundle-analyzer': ^12.0.9
   '@svgr/webpack': ^6.2.0
+  '@types/react': ^17.0.38
   babel-jest: ^27.4.6
   clsx: ^1.1.1
   eslint: ^8.7.0
@@ -29,7 +30,7 @@ dependencies:
   qrcode: 1.5.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
-  react-markdown: 8.0.0_react@17.0.2
+  react-markdown: 8.0.0_b08e3c15324cbe90a6ff8fcd416c932c
 
 devDependencies:
   '@babel/core': 7.16.12
@@ -39,6 +40,7 @@ devDependencies:
   '@kaciras/eslint-config-react': 2.3.0_eslint@8.7.0
   '@next/bundle-analyzer': 12.0.9
   '@svgr/webpack': 6.2.0
+  '@types/react': 17.0.38
   babel-jest: 27.4.6_@babel+core@7.16.12
   eslint: 8.7.0
   jest: 27.4.7
@@ -1992,6 +1994,22 @@ packages:
     resolution: {integrity: sha512-QzSuZMBuG5u8HqYz01qtMdg/Jfctlnvj1z/lYnIDXs/golxw0fxtRAHd9KrzjR7Yxz1qVeI00o0kiO3PmVdJ9w==}
     dev: true
 
+  /@types/prop-types/15.7.4:
+    resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
+    dev: true
+
+  /@types/react/17.0.38:
+    resolution: {integrity: sha512-SI92X1IA+FMnP3qM5m4QReluXzhcmovhZnLNm3pyeQlooi02qI7sLiepEYqT678uNiyc25XfCqxREFpy3W7YhQ==}
+    dependencies:
+      '@types/prop-types': 15.7.4
+      '@types/scheduler': 0.16.2
+      csstype: 3.0.10
+    dev: true
+
+  /@types/scheduler/0.16.2:
+    resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+    dev: true
+
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
     dev: true
@@ -2678,6 +2696,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       cssom: 0.3.8
+    dev: true
+
+  /csstype/3.0.10:
+    resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
     dev: true
 
   /data-urls/2.0.0:
@@ -5106,13 +5128,14 @@ packages:
   /react-is/17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  /react-markdown/8.0.0_react@17.0.2:
+  /react-markdown/8.0.0_b08e3c15324cbe90a6ff8fcd416c932c:
     resolution: {integrity: sha512-qbrWpLny6Ef2xHqnYqtot948LXP+4FtC+MWIuaN1kvSnowM+r1qEeEHpSaU0TDBOisQuj+Qe6eFY15cNL3gLAw==}
     peerDependencies:
       '@types/react': '>=16'
       react: '>=16'
     dependencies:
       '@types/hast': 2.3.4
+      '@types/react': 17.0.38
       '@types/unist': 2.0.6
       comma-separated-tokens: 2.0.2
       hast-util-whitespace: 2.0.0
