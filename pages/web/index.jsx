@@ -29,7 +29,7 @@ const blogProject = {
 	],
 	techStack: {
 		lang: ["JAVA", "TypeScript"],
-		frontend: ["NodeJS", "Webpack", "PWA", "Vue", "Storybook"],
+		frontend: ["NodeJS", "Vite", "PWA", "Vue3", "Storybook"],
 		backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
 		operation: ["Nginx", "Debian", "GitHub Actions", "Travis CI"],
 	},
@@ -51,7 +51,7 @@ const icAnalyzer = {
 	],
 	techStack: {
 		lang: ["TypeScript", "C++", "WebAssembly"],
-		frontend: ["React", "Webpack", "Emscripten", "SCSS", "Highcharts"],
+		frontend: ["React", "Webpack", "Emscripten", "SWC", "Highcharts"],
 		operation: ["Vercel", "GitHub Actions", "GitHub Pages"],
 	},
 	banner: ICAnalyzerImage,
