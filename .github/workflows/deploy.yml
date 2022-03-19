@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 17
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # 官网上的示例用 CURL 下载不跨平台，所以还是选择 npm 来安装。
       - name: Install pnpm
@@ -33,7 +33,7 @@ jobs:
           touch out/.nojekyll
 
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           silent: true
           clean: true
