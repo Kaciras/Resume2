@@ -26,20 +26,20 @@
 		"react-markdown": "^8.0.2"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.17.8",
+		"@babel/core": "^7.17.9",
 		"@babel/preset-env": "^7.16.11",
 		"@kaciras/eslint-config-core": "^2.3.0",
 		"@kaciras/eslint-config-jest": "^2.3.0",
 		"@kaciras/eslint-config-react": "^2.3.0",
 		"@next/bundle-analyzer": "^12.1.4",
 		"@svgr/webpack": "^6.2.1",
-		"@types/react": "^17.0.43",
+		"@types/react": "^18.0.1",
 		"babel-jest": "^27.5.1",
-		"eslint": "^8.12.0",
+		"eslint": "^8.13.0",
 		"jest": "^27.5.1",
 		"loader-utils": "^3.2.0",
 		"next-compose-plugins": "^2.2.1",
-		"sass": "^1.49.11",
+		"sass": "^1.50.0",
 		"sharp": "^0.30.3",
 		"svgo": "^2.8.0"
 	}
