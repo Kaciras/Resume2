@@ -1,7 +1,8 @@
-const { join } = require("path");
-const withPlugins = require("next-compose-plugins");
-const withBundleAnalyzer = require("@next/bundle-analyzer");
-const aliasConfig = require("./alias.idea");
+import { fileURLToPath } from "url";
+import { join } from "path";
+import withPlugins from "next-compose-plugins";
+import withBundleAnalyzer from "@next/bundle-analyzer";
+import aliasConfig from "./alias.idea.js";
 
 function customWebpack(config) {
 	Object.assign(config.resolve.alias, aliasConfig.resolve.alias);
@@ -23,7 +24,7 @@ function customWebpack(config) {
 		},
 		{
 			test: /\.svg$/,
-			include: join(__dirname, "assets/icon"),
+			include: join(fileURLToPath(import.meta.url), "../assets/icon"),
 			use: "@svgr/webpack",
 		},
 		{
@@ -39,7 +40,7 @@ function customWebpack(config) {
 	return config;
 }
 
-module.exports = withPlugins([
+export default withPlugins([
 	withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" }),
 ], {
 	webpack: customWebpack,
