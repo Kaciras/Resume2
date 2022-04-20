@@ -9,7 +9,7 @@
 		"url": "https://github.com/Kaciras/Resume2"
 	},
 	"engines": {
-		"node": ">=17"
+		"node": ">=18"
 	},
 	"scripts": {
 		"lint": "eslint --ext mjs,js,jsx --fix .",
