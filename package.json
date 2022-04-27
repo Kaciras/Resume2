@@ -21,9 +21,9 @@
 		"clsx": "^1.1.1",
 		"next": "^12.1.5",
 		"qrcode": "^1.5.0",
-		"react": "^18.0.0",
-		"react-dom": "^18.0.0",
-		"react-markdown": "^8.0.2"
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0",
+		"react-markdown": "^8.0.3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.17.9",
@@ -33,14 +33,14 @@
 		"@kaciras/eslint-config-react": "^2.3.0",
 		"@next/bundle-analyzer": "^12.1.5",
 		"@svgr/webpack": "^6.2.1",
-		"@types/react": "^18.0.5",
-		"babel-jest": "^27.5.1",
-		"eslint": "^8.13.0",
-		"jest": "^27.5.1",
+		"@types/react": "^18.0.8",
+		"babel-jest": "^28.0.1",
+		"eslint": "^8.14.0",
+		"jest": "^28.0.1",
 		"loader-utils": "^3.2.0",
 		"next-compose-plugins": "^2.2.1",
-		"sass": "^1.50.0",
-		"sharp": "^0.30.3",
+		"sass": "^1.51.0",
+		"sharp": "^0.30.4",
 		"svgo": "^2.8.0"
 	}
 }
