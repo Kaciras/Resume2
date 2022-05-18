@@ -26,8 +26,8 @@
 		"react-markdown": "^8.0.3"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.17.10",
-		"@babel/preset-env": "^7.17.10",
+		"@babel/core": "^7.17.12",
+		"@babel/preset-env": "^7.17.12",
 		"@kaciras/eslint-config-core": "^2.3.0",
 		"@kaciras/eslint-config-jest": "^2.3.0",
 		"@kaciras/eslint-config-react": "^2.3.0",
