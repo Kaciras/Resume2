@@ -33,14 +33,14 @@
 		"@kaciras/eslint-config-react": "^2.4.1",
 		"@next/bundle-analyzer": "^12.1.6",
 		"@svgr/webpack": "^6.2.1",
-		"@types/react": "^18.0.12",
+		"@types/react": "^18.0.14",
 		"babel-jest": "^28.1.1",
-		"eslint": "^8.17.0",
+		"eslint": "^8.18.0",
 		"jest": "^28.1.1",
 		"loader-utils": "^3.2.0",
 		"next-compose-plugins": "^2.2.1",
-		"sass": "^1.52.3",
-		"sharp": "^0.30.6",
+		"sass": "^1.53.0",
+		"sharp": "^0.30.7",
 		"svgo": "^2.8.0"
 	}
 }
