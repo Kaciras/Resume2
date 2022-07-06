@@ -18,7 +18,7 @@
 		"build": "next build && next export"
 	},
 	"dependencies": {
-		"clsx": "^1.1.1",
+		"clsx": "^1.2.1",
 		"next": "^12.2.0",
 		"qrcode": "^1.5.0",
 		"react": "^18.2.0",
@@ -33,9 +33,9 @@
 		"@kaciras/eslint-config-react": "^2.4.1",
 		"@next/bundle-analyzer": "^12.2.0",
 		"@svgr/webpack": "^6.2.1",
-		"@types/react": "^18.0.14",
+		"@types/react": "^18.0.15",
 		"babel-jest": "^28.1.2",
-		"eslint": "^8.18.0",
+		"eslint": "^8.19.0",
 		"jest": "^28.1.2",
 		"loader-utils": "^3.2.0",
 		"next-compose-plugins": "^2.2.1",
