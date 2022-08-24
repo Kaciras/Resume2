@@ -26,7 +26,7 @@
 		"react-markdown": "^8.0.3"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.18.10",
+		"@babel/core": "^7.18.13",
 		"@babel/preset-env": "^7.18.10",
 		"@kaciras/eslint-config-core": "^2.4.1",
 		"@kaciras/eslint-config-jest": "^2.4.1",
@@ -39,7 +39,7 @@
 		"jest": "^28.1.3",
 		"loader-utils": "^3.2.0",
 		"next-compose-plugins": "^2.2.1",
-		"sass": "^1.54.4",
+		"sass": "^1.54.5",
 		"sharp": "^0.30.7",
 		"svgo": "^2.8.0"
 	}
