@@ -1,6 +1,5 @@
 import { fileURLToPath } from "url";
 import { join } from "path";
-import withPlugins from "next-compose-plugins";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import aliasConfig from "./alias.idea.js";
 
@@ -40,9 +39,9 @@ function customWebpack(config) {
 	return config;
 }
 
-export default withPlugins([
-	withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" }),
-], {
+const analyzeBundle = withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
+
+export default analyzeBundle({
 	webpack: customWebpack,
 	poweredByHeader: false,
 	swcMinify: true,
