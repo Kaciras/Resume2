@@ -1,5 +1,3 @@
-const jestConfig = require("./jest.config");
-
 module.exports = {
 	root: true,
 	extends: [
@@ -14,7 +12,7 @@ module.exports = {
 		"react/prop-types": "off",
 	},
 	overrides: [{
-		files: jestConfig.testMatch,
+		files: "**/__tests__/**/*.?(m)js",
 		extends: ["@kaciras/jest"],
 	}],
 };
