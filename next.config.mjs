@@ -1,5 +1,3 @@
-import { fileURLToPath } from "url";
-import { join } from "path";
 import withBundleAnalyzer from "@next/bundle-analyzer";
 import aliasConfig from "./alias.idea.js";
 
@@ -23,7 +21,7 @@ function customWebpack(config) {
 		},
 		{
 			test: /\.svg$/,
-			include: join(fileURLToPath(import.meta.url), "../assets/icon"),
+			resourceQuery: /react/,
 			use: "@svgr/webpack",
 		},
 		{
@@ -39,9 +37,9 @@ function customWebpack(config) {
 	return config;
 }
 
-const analyzeBundle = withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" });
-
-export default analyzeBundle({
+export default withBundleAnalyzer({
+	enabled: process.env.ANALYZE === "true",
+})({
 	webpack: customWebpack,
 	poweredByHeader: false,
 	swcMinify: true,

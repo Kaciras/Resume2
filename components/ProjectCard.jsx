@@ -1,4 +1,4 @@
-import GitHubIcon from "@/assets/icon/github.svg";
+import GitHubIcon from "@/assets/icon/github.svg?react";
 import styles from "./ProjectCard.module.scss";
 
 /**

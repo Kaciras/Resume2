@@ -9,7 +9,7 @@ import ProjectCard from "@/components/ProjectCard";
 import logo from "@/assets/web-logo.svg";
 import blogScreenshot from "@/assets/blog.png";
 import ICAnalyzerImage from "@/assets/ic-analyzer.png";
-import FileDownloadIcon from "@/assets/icon/file-download.svg";
+import FileDownloadIcon from "@/assets/icon/file-download.svg?react";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
