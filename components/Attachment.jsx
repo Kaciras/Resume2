@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { downloadSecret } from "@/lib/common.mjs";
-import styles from "./Attachment.module.scss";
 
 export default function Attachment(props) {
 	const { className, name, type, encrypted, children } = props;
@@ -43,9 +42,9 @@ export default function Attachment(props) {
 	}
 
 	const clazz = clsx(
-		styles.button,
+		"button",
 		className,
-		{ [styles.busy]: running },
+		{ busy: running },
 	);
 
 	return <a className={clazz} download={name} href={url} onClick={handleClick}>{children}</a>;
