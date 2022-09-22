@@ -1,50 +1,54 @@
 import Link from "next/link";
 import PageLayout from "@/components/PageLayout";
 import styles from "./index.module.scss";
-import testImage from "@/assets/frontend.png";
+import gitHub from "@/assets/icon/github.svg";
+import home from "@/assets/icon/home.svg";
 
-/*
- * TODO: 首页正在设计中，反正目前用不上慢慢搞了。
- *
- * https://vincent-cotro.welovedevs.com 中规中矩，个人展示我还是希望有点创意。
- */
-
-function ResumeCard({ title, href, image }) {
+function Position({ title, children, href }) {
 	if (typeof location !== "undefined" && location.search) {
 		href += location.search;
 	}
-	const style = {
-		backgroundImage: `url("${image}")`,
-	};
+
 	return (
-		<Link href={href}>
-			<a className={styles.card} style={style}>
+		<div className={styles.card}>
+			<div className={styles.caption}>
 				<div className={styles.title}>{title}</div>
-			</a>
-		</Link>
+				<p>{children}</p>
+				<Link href={href}>
+					<a className="button">查看详情</a>
+				</Link>
+			</div>
+		</div>
 	);
+}
+
+function SocialLink({ url, icon, name }) {
+	return <a href={url} title={name}><img alt="icon" src={icon} className={styles.social}/></a>;
 }
 
 export default function Home() {
 	return (
 		<PageLayout title="首页">
 			<section className={styles.header}>
+				<h1 className={styles.name}>Kaciras</h1>
+
 				<img
 					className={styles.avatar}
-					title="真实相貌以面试为准"
+					title="GitHub Avatar"
 					alt="avatar"
 					src="https://avatars.githubusercontent.com/u/16855468?s=460"
 				/>
-				<div className={styles.info}>
-					<h1>Kaciras</h1>
-					<h2 className={styles.sub}>Full-stack developer</h2>
-					<a href="https://blog.kaciras.com">Blog</a>
+				<div>TODO</div>
+				<h2 className={styles.sub}>Full-stack developer</h2>
+				<div className={styles.socialList}>
+					<SocialLink name="Home" url="https://blog.kaciras.com/" icon={home}/>
+					<SocialLink name="GitHub" url="https://github.com/Kaciras" icon={gitHub}/>
 				</div>
 			</section>
 			<section className={styles.cardList}>
-				<ResumeCard href="/web" title="TODO" image={testImage}/>
-				<ResumeCard href="/web" title="JAVA 工程师" image={testImage}/>
-				<ResumeCard href="/web" title="JAVA 工程师" image={testImage}/>
+				<Position href="/web" title="前端开发">前端是我最擅长的领域</Position>
+				<Position href="/ops" title="运维">VPS 的维护工作也在干</Position>
+				<Position href="/backend" title="后端工程师">各种后端服务同样写过不少</Position>
 			</section>
 		</PageLayout>
 	);
