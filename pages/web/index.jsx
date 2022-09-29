@@ -9,7 +9,7 @@ import ProjectCard from "@/components/ProjectCard";
 import logo from "@/assets/web-logo.svg";
 import blogScreenshot from "@/assets/blog.png";
 import ICAnalyzerImage from "@/assets/ic-analyzer.png";
-import FileDownloadIcon from "@/assets/icon/file-download.svg?react";
+import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
@@ -73,7 +73,7 @@ export default function FrontendResume() {
 						type="application/pdf"
 						encrypted={true}
 					>
-						<FileDownloadIcon className={styles.buttonIcon}/>
+						<BsFillFileEarmarkArrowDownFill className={styles.buttonIcon}/>
 						下载 PDF 版简历
 					</Attachment>
 				</div>

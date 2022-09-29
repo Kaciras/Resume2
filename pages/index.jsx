@@ -1,8 +1,9 @@
 import Link from "next/link";
+import { useMediaQuery } from "react-responsive";
 import PageLayout from "@/components/PageLayout";
+import home from "@/assets/icon/home.svg?react";
+import { ImGithub } from "react-icons/im";
 import styles from "./index.module.scss";
-import gitHub from "@/assets/icon/github.svg";
-import home from "@/assets/icon/home.svg";
 
 function Position({ title, children, href }) {
 	if (typeof location !== "undefined" && location.search) {
@@ -22,11 +23,17 @@ function Position({ title, children, href }) {
 	);
 }
 
-function SocialLink({ url, icon, name }) {
-	return <a href={url} title={name}><img alt="icon" src={icon} className={styles.social}/></a>;
+function SocialLink({ url, SvgIcon, name }) {
+	return <a href={url} title={name}><SvgIcon className={styles.social}/></a>;
+}
+
+function BodyDesktop() {
+
 }
 
 export default function Home() {
+	const isDesktop = useMediaQuery({ query: "(min-width: 1224px)" });
+
 	return (
 		<PageLayout title="首页">
 			<section className={styles.header}>
@@ -41,8 +48,8 @@ export default function Home() {
 				<div>TODO</div>
 				<h2 className={styles.sub}>Full-stack developer</h2>
 				<div className={styles.socialList}>
-					<SocialLink name="Home" url="https://blog.kaciras.com/" icon={home}/>
-					<SocialLink name="GitHub" url="https://github.com/Kaciras" icon={gitHub}/>
+					<SocialLink name="Home" url="https://blog.kaciras.com/" SvgIcon={home}/>
+					<SocialLink name="GitHub" url="https://github.com/Kaciras" SvgIcon={ImGithub}/>
 				</div>
 			</section>
 			<section className={styles.cardList}>

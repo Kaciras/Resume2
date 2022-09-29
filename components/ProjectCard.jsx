@@ -1,4 +1,4 @@
-import GitHubIcon from "@/assets/icon/github.svg?react";
+import { ImGithub } from "react-icons/im";
 import styles from "./ProjectCard.module.scss";
 
 /**
@@ -13,7 +13,7 @@ export default function ProjectCard(props) {
 		<a className={styles.card} href={url}>
 			<div className={styles.header}>
 				<h2 className={styles.name}>{name}</h2>
-				<GitHubIcon className={styles.icon}/>
+				<ImGithub className={styles.icon}/>
 			</div>
 			{description}
 		</a>
