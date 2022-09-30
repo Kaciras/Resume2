@@ -42,5 +42,10 @@
 		"sass": "^1.55.0",
 		"sharp": "^0.31.0",
 		"svgo": "^2.8.0"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": ["typescript"]
+		}
 	}
 }
