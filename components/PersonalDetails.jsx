@@ -1,25 +1,12 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useContext } from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { GoAlert } from "react-icons/go";
 import { IoIosSchool } from "react-icons/io";
 import QQIcon from "../assets/icon/qq.svg?react";
-import { downloadSecret } from "../lib/common.js";
 import AtomSpinner from "./AtomSpinner";
 import styles from "./PersonalDetails.module.scss";
-
-/**
- * 用于演示的身份信息，尽量保证与真实信息渲染出来的高度一样，以避免布局移动。
- */
-const placeholder = {
-	name: "演示姓名",
-	education: "某某大学，本科，网络工程，2014-2018",
-	phone: 12345678900,
-	mail: "Kaciras@protonmail.com",
-	qq: 123456789,
-	note: "公共模式下，上面只有邮箱是真的",
-};
+import { PersonInfoContext } from "./PersonInfoContext.jsx";
 
 /**
  * 解密指示器，用于提示用户等待解密完成。
@@ -49,23 +36,7 @@ function DecryptingIndicator({ running }) {
  * 所以就只能在客户端解密，这么一来要求客户端不能禁用 JS。
  */
 export default function PersonalDetails({ title, children }) {
-	const { key } = useRouter().query;
-	const [running, setRunning] = useState(!!key);
-	const [info, setInfo] = useState(placeholder);
-
-	function tryUseRealData() {
-		if (key === undefined) {
-			return;
-		}
-		setRunning(true);
-		downloadSecret("/info.json.aes", key)
-			.then(json => JSON.parse(new TextDecoder().decode(json)))
-			.then(setInfo)
-			.catch(e => alert(`用户信息解密失败，${e.message}`))
-			.finally(() => setRunning(false));
-	}
-
-	useEffect(tryUseRealData, [key]);
+	const { loading, info } = useContext(PersonInfoContext);
 
 	const { name, phone, mail, qq, education, note } = info;
 	const attributes = [];
@@ -112,7 +83,7 @@ export default function PersonalDetails({ title, children }) {
 
 			{children}
 
-			<DecryptingIndicator running={running}/>
+			<DecryptingIndicator running={loading}/>
 		</section>
 	);
 }
