@@ -26,7 +26,7 @@ function customWebpack(config) {
 		},
 		{
 			test: /\.(png|jpg|svg)$/,
-			use: "./lib/image-loader.js",
+			use: "./lib/image-loader.cjs",
 		},
 		{
 			rules: config.module.rules,

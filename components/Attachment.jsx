@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { useRouter } from "next/router";
-import { downloadSecret } from "@/lib/common.mjs";
+import { downloadSecret } from "../lib/common.js";
 
 export default function Attachment(props) {
 	const { className, name, type, encrypted, children } = props;

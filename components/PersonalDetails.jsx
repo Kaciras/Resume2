@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { downloadSecret } from "@/lib/common.mjs";
-import AtomSpinner from "@/components/AtomSpinner";
+import { downloadSecret } from "../lib/common.js";
+import AtomSpinner from "./AtomSpinner";
 import styles from "./PersonalDetails.module.scss";
 
 /**

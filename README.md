@@ -45,7 +45,7 @@ pnpm run build
 调用以下命令，对`/secret`里所有的文件用`AES-128-GCM`加密：
 
 ```shell script
-node script/secret-files.mjs encrypt <password>
+node script/secret-files.js encrypt <password>
 ```
 
 加密后的文件被保存到`/public`目录，它将包含在构建中并上传，当 URL 存在`key=<password>`参数且密码正确时才能加载这些文件。
