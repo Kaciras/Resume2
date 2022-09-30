@@ -57,6 +57,14 @@
 		font-size: 0.875em;
 	}
 
+	& svg {
+		margin-right: 0.4em;
+		font-size: 1.125em;
+
+		// 大小不同的 SVG 跟文字对其真难，这个 sub 倒是正好能。
+		vertical-align: sub;
+	}
+
 	& > dt {
 		&::after {
 			content: "："

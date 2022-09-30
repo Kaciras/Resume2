@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { GrMail } from "react-icons/gr";
+import { GoAlert } from "react-icons/go";
+import { IoIosSchool } from "react-icons/io";
+import QQIcon from "../assets/icon/qq.svg?react";
 import { downloadSecret } from "../lib/common.js";
 import AtomSpinner from "./AtomSpinner";
 import styles from "./PersonalDetails.module.scss";
@@ -7,14 +12,13 @@ import styles from "./PersonalDetails.module.scss";
 /**
  * 用于演示的身份信息，尽量保证与真实信息渲染出来的高度一样，以避免布局移动。
  */
-const Placeholder = {
+const placeholder = {
 	name: "演示姓名",
-	degree: "某某大学，本科，某某很强的专业，2014-2018",
-	addresses: {
-		电话和微信: 12345678900,
-		Email: "Kaciras@protonmail.com",
-		注意: "为防骚扰，上述信息只有邮箱是真的",
-	},
+	education: "某某大学，本科，网络工程，2014-2018",
+	phone: 12345678900,
+	mail: "Kaciras@protonmail.com",
+	qq: 123456789,
+	note: "公共模式下，上面只有邮箱是真的",
 };
 
 /**
@@ -38,7 +42,7 @@ function DecryptingIndicator({ running }) {
  * 简历最上方的个人信息栏，可以使用演示信息或真实信息。
  *
  * 如果 URL 带有 key=[password] 参数则尝试解密真实的身份，
- * 如果没有或者密码错误则使用演示信息（Placeholder）
+ * 如果没有或者密码错误则使用演示信息（placeholder）
  *
  * <h2>静态站与禁用JS</h2>
  * 如果使用静态构建并部署到开源平台（比如 GitHub），那么预渲染的结果会包含真实信息，
@@ -47,7 +51,7 @@ function DecryptingIndicator({ running }) {
 export default function PersonalDetails({ title, children }) {
 	const { key } = useRouter().query;
 	const [running, setRunning] = useState(!!key);
-	const [info, setInfo] = useState(Placeholder);
+	const [info, setInfo] = useState(placeholder);
 
 	function tryUseRealData() {
 		if (key === undefined) {
@@ -63,11 +67,26 @@ export default function PersonalDetails({ title, children }) {
 
 	useEffect(tryUseRealData, [key]);
 
-	const { name, degree, addresses } = info;
-	const addressRows = [];
-	for (const [k, v] of Object.entries(addresses)) {
-		addressRows.push(<dt key={k}>{k}</dt>);
-		addressRows.push(<dd key={v}>{v}</dd>);
+	const { name, phone, mail, qq, education, note } = info;
+	const attributes = [];
+
+	// 图标要对应，同时一些项还要是链接，只能一个个写死了。
+	if (mail) {
+		attributes.push(<dt><GrMail/>邮箱</dt>);
+		attributes.push(<dd><a href={"mailto:" + mail}>{mail}</a></dd>);
+	}
+	if (phone) {
+		attributes.push(<dt><BsFillTelephoneFill/>电话</dt>);
+		attributes.push(<dd><a href={"tel:" + phone}>{phone}</a></dd>);
+	}
+	if (qq) {
+		attributes.push(<dt><QQIcon/>QQ</dt>, <dd>{qq}</dd>);
+	}
+	if (education) {
+		attributes.push(<dt><IoIosSchool/>学历</dt>, <dd>{education}</dd>);
+	}
+	if (note) {
+		attributes.push(<dt><GoAlert/>注意</dt>, <dd>{note}</dd>);
 	}
 
 	// 解密后的内容与示例内容不同，会显示一个预渲染警告，
@@ -87,9 +106,7 @@ export default function PersonalDetails({ title, children }) {
 					</h2>
 				</header>
 				<dl className={styles.attributes}>
-					<dt>毕业于</dt>
-					<dd>{degree}</dd>
-					{addressRows}
+					{attributes}
 				</dl>
 			</div>
 
