@@ -6,7 +6,7 @@ import Attachment from "@/components/Attachment";
 import StaticImg from "@/components/StaticImg";
 import ProjectIntro from "@/components/ProjectIntro";
 import ProjectCard from "@/components/ProjectCard";
-import logo from "@/assets/web-logo.svg";
+import logo from "@/assets/web-site.svg";
 import blogScreenshot from "@/assets/blog.png";
 import ICAnalyzerImage from "@/assets/ic-analyzer.png";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";

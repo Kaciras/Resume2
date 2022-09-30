@@ -35,12 +35,16 @@
 	white-space: nowrap;
 	text-align: center;
 	border-radius: 4px;
+
+	@include mobile-layout {
+		padding: .3em .5em;
+	}
 }
 
 // 这个亮色的真难调
 .frontend {
 	color: black;
-	background: #f7f700;
+	background: #f2ea00;
 }
 
 .backend {
@@ -52,5 +56,5 @@
 }
 
 .lang {
-	background: #d40000;
+	background: #d40b15;
 }

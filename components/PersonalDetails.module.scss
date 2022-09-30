@@ -17,6 +17,10 @@
 
 .info {
 	margin-right: auto;
+
+	@include mobile-layout {
+		margin: auto;
+	}
 }
 
 .nameGroup {
