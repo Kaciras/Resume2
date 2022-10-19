@@ -35,12 +35,11 @@ function encryptFiles(name) {
 	const path = join(inputDir, name);
 
 	if (statSync(path).isDirectory()) {
-		readdirSync(path).forEach(encryptFiles);
-	} else {
-		let data = readFileSync(path);
-		data = encrypt(password, data);
-		writeFileSync(`${outputDir}/${name}.aes`, data);
+		return readdirSync(path).forEach(encryptFiles);
 	}
+
+	const data = encrypt(password, readFileSync(path));
+	writeFileSync(`${outputDir}/${name}.aes`, data);
 }
 
 function decryptFile(name) {

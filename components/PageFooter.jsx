@@ -5,16 +5,17 @@ import styles from "./PageFooter.module.scss";
 
 const ProjectURL = "https://github.com/Kaciras/Resume2";
 
+const options = {
+	margin: 1,
+	color: { light: "#fafafaff" },
+};
+
 export default function PageFooter() {
-	const [qrCodeUrl, setQRCodeUrl] = useState(null);
+	const [qrCodeUrl, setQRCodeUrl] = useState("");
 	const qrCodeRef = useRef(null);
 
 	function drawQRCode() {
 		const canvas = qrCodeRef.current;
-		const options = {
-			margin: 1,
-			color: { light: "#fafafaff" },
-		};
 		QRCode.toDataURL(canvas, location.href, options).then(setQRCodeUrl);
 	}
 
