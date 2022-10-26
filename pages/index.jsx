@@ -15,9 +15,7 @@ function Position({ title, children, href }) {
 			<div className={styles.caption}>
 				<div className={styles.title}>{title}</div>
 				<p>{children}</p>
-				<Link href={href}>
-					<a className="button">查看详情</a>
-				</Link>
+				<Link className="button" href={href}>查看详情</Link>
 			</div>
 		</div>
 	);

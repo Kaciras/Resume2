@@ -42,7 +42,6 @@ export default withBundleAnalyzer({
 })({
 	webpack: customWebpack,
 	poweredByHeader: false,
-	swcMinify: true,
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
