@@ -1,8 +1,8 @@
 import ReactMarkdown from "react-markdown";
-import ExternalLink from "@/components/ExternalLink";
-import TechLabels from "@/components/TechLabels";
+import StaticImg from "./StaticImg";
+import ExternalLink from "./ExternalLink";
+import TechLabels from "./TechLabels";
 import styles from "./ProjectIntro.module.scss";
-import StaticImg from "@/components/StaticImg";
 
 // 因为链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
 function Delimiter() {

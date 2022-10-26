@@ -41,23 +41,24 @@ export default function PersonalDetails({ title, children }) {
 	const { name, phone, mail, qq, education, note } = info;
 	const attributes = [];
 
-	// 图标要对应，同时一些项还要是链接，只能一个个写死了。
+	// 图标要对应，同时一些项还要是链接，一个个写死也行，就是这个 key 属性挺烦人。
 	if (mail) {
-		attributes.push(<dt><GrMail/>邮箱</dt>);
-		attributes.push(<dd><a href={"mailto:" + mail}>{mail}</a></dd>);
+		attributes.push(<dt key="mail-k"><GrMail/>邮箱</dt>);
+		attributes.push(<dd key="mail-v"><a href={"mailto:" + mail}>{mail}</a></dd>);
 	}
 	if (phone) {
-		attributes.push(<dt><BsFillTelephoneFill/>电话</dt>);
-		attributes.push(<dd><a href={"tel:" + phone}>{phone}</a></dd>);
+		attributes.push(<dt key="phone-k"><BsFillTelephoneFill/>电话</dt>);
+		attributes.push(<dd key="phone-v"><a href={"tel:" + phone}>{phone}</a></dd>);
 	}
 	if (qq) {
-		attributes.push(<dt><QQIcon/>QQ</dt>, <dd>{qq}</dd>);
+		attributes.push(<dt key="qq-k"><QQIcon/>QQ</dt>, <dd key="qq-k">{qq}</dd>);
 	}
 	if (education) {
-		attributes.push(<dt><IoIosSchool/>学历</dt>, <dd>{education}</dd>);
+		attributes.push(<dt key="edu-k"><IoIosSchool/>学历</dt>);
+		attributes.push(<dd key="edu-v">{education}</dd>);
 	}
 	if (note) {
-		attributes.push(<dt><GoAlert/>注意</dt>, <dd>{note}</dd>);
+		attributes.push(<dt key="ps-k"><GoAlert/>注意</dt>, <dd key="ps-v">{note}</dd>);
 	}
 
 	// 解密后的内容与示例内容不同，会显示一个预渲染警告，

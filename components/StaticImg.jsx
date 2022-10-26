@@ -15,6 +15,10 @@ const upgrades = [
  *
  * <h1>最佳选择功能</h1>
  * 目前没有实现对新编码的筛选，默认新的一定更好，若要实现可以让加载器返回更多信息。
+ *
+ * <h1>为什么不用 next/image</h1>
+ * next/image 只渲染一个 <img>，它采用了后端选择机制，不能在静态网站中使用。
+ * 这意味着 GitHub Pages 没法用，只能放到 Vercel 或自托管。
  */
 export default function StaticImg(props) {
 	const { src } = props;
