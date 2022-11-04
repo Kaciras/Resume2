@@ -14,7 +14,7 @@ import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
 import styles from "./index.module.scss";
-import { TechMeter, TechMeterList } from "../../components/TechMeter";
+import { TechMeter, TechMeterList } from "../../components/TechMeter.jsx";
 import vueLogo from "../../assets/logo/vue.svg";
 import reactLogo from "../../assets/logo/react.svg";
 import viteLogo from "../../assets/logo/vite.svg";
@@ -104,7 +104,7 @@ export default function FrontendResume() {
 				<ProjectIntro>{icAnalyzer}</ProjectIntro>
 				<ProjectIntro>{blogProject}</ProjectIntro>
 
-				<section>
+				<article>
 					<h1 className={styles.h1}>其它项目</h1>
 					<div className={styles.cards}>
 						<ProjectCard
@@ -128,7 +128,7 @@ export default function FrontendResume() {
 							url="https://github.com/Kaciras/vite-plugin-svg-sfc"
 						/>
 					</div>
-				</section>
+				</article>
 			</TitledSection>
 
 			<TitledSection

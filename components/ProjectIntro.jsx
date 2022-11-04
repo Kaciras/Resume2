@@ -35,7 +35,7 @@ export default function ProjectIntro(props) {
 	items.pop(); // 去掉末尾的分隔符。
 
 	return (
-		<section className={styles.container}>
+		<article className={styles.container}>
 			<header className={styles.header}>
 				<h2 className={styles.name}>
 					{name}
@@ -51,6 +51,6 @@ export default function ProjectIntro(props) {
 			<div className={styles.markdown}>
 				<ReactMarkdown>{content}</ReactMarkdown>
 			</div>
-		</section>
+		</article>
 	);
 }

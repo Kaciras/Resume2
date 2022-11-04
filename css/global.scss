@@ -16,6 +16,10 @@ body {
 	font-family: Arial, sans-serif;
 }
 
+a:not(:hover) {
+	text-decoration: none;
+}
+
 address {
 	font-style: normal;
 }

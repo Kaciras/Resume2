@@ -2,9 +2,9 @@ import styles from "./TechMeter.module.scss";
 
 export function TechMeterList({ name,children }) {
 	return (
-		<div className={styles.list}>
-			<h1>{name}</h1>
-			{children}
+		<div>
+			<h2 className={styles.title}>{name}</h2>
+			<ul className={styles.list}>{children}</ul>
 		</div>
 	);
 }
@@ -13,10 +13,10 @@ export function TechMeterList({ name,children }) {
 
 export function TechMeter({ name, value, logo }) {
 	return (
-		<>
+		<li className={styles.item}>
 			<img className={styles.logo} alt="logo" src={logo}/>
 			{name}
 			<div className={styles.meter} style={{ "--value": `${value}%` }}/>
-		</>
+		</li>
 	);
 }

@@ -2,7 +2,9 @@
 
 .container:not(:first-of-type) {
 	margin-top: 2rem;
-	border-top: solid 1px #ccc;
+
+	//
+	//border-top: solid 1px #ccc;
 }
 
 .header {
@@ -19,10 +21,11 @@
 }
 
 .name {
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	margin: 0;
 
 	@include mobile-layout {
+		font-size: 1.5rem;
 		margin-bottom: 1rem;
 	}
 }
