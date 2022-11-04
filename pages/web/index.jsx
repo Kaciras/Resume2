@@ -14,6 +14,10 @@ import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
 import styles from "./index.module.scss";
+import { TechMeter, TechMeterList } from "../../components/TechMeter";
+import vueLogo from "../../assets/logo/vue.svg";
+import reactLogo from "../../assets/logo/react.svg";
+import viteLogo from "../../assets/logo/vite.svg";
 
 const blogProject = {
 	name: "个人网站",
@@ -31,7 +35,7 @@ const blogProject = {
 		lang: ["JAVA", "TypeScript"],
 		frontend: ["NodeJS", "Vite", "PWA", "Vue3", "Storybook"],
 		backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
-		operation: ["Nginx", "Debian", "GitHub Actions", "Travis CI"],
+		operation: ["Nginx", "Debian", "Sentry", "GitHub Actions", "Travis CI"],
 	},
 	banner: blogScreenshot,
 	content: blogDescription,
@@ -79,6 +83,19 @@ export default function FrontendResume() {
 				</div>
 			</PersonalDetails>
 
+			<section className={styles.proficiency}>
+				<TechMeterList name="前端框架">
+					<TechMeter name="Vue" value="80" logo={vueLogo}/>
+					<TechMeter name="React" value="20" logo={reactLogo}/>
+					<TechMeter name="React" value="20" logo={viteLogo}/>
+				</TechMeterList>
+				<TechMeterList name="前端框架">
+					<TechMeter name="Vue" value="80" logo={vueLogo}/>
+					<TechMeter name="React" value="20" logo={reactLogo}/>
+					<TechMeter name="React" value="20" logo={viteLogo}/>
+				</TechMeterList>
+			</section>
+
 			<TitledSection
 				title="项目展示"
 				subtitle="编织有艺术感的代码"
@@ -91,19 +108,24 @@ export default function FrontendResume() {
 					<h1 className={styles.h1}>其它项目</h1>
 					<div className={styles.cards}>
 						<ProjectCard
+							name="firefox-theme"
+							description="仿 Firefox 的新标签页，使用 WebComponent 和 Rollup 打包。"
+							url="https://github.com/Kaciras/firefox-theme"
+						/>
+						<ProjectCard
 							name="deasync"
-							description="一个能将异步代码转为同步的 NodeJS 库。"
+							description="能将异步代码转为同步的 NodeJS 库。"
 							url="https://github.com/Kaciras/deasync"
 						/>
 						<ProjectCard
 							name="pac-maker"
-							description="自动代理配置（PAC）文件生成 & 维护工具。"
+							description="自动代理配置（PAC）文件生成 & 执行工具，支持代理 fetch()。"
 							url="https://github.com/Kaciras/pac-maker"
 						/>
 						<ProjectCard
-							name="browser-theme"
-							description="仿 Firefox 的新标签页，使用 WebComponent 构建和 Rollup 打包。"
-							url="https://github.com/Kaciras/browser-theme"
+							name="vite-plugin-svg-sfc"
+							description="将 SVG 转为 Vue 组件的 Vite 插件，支持热更新、Scoped CSS、SVGO 优化。"
+							url="https://github.com/Kaciras/vite-plugin-svg-sfc"
 						/>
 					</div>
 				</section>

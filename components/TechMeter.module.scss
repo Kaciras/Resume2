@@ -1,0 +1,40 @@
+$logo-size: 48px;
+$meter-background: #dadada;
+$meter-radius: 10px;
+
+.list {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-auto-rows: auto 1fr;
+	column-gap: 10px;
+
+	&>h1 {
+		grid-column: 1/3;
+	}
+}
+
+.container {
+
+}
+
+.logo {
+	grid-row: span 2;
+	width: $logo-size;
+	height: $logo-size;
+}
+
+.meter {
+	border-radius: $meter-radius;
+	background: $meter-background;
+
+	height: 16px;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		display: block;
+		width: var(--value, 0);
+		height: 100%;
+		background: var(--optimum, green);
+	}
+}

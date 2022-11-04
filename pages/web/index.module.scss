@@ -20,6 +20,13 @@
 	margin-right: 4px;
 }
 
+.proficiency {
+	composes: content from global;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	column-gap: 40px;
+}
+
 // 跟 ProjectIntro 里的重复了
 .markdown {
 	@include pc-layout {
@@ -36,5 +43,5 @@
 .cards {
 	display: grid;
 	gap: 20px;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
