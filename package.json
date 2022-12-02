@@ -24,9 +24,9 @@
 		"qrcode": "^1.5.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-icons": "^4.6.0",
-		"react-markdown": "^8.0.3",
-		"react-responsive": "^9.0.0"
+		"react-icons": "^4.7.1",
+		"react-markdown": "^8.0.4",
+		"react-responsive": "^9.0.2"
 	},
 	"devDependencies": {
 		"@kaciras/eslint-config-core": "^2.4.1",
