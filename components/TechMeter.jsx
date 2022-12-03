@@ -1,8 +1,8 @@
 import styles from "./TechMeter.module.scss";
 
-export function TechMeterList({ name,children }) {
+export function TechMeterList({ name, children, color }) {
 	return (
-		<div>
+		<div style={{ "--optimum": color }}>
 			<h2 className={styles.title}>{name}</h2>
 			<ul className={styles.list}>{children}</ul>
 		</div>

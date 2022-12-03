@@ -1,15 +1,22 @@
+@import "css/mixins";
+
 $column-gap: 10px;
-$logo-size: 48px;
+$logo-size: 3em;
 $meter-background: #ddd;
 $meter-radius: 10px;
 
 .title {
 	text-align: center;
-	margin: 0 0 0 ($logo-size + $column-gap);
+	margin: 0;
 }
 
 .list {
 	padding-left: 0;
+
+	@include mobile-layout {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
 }
 
 .item {
@@ -39,6 +46,6 @@ $meter-radius: 10px;
 		display: block;
 		width: var(--value, 0);
 		height: 100%;
-		background: var(--optimum, green);
+		background: var(--optimum, #058a00);
 	}
 }
