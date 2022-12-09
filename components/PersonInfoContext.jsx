@@ -9,7 +9,7 @@ const demoInfo = {
 	name: "演示姓名",
 	education: "某某大学，本科，网络工程，2014-2018",
 	phone: 12345678900,
-	mail: "Kaciras@protonmail.com",
+	mail: "Kaciras@outlook.com",
 	note: "公共模式下，上面只有邮箱是真的",
 };
 
