@@ -15,9 +15,16 @@ import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
 import styles from "./index.module.scss";
 import { TechMeter, TechMeterList } from "../../components/TechMeter.jsx";
+import wcLogo from "../../assets/logo/webcomponent.svg";
 import vueLogo from "../../assets/logo/vue.svg";
 import reactLogo from "../../assets/logo/react.svg";
 import viteLogo from "../../assets/logo/vite.svg";
+import typescriptLogo from "../../assets/logo/typescript.svg";
+import webpackLogo from "../../assets/logo/webpack.svg";
+import nodeLogo from "../../assets/logo/node.svg";
+import cssLogo from "../../assets/logo/css.svg";
+import screenIcon from "../../assets/logo/screen.svg";
+import mobileIcon from "../../assets/logo/mobile.svg";
 
 const blogProject = {
 	name: "个人网站",
@@ -33,8 +40,8 @@ const blogProject = {
 	],
 	techStack: {
 		lang: ["JAVA", "TypeScript"],
-		frontend: ["NodeJS", "Vite", "PWA", "Vue3", "Storybook"],
-		backend: ["SpringBoot", "Redis", "MySQL", "MyBatis"],
+		frontend: ["NodeJS", "Vite", "Vitest", "PWA", "Vue3", "Storybook"],
+		backend: ["Spring Boot", "Redis", "MySQL", "MyBatis"],
 		operation: ["Nginx", "Debian", "Sentry", "GitHub Actions", "Travis CI"],
 	},
 	banner: blogScreenshot,
@@ -84,15 +91,23 @@ export default function FrontendResume() {
 			</PersonalDetails>
 
 			<section className={styles.proficiency}>
-				<TechMeterList name="前端框架">
-					<TechMeter name="Vue" value="80" logo={vueLogo}/>
-					<TechMeter name="React" value="20" logo={reactLogo}/>
-					<TechMeter name="React" value="20" logo={viteLogo}/>
+				<TechMeterList name="页面框架">
+					<TechMeter name="Vue" value="100" logo={vueLogo}/>
+					<TechMeter name="React" value="85" logo={reactLogo}/>
+					<TechMeter name="WebComponent & VanillaJS" value="75" logo={wcLogo}/>
 				</TechMeterList>
-				<TechMeterList name="前端框架">
-					<TechMeter name="Vue" value="80" logo={vueLogo}/>
-					<TechMeter name="React" value="20" logo={reactLogo}/>
-					<TechMeter name="React" value="20" logo={viteLogo}/>
+				<TechMeterList name="平台" color="#bb00cb">
+					<TechMeter name="NodeJS" value="100" logo={nodeLogo}/>
+					<TechMeter name="Browser (Desktop)" value="90" logo={screenIcon}/>
+					<TechMeter name="Browser (Mobile)" value="70" logo={mobileIcon}/>
+				</TechMeterList>
+				<TechMeterList name="构建工具" color="#0053c7">
+					<TechMeter name="Vite & Rollup" value="100" logo={viteLogo}/>
+					<TechMeter name="Webpack" value="70" logo={webpackLogo}/>
+				</TechMeterList>
+				<TechMeterList name="语言" color="#d40b15">
+					<TechMeter name="TypeScript & JavaScript" value="100" logo={typescriptLogo}/>
+					<TechMeter name="HTML + CSS" value="80" logo={cssLogo}/>
 				</TechMeterList>
 			</section>
 
@@ -109,7 +124,7 @@ export default function FrontendResume() {
 					<div className={styles.cards}>
 						<ProjectCard
 							name="firefox-theme"
-							description="仿 Firefox 的新标签页，使用 WebComponent 和 Rollup 打包。"
+							description="仿 Firefox 旧版的新标签页，使用 WebComponent 和 Rollup 构建。"
 							url="https://github.com/Kaciras/firefox-theme"
 						/>
 						<ProjectCard
@@ -124,7 +139,7 @@ export default function FrontendResume() {
 						/>
 						<ProjectCard
 							name="vite-plugin-svg-sfc"
-							description="将 SVG 转为 Vue 组件的 Vite 插件，支持热更新、Scoped CSS、SVGO 优化。"
+							description="将 SVG 转为 Vue 组件的 Vite 插件，支持热更新、Scoped CSS"
 							url="https://github.com/Kaciras/vite-plugin-svg-sfc"
 						/>
 					</div>

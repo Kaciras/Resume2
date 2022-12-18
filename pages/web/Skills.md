@@ -1,4 +1,4 @@
-掌握多种编程语言：JAVA, Python, C#, JavaScript, TypeScript。
+掌握多种语言：JAVA, Python, C#, JavaScript, TypeScript。
 
 其它技能：浏览器插件开发、NodeJS 扩展开发。
 
