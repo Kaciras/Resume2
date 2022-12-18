@@ -10,6 +10,12 @@
 	}
 }
 
+@mixin tablet-layout {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
 // 手机屏下的文字区域左右边距
 $margin-mobile: 12px;
 

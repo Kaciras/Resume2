@@ -13,8 +13,12 @@ function Position({ title, children, href }) {
 	return (
 		<div className={styles.card}>
 			<div className={styles.caption}>
-				<div className={styles.title}>{title}</div>
+				<div className={styles.title}>
+					{title}
+				</div>
 				<p>{children}</p>
+
+				{/* Firefox 如果 target=_blank 就无法单页导航 */}
 				<Link
 					target="_self"
 					className="button"
