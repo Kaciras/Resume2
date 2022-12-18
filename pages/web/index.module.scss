@@ -46,6 +46,10 @@
 	display: block;
 	text-align: center;
 	font-size: 2rem;
+
+	@include mobile-layout {
+		font-size: 1.5rem;
+	}
 }
 
 .cards {

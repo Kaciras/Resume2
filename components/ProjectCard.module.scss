@@ -1,3 +1,5 @@
+@import "../css/mixins";
+
 .card {
 	display: block;
 	padding: 20px;
@@ -16,12 +18,20 @@
 		transform: translateY(-4px);
 		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 	}
+
+	@include mobile-layout {
+		font-size: 0.875rem;
+	}
 }
 
 .header {
 	display: flex;
 	align-items: center;
 	margin-bottom: 1rem;
+
+	@include mobile-layout {
+		margin-bottom: 0.5rem;
+	}
 }
 
 .name {
