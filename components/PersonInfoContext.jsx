@@ -1,16 +1,16 @@
 import { createContext, useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/router.js";
+import { useRouter } from "next/router";
 import { downloadSecret } from "../lib/common.js";
 
 /**
  * 用于演示的身份信息，尽量保证与真实信息渲染出来的高度一样，防止布局移动太大（移动本身是无法避免的）。
  */
 const demoInfo = {
-	name: "演示姓名",
+	name: "徐先生",
 	education: "某某大学，本科，网络工程，2014-2018",
 	phone: 12345678900,
 	mail: "Kaciras@outlook.com",
-	note: "公共模式下，上面只有邮箱是真的",
+	note: "当前是预览模式，为防爬虫，只有邮箱是真的",
 };
 
 export const PersonInfoContext = createContext({ loading: false, info: demoInfo });

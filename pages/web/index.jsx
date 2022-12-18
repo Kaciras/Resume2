@@ -82,7 +82,6 @@ export default function FrontendResume() {
 					<Attachment
 						name="前端.pdf"
 						type="application/pdf"
-						encrypted={true}
 					>
 						<BsFillFileEarmarkArrowDownFill className={styles.buttonIcon}/>
 						下载 PDF 版简历

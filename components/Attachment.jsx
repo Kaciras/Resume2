@@ -8,7 +8,7 @@ export default function Attachment(props) {
 
 	const { key } = useRouter().query;
 	const [running, setRunning] = useState(false);
-	const [url, setUrl] = useState();
+	const [url, setUrl] = useState(encrypted ? undefined : `/${name}`);
 
 	useEffect(() => () => URL.revokeObjectURL(url), [url]);
 
