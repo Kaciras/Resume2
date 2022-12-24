@@ -92,13 +92,13 @@ export default function FrontendResume() {
 			<section className={styles.proficiency}>
 				<TechMeterList name="页面框架">
 					<TechMeter name="Vue" value="100" logo={vueLogo}/>
-					<TechMeter name="React" value="85" logo={reactLogo}/>
-					<TechMeter name="WebComponent & VanillaJS" value="75" logo={wcLogo}/>
+					<TechMeter name="React" value="75" logo={reactLogo}/>
+					<TechMeter name="WebComponent & VanillaJS" value="60" logo={wcLogo}/>
 				</TechMeterList>
 				<TechMeterList name="平台" color="#bb00cb">
 					<TechMeter name="NodeJS" value="100" logo={nodeLogo}/>
 					<TechMeter name="Browser (Desktop)" value="90" logo={screenIcon}/>
-					<TechMeter name="Browser (Mobile)" value="70" logo={mobileIcon}/>
+					<TechMeter name="Browser (Mobile)" value="65" logo={mobileIcon}/>
 				</TechMeterList>
 				<TechMeterList name="构建工具" color="#0053c7">
 					<TechMeter name="Vite & Rollup" value="100" logo={viteLogo}/>
@@ -106,7 +106,7 @@ export default function FrontendResume() {
 				</TechMeterList>
 				<TechMeterList name="语言" color="#d40b15">
 					<TechMeter name="TypeScript & JavaScript" value="100" logo={typescriptLogo}/>
-					<TechMeter name="HTML + CSS" value="80" logo={cssLogo}/>
+					<TechMeter name="HTML + CSS" value="75" logo={cssLogo}/>
 				</TechMeterList>
 			</section>
 
