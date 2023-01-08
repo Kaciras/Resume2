@@ -80,7 +80,7 @@ export default function FrontendResume() {
 						src={logo}
 					/>
 					<Attachment
-						name="前端.pdf"
+						name="frontend.pdf"
 						type="application/pdf"
 					>
 						<BsFillFileEarmarkArrowDownFill className={styles.buttonIcon}/>

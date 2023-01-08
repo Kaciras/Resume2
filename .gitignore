@@ -32,3 +32,4 @@ yarn-error.log*
 
 # secret files
 /secret
+/debug.[jt]s
