@@ -47,7 +47,7 @@ export default function PersonalDetails({ title, children }) {
 		attributes.push(<dd key="mail-v"><a href={"mailto:" + mail}>{mail}</a></dd>);
 	}
 	if (phone) {
-		attributes.push(<dt key="phone-k"><BsFillTelephoneFill/>电话</dt>);
+		attributes.push(<dt key="phone-k"><BsFillTelephoneFill/>电话和微信</dt>);
 		attributes.push(<dd key="phone-v"><a href={"tel:" + phone}>{phone}</a></dd>);
 	}
 	if (qq) {
