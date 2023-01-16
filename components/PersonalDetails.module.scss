@@ -57,18 +57,10 @@
 		&::after {
 			content: "："
 		}
-
-		grid-column: 1;
-		justify-self: end;
 	}
 
 	& > dd {
 		margin-left: 0;
-		grid-column: 2;
-	}
-
-	@include mobile-layout {
-		font-size: 0.875em;
 	}
 
 	& svg {
@@ -77,6 +69,15 @@
 
 		// 大小不同的 SVG 跟文字对其真难，这个 sub 倒是正好能。
 		vertical-align: sub;
+	}
+
+	@include mobile-layout {
+		font-size: 0.875em;
+		grid-template-columns: auto;
+
+		& > dd {
+			margin-left: 1.525em;
+		}
 	}
 }
 
