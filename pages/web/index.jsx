@@ -122,9 +122,9 @@ export default function FrontendResume() {
 					<h1 className={styles.h1}>其它项目</h1>
 					<div className={styles.cards}>
 						<ProjectCard
-							name="firefox-theme"
-							description="仿 Firefox 旧版的新标签页，使用 WebComponent 和 Rollup 构建。"
-							url="https://github.com/Kaciras/firefox-theme"
+							name="bookshelf"
+							description="仅 20KB 的极简新标签页，使用 WebComponent 和 Rollup 构建。"
+							url="https://github.com/Kaciras/bookshelf"
 						/>
 						<ProjectCard
 							name="deasync"
