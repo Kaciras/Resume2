@@ -2,13 +2,13 @@
 
 ![Deploy](https://github.com/Kaciras/Resume2/workflows/Deploy/badge.svg)
 
-个人简历网站，在线浏览：[Web前端开发工程师](https://resume.kaciras.com/web)
+个人简历网站，[Web前端开发工程师](https://resume.kaciras.com/web)
 
-浏览器支持（以 Nullish coalescing operator 为基准）：
-* Firefox >= 72
-* Chrome / Edge >= 80
-* Safari >= 13.1
-* 国产浏览器未知，请用最新版。
+浏览器支持：
+
+* Firefox >= 103
+* Chrome / Edge >= 92
+* Safari >= 15.4
 
 # 构建
 
@@ -27,18 +27,16 @@ pnpm run build
 
 # 信息加密
 
-本项目支持对信息加密，需要加密的文件放在`/secret`目录下，该目录被`.gitignore`所排除，也不会包含在构建的输出里。
+本项目支持对信息加密，需要加密的文件放在`/secret`目录下，该目录被不会包含在构建的输出里。
 
 例如创建`secret/info.json`并填写个人信息：
 
 ```json
 {
 	"name": "姓名",
-	"degree": "某某学校，专业，本科，2014-2018",
-	"addresses": {
-		"电话和微信": 66666,
-		"Email": "example@example.com"
-	}
+	"education": "某某学校，专业，本科，2014-2018",
+	"phone": 66666,
+	"mail": "example@example.com"
 }
 ```
 
