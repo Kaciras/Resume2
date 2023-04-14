@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
-import PageLayout from "@/components/PageLayout";
-import home from "@/assets/icon/home.svg?react";
 import { ImGithub } from "react-icons/im";
 import styles from "./index.module.scss";
+import PageLayout from "@/components/PageLayout.jsx";
+import home from "@/assets/icon/home.svg?react";
 
 function Position({ title, children, href }) {
 	if (typeof location !== "undefined" && location.search) {

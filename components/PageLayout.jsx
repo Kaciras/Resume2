@@ -1,5 +1,5 @@
-import PageFooter from "./PageFooter";
 import Head from "next/head";
+import PageFooter from "./PageFooter.jsx";
 
 export default function PageLayout(props) {
 	const { title, children } = props;

@@ -1,6 +1,6 @@
-import PageLayout from "@/components/PageLayout";
-import PersonalDetails from "@/components/PersonalDetails";
-import TitledSection from "@/components/TitledSection";
+import PageLayout from "@/components/PageLayout.jsx";
+import PersonalDetails from "@/components/PersonalDetails.jsx";
+import TitledSection from "@/components/TitledSection.jsx";
 
 export default function BackendResume() {
 	return (

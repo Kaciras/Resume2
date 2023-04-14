@@ -1,5 +1,5 @@
 import MergedIcon from "../assets/icon/merged.svg?react";
-import ExternalLink from "./ExternalLink";
+import ExternalLink from "./ExternalLink.jsx";
 import styles from "./PRLink.module.scss";
 
 export default function PRLink({ repo, id }) {

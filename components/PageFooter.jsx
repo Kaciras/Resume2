@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import QRCode from "qrcode";
-import ExternalLink from "./ExternalLink";
+import ExternalLink from "./ExternalLink.jsx";
 import styles from "./PageFooter.module.scss";
 
 const ProjectURL = "https://github.com/Kaciras/Resume2";
