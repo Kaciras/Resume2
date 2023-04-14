@@ -12,7 +12,7 @@ const customJestConfig = {
 	testMatch: [
 		"**/__tests__/**/*.?(m)js",
 	],
-	moduleFileExtensions: ["mjs", "js", "jsx", "json", "node"],
+	moduleFileExtensions: ["js", "jsx", "json"],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
