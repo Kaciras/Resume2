@@ -7,14 +7,11 @@
  *
  * node script/secret-file.js decrypt <password> info.json.aes
  * 解密 /public/info.json.aes 文件，在控制台输出其内容。
- *
- * 【加密后的编码】
- * 加密的文件使用 base64 编码，这虽然多了一步，但 base64 文本在 webpack 打包时更具扩展性。
  */
 import { argv, exit, stdout } from "process";
 import { dirname, join } from "path";
 import { readdirSync, readFileSync, statSync, writeFileSync } from "fs";
-import { decrypt, encrypt } from "../lib/crypto-node.js";
+import NodeAESHelper from "../lib/crypto-node.js";
 
 if (argv.length < 4) {
 	console.error("Arguments required, usage: node script/secret-file.js [en|de]crypt password [filename]");
@@ -28,6 +25,8 @@ const root = dirname(dirname(__filename));
 const inputDir = join(root, "secret");
 const outputDir = join(root, "public");
 
+const aes = new NodeAESHelper(password);
+
 /**
  * 加密 inputDir 下的文件，如果是目录则递归，结果保存到 outputDir。
  */
@@ -38,7 +37,7 @@ function encryptFiles(name) {
 		return readdirSync(path).forEach(encryptFiles);
 	}
 
-	const data = encrypt(password, readFileSync(path));
+	const data = aes.encrypt(readFileSync(path));
 	writeFileSync(`${outputDir}/${name}.aes`, data);
 }
 
@@ -48,8 +47,7 @@ function decryptFile(name) {
 		exit(2);
 	}
 	const path = join(outputDir, name + ".aes");
-	const data = readFileSync(path, "utf8");
-	stdout.write(decrypt(password, data).toString());
+	stdout.write(aes.decrypt(readFileSync(path)));
 }
 
 switch (mode) {
