@@ -19,7 +19,7 @@
 		"build": "next build && next export"
 	},
 	"dependencies": {
-		"@kaciras/utilities": "^0.10.0",
+		"@kaciras/utilities": "^0.10.1",
 		"clsx": "^2.0.0",
 		"next": "^13.4.19",
 		"qrcode": "^1.5.3",
@@ -35,10 +35,10 @@
 		"@kaciras/eslint-config-react": "^2.6.0",
 		"@next/bundle-analyzer": "^13.4.19",
 		"@svgr/webpack": "^8.1.0",
-		"@types/react": "^18.2.20",
-		"eslint": "^8.47.0",
+		"@types/react": "^18.2.21",
+		"eslint": "^8.48.0",
 		"eslint-config-next": "^13.4.19",
-		"jest": "^29.6.2",
+		"jest": "^29.6.4",
 		"loader-utils": "^3.2.1",
 		"sass": "^1.66.1",
 		"sharp": "^0.32.5",
