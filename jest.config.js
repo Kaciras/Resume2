@@ -8,11 +8,13 @@ const createJestConfig = nextJest({
 
 /** @type {import('jest').Config} */
 const customJestConfig = {
+	moduleFileExtensions: ["js", "jsx", "json"],
 	clearMocks: true,
 	testMatch: [
 		"**/__tests__/**/*.?(m)js",
 	],
-	moduleFileExtensions: ["js", "jsx", "json"],
+	//https://github.com/vercel/next.js/issues/40183
+	transformIgnorePatterns: ["node_modules/@kaciras"],
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

@@ -10,7 +10,7 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=19"
+		"node": ">=20"
 	},
 	"scripts": {
 		"lint": "eslint --ext mjs,js,jsx --fix .",
