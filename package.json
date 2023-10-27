@@ -16,7 +16,7 @@
 		"lint": "eslint --ext mjs,js,jsx --fix .",
 		"dev": "next dev",
 		"test": "jest",
-		"build": "next build && next export"
+		"build": "next build"
 	},
 	"dependencies": {
 		"@kaciras/utilities": "^0.10.1",

@@ -40,6 +40,7 @@ function customWebpack(config) {
 export default withBundleAnalyzer({
 	enabled: process.env.ANALYZE === "true",
 })({
+	output: "export",
 	webpack: customWebpack,
 	poweredByHeader: false,
 	eslint: {
