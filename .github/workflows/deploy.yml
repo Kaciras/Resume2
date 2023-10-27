@@ -21,6 +21,8 @@ jobs:
         run: npm i -g pnpm
 
       - run: pnpm install-test
+        env:
+          NODE_OPTIONS: --experimental-vm-modules
 
       # 遥测输出好几行警告不好看，不是我不愿意分享啊，本地是开着的。
       - run: pnpm run build
