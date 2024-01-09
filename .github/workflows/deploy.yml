@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: latest
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # 官网上的示例用 CURL 下载不跨平台，所以还是选择 npm 来安装。
       - name: Install pnpm
