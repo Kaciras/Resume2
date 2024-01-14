@@ -1,9 +1,6 @@
 import withBundleAnalyzer from "@next/bundle-analyzer";
-import aliasConfig from "./alias.idea.js";
 
 function customWebpack(config) {
-	Object.assign(config.resolve.alias, aliasConfig.resolve.alias);
-
 	// https://github.com/vercel/next.js/issues/17806
 	config.module.rules.push({
 		test: /\.mjs$/,

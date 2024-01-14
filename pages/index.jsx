@@ -2,8 +2,8 @@ import Link from "next/link";
 import { useMediaQuery } from "react-responsive";
 import { ImGithub } from "react-icons/im";
 import styles from "./index.module.scss";
-import PageLayout from "@/components/PageLayout.jsx";
-import home from "@/assets/icon/home.svg?react";
+import PageLayout from "../components/PageLayout.jsx";
+import home from "../assets/icon/home.svg?react";
 
 function Position({ title, children, href }) {
 	if (typeof location !== "undefined" && location.search) {
@@ -33,10 +33,6 @@ function Position({ title, children, href }) {
 
 function SocialLink({ url, SvgIcon, name }) {
 	return <a href={url} title={name}><SvgIcon className={styles.social}/></a>;
-}
-
-function BodyDesktop() {
-
 }
 
 export default function Home() {
