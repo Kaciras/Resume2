@@ -13,7 +13,7 @@
 		"node": ">=20"
 	},
 	"scripts": {
-		"lint": "eslint --ext mjs,js,jsx --fix .",
+		"lint": "eslint --ext js,jsx --fix .",
 		"dev": "next dev",
 		"test": "jest",
 		"build": "next build"
