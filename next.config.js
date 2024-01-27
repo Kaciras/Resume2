@@ -34,5 +34,6 @@ export default withBundleAnalyzer({
 	},
 	images: {
 		dangerouslyAllowSVG: true,
+		formats: ["image/avif", "image/webp"],
 	},
 });
