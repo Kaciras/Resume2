@@ -5,7 +5,7 @@
 	grid-template-columns: auto;
 	grid-gap: 20px;
 
-	// for mobile
+	/* for mobile */
 	justify-content: center;
 }
 
@@ -35,7 +35,7 @@
 	}
 }
 
-// 跟 ProjectIntro 里的重复了
+/* 跟 ProjectIntro 里的重复了 */
 .markdown {
 	@include pc-layout {
 		padding: 0 2rem;

@@ -1,21 +1,23 @@
 @import "../css/mixins";
 
-// 子元素有 flex: 1 无需 space-evenly 也能充满一行
+/* 子元素有 flex: 1 无需 space-evenly 也能充满一行 */
 .container {
 	display: flex;
 	flex-wrap: wrap;
 
-	// 兼容性不太好，等 2022 下半年再换。
+	/* 兼容性不太好，等 2022 下半年再换。 */
 	//gap: 0.5em;
 
 	list-style: none;
-	margin: -4px; // 抵消内部元素的边距
+	margin: -4px; /* 抵消内部元素的边距 */
 	padding: 0;
 
 	font-family: system-ui, -apple-system, sans-serif;
 
-	// 通过伪元素抢占末尾空间实现最后一行不铺满
-	// https://stackoverflow.com/a/30307820/7065321
+	/*
+	 * 通过伪元素抢占末尾空间实现最后一行不铺满。
+	 * https://stackoverflow.com/a/30307820/7065321
+	 */
 	&::after {
 		content: "";
 		flex-grow: 10000;
@@ -41,7 +43,7 @@
 	}
 }
 
-// 这个亮色的真难调
+/* 这个亮色的真难调 */
 .frontend {
 	color: black;
 	background: #f2ea00;

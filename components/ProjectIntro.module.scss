@@ -2,8 +2,6 @@
 
 .container:not(:first-of-type) {
 	margin-top: 2rem;
-
-	//
 	//border-top: solid 1px #ccc;
 }
 
@@ -40,7 +38,7 @@
 	margin: 1.5rem 0 2rem 0;
 	max-width: 100%;
 
-	// 阴影不受负间距的影响，但结果还可以接受
+	/* 阴影不受负间距的影响，但结果还可以接受 */
 	box-shadow: 0 8px 16px rgba(0, 0, 0, .5);
 
 	@include mobile-layout {
