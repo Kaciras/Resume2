@@ -1,9 +1,9 @@
 import ReactMarkdown from "react-markdown";
+import Image from "next/image";
 import TitledSection from "../../components/TitledSection.jsx";
 import PersonalDetails from "../../components/PersonalDetails.jsx";
 import PageLayout from "../../components/PageLayout.jsx";
 import Attachment from "../../components/Attachment.jsx";
-import StaticImg from "../../components/StaticImg.jsx";
 import ProjectIntro from "../../components/ProjectIntro.jsx";
 import ProjectCard from "../../components/ProjectCard.jsx";
 import { TechMeter, TechMeterList } from "../../components/TechMeter.jsx";
@@ -74,10 +74,10 @@ export default function FrontendResume() {
 		<PageLayout title="Web 前端开发工程师">
 			<PersonalDetails title="Web 前端开发工程师">
 				<div className={styles.custom}>
-					<StaticImg
-						className={styles.logo}
-						alt="logo"
+					<Image
 						src={logo}
+						alt="logo"
+						className={styles.logo}
 					/>
 					<Attachment
 						name="front-end.pdf"

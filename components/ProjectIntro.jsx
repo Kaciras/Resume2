@@ -1,5 +1,5 @@
 import ReactMarkdown from "react-markdown";
-import StaticImg from "./StaticImg.jsx";
+import Image from "next/image";
 import ExternalLink from "./ExternalLink.jsx";
 import TechLabels from "./TechLabels.jsx";
 import styles from "./ProjectIntro.module.scss";
@@ -43,7 +43,7 @@ export default function ProjectIntro(props) {
 				<div>{items}</div>
 			</header>
 			<TechLabels stack={techStack}/>
-			<StaticImg
+			<Image
 				src={banner}
 				alt="banner"
 				className={styles.banner}

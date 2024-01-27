@@ -16,10 +16,6 @@ function customWebpack(config) {
 			use: "@svgr/webpack",
 		},
 		{
-			test: /\.(png|jpg|svg)$/,
-			use: "./lib/image-loader.cjs",
-		},
-		{
 			rules: config.module.rules,
 		},
 	];
@@ -37,6 +33,6 @@ export default withBundleAnalyzer({
 		ignoreDuringBuilds: true,
 	},
 	images: {
-		disableStaticImages: true,
+		dangerouslyAllowSVG: true,
 	},
 });

@@ -12,6 +12,7 @@
 .logo {
 	composes: hide-mobile from global;
 	width: 130px;
+	height: auto;
 	justify-self: end;
 }
 

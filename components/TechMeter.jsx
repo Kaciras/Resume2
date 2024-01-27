@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "./TechMeter.module.scss";
 
 export function TechMeterList({ name, children, color }) {
@@ -14,7 +15,7 @@ export function TechMeterList({ name, children, color }) {
 export function TechMeter({ name, value, logo }) {
 	return (
 		<li className={styles.item}>
-			<img className={styles.logo} alt="logo" src={logo}/>
+			<Image className={styles.logo} alt="logo" src={logo}/>
 			{name}
 			<div className={styles.meter} style={{ "--value": `${value}%` }}/>
 		</li>
