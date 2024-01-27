@@ -5,9 +5,6 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	/* 兼容性不太好，等 2022 下半年再换。 */
-	//gap: 0.5em;
-
 	list-style: none;
 	margin: -4px; /* 抵消内部元素的边距 */
 	padding: 0;

@@ -26,6 +26,7 @@
 
 .header {
 	display: flex;
+	gap: 5px;
 	align-items: center;
 	margin-bottom: 1rem;
 
@@ -44,8 +45,5 @@
 	flex-shrink: 0;
 	margin-left: auto;
 	font-size: 36px;
-
-	/* 为了兼容性不能用 flex + gap */
-	padding-left: 5px;
 	box-sizing: content-box;
 }
