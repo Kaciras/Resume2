@@ -1,5 +1,0 @@
-# node_modules & dot-files are implicit ignored.
-# https://eslint.org/docs/user-guide/configuring/ignoring-code#the-eslintignore-file
-
-/out
-/.next
