@@ -9,8 +9,10 @@ import ProjectCard from "../../components/ProjectCard.jsx";
 import { TechMeter, TechMeterList } from "../../components/TechMeter.jsx";
 import logo from "../../assets/web-site.svg";
 import blogScreenshot from "../../assets/blog.png";
+import esbenchBanner from "../../assets/esbench.png";
 import ICAnalyzerImage from "../../assets/ic-analyzer.png";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
+import esbenchDescription from "./ESBench.md";
 import blogDescription from "./Blog.md";
 import icAnalyzerDescription from "./ICAnalyzer.md";
 import skills from "./Skills.md";
@@ -25,6 +27,28 @@ import nodeLogo from "../../assets/logo/node.svg";
 import cssLogo from "../../assets/logo/css.svg";
 import screenIcon from "../../assets/logo/screen.svg";
 import mobileIcon from "../../assets/logo/mobile.svg";
+
+const esbench = {
+	name: "ESBench",
+	links: [
+		{
+			href: "https://esbench.vercel.app",
+			text: "esbench.vercel.app",
+		},
+		{
+			href: "https://github.com/ESBenchmark/ESBench",
+			text: "GitHub",
+		}
+	],
+	techStack: {
+		lang: ["TypeScript"],
+		frontend: ["Vite", "Vitest", "Vue3", "Monaco Editor", "Chart.js"],
+		backend: ["Playwright"],
+		operation: ["Vercel"],
+	},
+	banner: esbenchBanner,
+	content: esbenchDescription,
+}
 
 const blogProject = {
 	name: "个人网站",
@@ -63,10 +87,10 @@ const icAnalyzer = {
 	techStack: {
 		lang: ["TypeScript", "C++", "WebAssembly"],
 		frontend: ["React", "Webpack", "Emscripten", "SWC", "Highcharts"],
-		operation: ["Vercel", "GitHub Actions", "GitHub Pages"],
+		operation: ["GitHub Actions", "GitHub Pages"],
 	},
 	banner: ICAnalyzerImage,
-	content: icAnalyzerDescription,
+	content: icAnalyzerDescription
 };
 
 export default function FrontendResume() {
@@ -115,6 +139,7 @@ export default function FrontendResume() {
 				subtitle="编织有艺术感的代码"
 				type="projects"
 			>
+				<ProjectIntro>{esbench}</ProjectIntro>
 				<ProjectIntro>{icAnalyzer}</ProjectIntro>
 				<ProjectIntro>{blogProject}</ProjectIntro>
 
