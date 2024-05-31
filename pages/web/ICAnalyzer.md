@@ -5,8 +5,6 @@ ICAnalyzer 是一个**方便（在线使用）、直观（交互丰富）、定�
 
 **全程使用 React Hooks**，以简洁的代码实现了美观的界面。同时使用 Devtool 对应用进行分析并优化性能。
 
-* [React 嵌套对象的性能优化](https://blog.kaciras.com/article/25/optimize-react-performace-with-nested-object)
-
 **编译 C++ 代码为 WebAssembly**，让编码器在浏览器上执行，**并通过 WebWorker 实现多线程**，充分利用 CPU。
 
 通过 Highcharts 绘制图表，并添加交互功能，在有限的空间内展示了各种变量和指标。

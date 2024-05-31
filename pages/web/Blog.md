@@ -9,8 +9,6 @@
 
 [扩展 Markdown 转换器使其能够插入视频](https://blog.kaciras.com/article/18/add-video-support-to-markdown)
 
-使用 [Sentry](https://sentry.io) 跟踪页面里的错误，做到及时响应并修复问题。
-
 **支持 PWA**，使用自定义的 ServiceWorker，支持离线访问，还可以添加到桌面。
 
 支持服务端渲染，让动态内容同样被搜索引擎收录，并提升首屏速度。

@@ -157,14 +157,14 @@ export default function FrontendResume() {
 							url="https://github.com/Kaciras/deasync"
 						/>
 						<ProjectCard
-							name="pac-maker"
-							description="自动代理配置（PAC）文件生成 & 执行工具，支持代理 fetch()。"
-							url="https://github.com/Kaciras/pac-maker"
-						/>
-						<ProjectCard
 							name="vite-plugin-svg-sfc"
 							description="将 SVG 转为 Vue 组件的 Vite 插件，支持热更新、Scoped CSS"
 							url="https://github.com/Kaciras/vite-plugin-svg-sfc"
+						/>
+						<ProjectCard
+							name="ts-directly"
+							description="7.5 KB（gzip 压缩后）库让 Node 直接运行 TS，自动选择已安装的编译器。"
+							url="https://github.com/Kaciras/ts-directly"
 						/>
 					</div>
 				</article>
