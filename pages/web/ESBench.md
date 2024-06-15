@@ -1,3 +1,5 @@
+**从零开发整个项目**，经历了[完整的需求分析、竞品对比、架构设计的过程](https://blog.kaciras.com/article/37/build-a-js-benchmarking-tool-esbench)（未来还有推广）。
+
 实现了参数化测试、基线、结果对比，内置支持运行 TypeScript。**功能全面，超越其它现有的工具。**
 
 支持跨平台运行，**能将同一套测试跑在浏览器、Node、Bun、手机端等等**，对比不同平台的性能。
