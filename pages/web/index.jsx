@@ -29,7 +29,7 @@ import screenIcon from "../../assets/logo/screen.svg";
 import mobileIcon from "../../assets/logo/mobile.svg";
 
 const esbench = {
-	name: "ESBench",
+	name: "基准测试框架 ESBench",
 	links: [
 		{
 			href: "https://esbench.vercel.app",
@@ -135,9 +135,18 @@ export default function FrontendResume() {
 			</section>
 
 			<TitledSection
+				title="全栈技能树"
+				subtitle="广泛的知识不惧任何挑战"
+				type="skills"
+			>
+				<div className={styles.markdown}>
+					<ReactMarkdown>{skills}</ReactMarkdown>
+				</div>
+			</TitledSection>
+
+			<TitledSection
 				title="项目展示"
 				subtitle="编织有艺术感的代码"
-				type="projects"
 			>
 				<ProjectIntro>{esbench}</ProjectIntro>
 				<ProjectIntro>{icAnalyzer}</ProjectIntro>
@@ -147,9 +156,9 @@ export default function FrontendResume() {
 					<h1 className={styles.h1}>其它项目</h1>
 					<div className={styles.cards}>
 						<ProjectCard
-							name="bookshelf"
-							description="仅 20KB 的极简新标签页，使用 WebComponent 和 Rollup 构建。"
-							url="https://github.com/Kaciras/bookshelf"
+							name="ts-directly"
+							description="7.5 KB（压缩后）库让 Node 直接运行 TS，自动选择已安装的编译器。"
+							url="https://github.com/Kaciras/ts-directly"
 						/>
 						<ProjectCard
 							name="deasync"
@@ -162,21 +171,12 @@ export default function FrontendResume() {
 							url="https://github.com/Kaciras/vite-plugin-svg-sfc"
 						/>
 						<ProjectCard
-							name="ts-directly"
-							description="7.5 KB（gzip 压缩后）库让 Node 直接运行 TS，自动选择已安装的编译器。"
-							url="https://github.com/Kaciras/ts-directly"
+							name="bookshelf"
+							description="仅 20KB 的极简新标签页，使用 WebComponent 和 Rollup 构建。"
+							url="https://github.com/Kaciras/bookshelf"
 						/>
 					</div>
 				</article>
-			</TitledSection>
-
-			<TitledSection
-				title="全栈技能树"
-				subtitle="广泛的知识不惧任何挑战"
-			>
-				<div className={styles.markdown}>
-					<ReactMarkdown>{skills}</ReactMarkdown>
-				</div>
 			</TitledSection>
 		</PageLayout>
 	);

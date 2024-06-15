@@ -1,6 +1,6 @@
-**独自完成整个项目，包括设计、前端、后端、运维，写文。**
+从 0 开发整个项目，包括设计、前端、后端、运维，写文。
 
-**功能完整**，具有评论系统、后台、编辑器等 CMS 所需的功能；**[性能强大，Lighthouse 满分](https://blog.kaciras.com/article/28/kaciras-blog-v2-release-note#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)。**
+**功能完整**，具有评论系统、后台、编辑器等 CMS 所需的功能；**性能强大**，[Lighthouse 满分](https://blog.kaciras.com/article/28/kaciras-blog-v2-release-note#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)。
 
 **为 Vite 编写插件**，提供了资源压缩、图片优化、SVG 组件等丰富的功能。
 

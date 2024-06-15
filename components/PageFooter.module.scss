@@ -4,7 +4,7 @@
 	composes: content from global;
 
 	/* 二维码要求背景必须比方块亮，没法用暗色。*/
-	background-color: #fafafa;
+	background: #f7f8f8;
 }
 
 .qrcode {
