@@ -1,4 +1,4 @@
-import { ImGithub } from "react-icons/im";
+import Image from "next/image";
 import styles from "./ProjectCard.module.scss";
 
 /**
@@ -7,13 +7,13 @@ import styles from "./ProjectCard.module.scss";
  * 项目名最多只能两行，超了布局会乱。
  */
 export default function ProjectCard(props) {
-	const { name, description, url } = props;
+	const { name, description, url, icon } = props;
 
 	return (
 		<a className={styles.card} href={url}>
 			<div className={styles.header}>
 				<h2 className={styles.name}>{name}</h2>
-				<ImGithub className={styles.icon}/>
+				<Image src={icon} alt="language" className={styles.icon}/>
 			</div>
 			{description}
 		</a>

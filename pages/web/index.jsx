@@ -22,6 +22,8 @@ import vueLogo from "../../assets/logo/vue.svg";
 import reactLogo from "../../assets/logo/react.svg";
 import viteLogo from "../../assets/logo/vite.svg";
 import typescriptLogo from "../../assets/logo/typescript.svg";
+import javascriptLogo from "../../assets/logo/javascript.svg";
+import csharpLogo from "../../assets/logo/csharp.svg";
 import webpackLogo from "../../assets/logo/webpack.svg";
 import nodeLogo from "../../assets/logo/node.svg";
 import cssLogo from "../../assets/logo/css.svg";
@@ -157,23 +159,33 @@ export default function FrontendResume() {
 					<div className={styles.cards}>
 						<ProjectCard
 							name="ts-directly"
-							description="7.5 KB（压缩后）库让 Node 直接运行 TS，自动选择已安装的编译器。"
+							description="7.5 KB（压缩后）库让 Node 直接运行 TS，自动选择已安装的编译器，支持 SWC、esbuild、tsc。"
 							url="https://github.com/Kaciras/ts-directly"
+							icon={typescriptLogo}
 						/>
 						<ProjectCard
 							name="deasync"
 							description="能将异步代码转为同步的 NodeJS 库。"
 							url="https://github.com/Kaciras/deasync"
+							icon={typescriptLogo}
 						/>
 						<ProjectCard
 							name="vite-plugin-svg-sfc"
 							description="将 SVG 转为 Vue 组件的 Vite 插件，支持热更新、Scoped CSS"
 							url="https://github.com/Kaciras/vite-plugin-svg-sfc"
+							icon={typescriptLogo}
 						/>
 						<ProjectCard
 							name="bookshelf"
 							description="仅 20KB 的极简新标签页，使用 WebComponent 和 Rollup 构建。"
 							url="https://github.com/Kaciras/bookshelf"
+							icon={javascriptLogo}
+						/>
+						<ProjectCard
+							name="CodingFS"
+							description="将项目映射到虚拟分区，里面仅显示特定类型（源码、依赖、构建结果）的文件"
+							url="https://github.com/Kaciras/CodingFS"
+							icon={csharpLogo}
 						/>
 					</div>
 				</article>
