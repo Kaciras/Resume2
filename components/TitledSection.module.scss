@@ -1,32 +1,31 @@
 @import "../css/mixins";
 
-.skills {
-	background: rgba(128, 128, 128, 0.05);
-}
-
 .header {
+	--primary-font: 2.5rem;
+	--mnior-font: 1.75rem;
+
 	text-align: center;
 	margin-bottom: 2rem;
-}
 
-.h1 {
-	margin: 0;
-	font-size: 2.5rem;
-	font-weight: normal;
-}
-
-.h2 {
-	margin: 1rem 0 0 0;
-	font-size: 1.75rem;
-	font-weight: normal;
-	color: #667;
-}
-
-@include mobile-layout {
-	.h1 {
-		font-size: 2rem;
+	& > h1 {
+		margin: 0;
+		font-size: var(--primary-font);
+		font-weight: normal;
 	}
-	.h2 {
-		font-size: 1.25rem;
+
+	& > h2 {
+		margin: 1rem 0 0 0;
+		font-size: var(--mnior-font);
+		font-weight: normal;
+		color: #667;
 	}
+
+	@include mobile-layout {
+		--primary-font: 2rem;
+		--mnior-font: 1.25rem;
+	}
+}
+
+.skills {
+	background: rgba(128, 128, 128, 0.05);
 }

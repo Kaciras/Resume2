@@ -36,13 +36,6 @@
 	}
 }
 
-/* 跟 ProjectIntro 里的重复了 */
-.markdown {
-	@include pc-layout {
-		padding: 0 2rem;
-	}
-}
-
 .h1 {
 	display: block;
 	text-align: center;

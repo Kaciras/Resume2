@@ -1,8 +1,8 @@
-import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import ExternalLink from "./ExternalLink.jsx";
 import TechLabels from "./TechLabels.jsx";
 import styles from "./ProjectIntro.module.scss";
+import MarkdownView from "./MarkdownView.jsx";
 
 // 因为链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
 function Delimiter() {
@@ -48,9 +48,7 @@ export default function ProjectIntro(props) {
 				alt="banner"
 				className={styles.banner}
 			/>
-			<div className={styles.markdown}>
-				<ReactMarkdown>{content}</ReactMarkdown>
-			</div>
+			<MarkdownView>{content}</MarkdownView>
 		</article>
 	);
 }

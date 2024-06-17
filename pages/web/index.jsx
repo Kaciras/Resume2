@@ -1,4 +1,3 @@
-import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import TitledSection from "../../components/TitledSection.jsx";
 import PersonalDetails from "../../components/PersonalDetails.jsx";
@@ -29,6 +28,7 @@ import nodeLogo from "devicon/icons/nodejs/nodejs-original.svg";
 import cssLogo from "devicon/icons/css3/css3-original.svg";
 import screenIcon from "../../assets/logo/screen.svg";
 import mobileIcon from "../../assets/logo/mobile.svg";
+import MarkdownView from "../../components/MarkdownView.jsx";
 
 const esbench = {
 	name: "基准测试框架 ESBench",
@@ -40,7 +40,7 @@ const esbench = {
 		{
 			href: "https://github.com/ESBenchmark/ESBench",
 			text: "GitHub",
-		}
+		},
 	],
 	techStack: {
 		lang: ["TypeScript"],
@@ -50,7 +50,7 @@ const esbench = {
 	},
 	banner: esbenchBanner,
 	content: esbenchDescription,
-}
+};
 
 const blogProject = {
 	name: "个人网站",
@@ -92,7 +92,7 @@ const icAnalyzer = {
 		operation: ["GitHub Actions", "GitHub Pages"],
 	},
 	banner: ICAnalyzerImage,
-	content: icAnalyzerDescription
+	content: icAnalyzerDescription,
 };
 
 export default function FrontendResume() {
@@ -100,11 +100,7 @@ export default function FrontendResume() {
 		<PageLayout title="Web 前端开发工程师">
 			<PersonalDetails title="Web 前端开发工程师">
 				<div className={styles.custom}>
-					<Image
-						src={logo}
-						alt="logo"
-						className={styles.logo}
-					/>
+					<Image src={logo} alt="logo" className={styles.logo}/>
 					<Attachment
 						name="front-end.pdf"
 						type="application/pdf"
@@ -136,20 +132,11 @@ export default function FrontendResume() {
 				</TechMeterList>
 			</section>
 
-			<TitledSection
-				title="全栈技能树"
-				subtitle="广泛的知识不惧任何挑战"
-				type="skills"
-			>
-				<div className={styles.markdown}>
-					<ReactMarkdown>{skills}</ReactMarkdown>
-				</div>
+			<TitledSection title="全栈技能树" subtitle="广泛的知识不惧任何挑战" type="skills">
+				<MarkdownView>{skills}</MarkdownView>
 			</TitledSection>
 
-			<TitledSection
-				title="项目展示"
-				subtitle="编织有艺术感的代码"
-			>
+			<TitledSection title="项目展示" subtitle="编织有艺术感的代码">
 				<ProjectIntro>{esbench}</ProjectIntro>
 				<ProjectIntro>{icAnalyzer}</ProjectIntro>
 				<ProjectIntro>{blogProject}</ProjectIntro>

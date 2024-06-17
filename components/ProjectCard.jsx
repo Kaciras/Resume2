@@ -11,10 +11,10 @@ export default function ProjectCard(props) {
 
 	return (
 		<a className={styles.card} href={url}>
-			<div className={styles.header}>
-				<h2 className={styles.name}>{name}</h2>
-				<Image src={icon} alt="language" className={styles.icon}/>
-			</div>
+			<span className={styles.header}>
+				<h2>{name}</h2>
+				<Image src={icon} alt="language"/>
+			</span>
 			{description}
 		</a>
 	);

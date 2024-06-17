@@ -24,6 +24,12 @@
 	}
 }
 
+.markdown {
+	@include pc-layout {
+		padding: 0 2rem;
+	}
+}
+
 .hide-mobile {
 	@include mobile-layout { display: none; }
 }

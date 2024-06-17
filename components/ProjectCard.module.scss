@@ -35,13 +35,13 @@
 	}
 }
 
-.name {
+.header > h2 {
 	margin: 0;
 	line-height: 1;
 	word-wrap: anywhere;
 }
 
-.icon {
+.header > img {
 	flex-shrink: 0;
 	margin-left: auto;
 	width: 36px;
