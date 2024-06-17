@@ -1,3 +1,6 @@
+import ProjectIntro from "../../components/ProjectIntro.jsx";
+import banner from "../../assets/ic-analyzer.png";
+
 ICAnalyzer 是一个**方便（在线使用）、直观（交互丰富）、定量（使用相似度指标）的图片压缩分析工具**。
 
 * [更详细的介绍](https://blog.kaciras.com/article/23/icanalyzer-development-log)
@@ -10,3 +13,22 @@ ICAnalyzer 是一个**方便（在线使用）、直观（交互丰富）、定�
 通过 Highcharts 绘制图表，并添加交互功能，在有限的空间内展示了各种变量和指标。
 
 使用 GitHub Actions 自动构建并上传到 GitHub Pages 和 Vercel，实现零成本部署。
+
+export default function ({ children }) {
+	const stack = {
+		lang: ["TypeScript", "C++", "WebAssembly"],
+		frontend: ["React", "Webpack", "Emscripten", "SWC", "Highcharts"],
+		operation: ["GitHub Actions", "GitHub Pages"],
+	}
+	const links = [
+		{
+			href: "https://ic-analyzer.kaciras.com",
+			text: "ic-analyzer.kaciras.com",
+		},
+		{
+			href: "https://github.com/Kaciras/ICAnalyzer",
+			text: "GitHub",
+		},
+	]
+	return <ProjectIntro name="ICAnalyzer" stack={stack} links={links} banner={banner}>{children}</ProjectIntro>;
+}

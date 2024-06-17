@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useMediaQuery } from "react-responsive";
 import { ImGithub } from "react-icons/im";
 import styles from "./index.module.scss";
 import PageLayout from "../components/PageLayout.jsx";
@@ -36,8 +35,6 @@ function SocialLink({ url, SvgIcon, name }) {
 }
 
 export default function Home() {
-	const isDesktop = useMediaQuery({ query: "(min-width: 1224px)" });
-
 	return (
 		<PageLayout title="首页">
 			<section className={styles.header}>

@@ -3,18 +3,14 @@ import TitledSection from "../../components/TitledSection.jsx";
 import PersonalDetails from "../../components/PersonalDetails.jsx";
 import PageLayout from "../../components/PageLayout.jsx";
 import Attachment from "../../components/Attachment.jsx";
-import ProjectIntro from "../../components/ProjectIntro.jsx";
 import ProjectCard from "../../components/ProjectCard.jsx";
 import { TechMeter, TechMeterList } from "../../components/TechMeter.jsx";
 import logo from "../../assets/web-site.svg";
-import blogScreenshot from "../../assets/blog.png";
-import esbenchBanner from "../../assets/esbench.png";
-import ICAnalyzerImage from "../../assets/ic-analyzer.png";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
-import esbenchDescription from "./ESBench.md";
-import blogDescription from "./Blog.md";
-import icAnalyzerDescription from "./ICAnalyzer.md";
-import skills from "./Skills.md";
+import ESBenchProject from "./ESBench.mdx";
+import BlogProject from "./Blog.mdx";
+import ICAnalyzerProject from "./ICAnalyzer.mdx";
+import Skills from "./Skills.mdx";
 import styles from "./index.module.scss";
 import wcLogo from "../../assets/logo/webcomponent.svg";
 import vueLogo from "devicon/icons/vuejs/vuejs-original.svg";
@@ -28,72 +24,6 @@ import nodeLogo from "devicon/icons/nodejs/nodejs-original.svg";
 import cssLogo from "devicon/icons/css3/css3-original.svg";
 import screenIcon from "../../assets/logo/screen.svg";
 import mobileIcon from "../../assets/logo/mobile.svg";
-import MarkdownView from "../../components/MarkdownView.jsx";
-
-const esbench = {
-	name: "基准测试框架 ESBench",
-	links: [
-		{
-			href: "https://esbench.vercel.app",
-			text: "esbench.vercel.app",
-		},
-		{
-			href: "https://github.com/ESBenchmark/ESBench",
-			text: "GitHub",
-		},
-	],
-	techStack: {
-		lang: ["TypeScript"],
-		frontend: ["Vite", "Vitest", "Vue3", "Monaco Editor", "Chart.js"],
-		backend: ["Playwright"],
-		operation: ["Vercel"],
-	},
-	banner: esbenchBanner,
-	content: esbenchDescription,
-};
-
-const blogProject = {
-	name: "个人网站",
-	links: [
-		{
-			href: "https://blog.kaciras.com",
-			text: "blog.kaciras.com",
-		},
-		{
-			href: "https://github.com/kaciras-blog",
-			text: "GitHub",
-		},
-	],
-	techStack: {
-		lang: ["JAVA", "TypeScript"],
-		frontend: ["NodeJS", "Vite", "Vitest", "PWA", "Vue3", "Storybook"],
-		backend: ["Spring Boot", "Redis", "MySQL", "MyBatis"],
-		operation: ["Nginx", "Debian", "Sentry", "GitHub Actions", "Travis CI"],
-	},
-	banner: blogScreenshot,
-	content: blogDescription,
-};
-
-const icAnalyzer = {
-	name: "ICAnalyzer",
-	links: [
-		{
-			href: "https://ic-analyzer.kaciras.com",
-			text: "ic-analyzer.kaciras.com",
-		},
-		{
-			href: "https://github.com/Kaciras/ICAnalyzer",
-			text: "GitHub",
-		},
-	],
-	techStack: {
-		lang: ["TypeScript", "C++", "WebAssembly"],
-		frontend: ["React", "Webpack", "Emscripten", "SWC", "Highcharts"],
-		operation: ["GitHub Actions", "GitHub Pages"],
-	},
-	banner: ICAnalyzerImage,
-	content: icAnalyzerDescription,
-};
 
 export default function FrontendResume() {
 	return (
@@ -133,13 +63,13 @@ export default function FrontendResume() {
 			</section>
 
 			<TitledSection title="全栈技能树" subtitle="广泛的知识不惧任何挑战" type="skills">
-				<MarkdownView>{skills}</MarkdownView>
+				<div className="markdown"><Skills/></div>
 			</TitledSection>
 
 			<TitledSection title="项目展示" subtitle="编织有艺术感的代码">
-				<ProjectIntro>{esbench}</ProjectIntro>
-				<ProjectIntro>{icAnalyzer}</ProjectIntro>
-				<ProjectIntro>{blogProject}</ProjectIntro>
+				<ESBenchProject/>
+				<ICAnalyzerProject/>
+				<BlogProject/>
 
 				<article>
 					<h1 className={styles.h1}>其它项目</h1>

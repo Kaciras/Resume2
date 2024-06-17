@@ -1,4 +1,4 @@
-import withBundleAnalyzer from "@next/bundle-analyzer";
+import nextMDX from "@next/mdx";
 
 function customWebpack(config) {
 	/*
@@ -24,9 +24,7 @@ function customWebpack(config) {
 	return config;
 }
 
-export default withBundleAnalyzer({
-	enabled: process.env.ANALYZE === "true",
-})({
+export default nextMDX()({
 	webpack: customWebpack,
 	poweredByHeader: false,
 	eslint: {

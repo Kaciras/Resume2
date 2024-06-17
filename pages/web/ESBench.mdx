@@ -1,3 +1,6 @@
+import ProjectIntro from "../../components/ProjectIntro.jsx";
+import banner from "../../assets/esbench.png";
+
 **从零开发整个项目**，经历了[完整的需求分析、竞品对比、架构设计的过程](https://blog.kaciras.com/article/37/build-a-js-benchmarking-tool-esbench)（未来还有推广）。
 
 实现了参数化测试、基线、结果对比，内置支持运行 TypeScript。**功能全面，超越其它现有的工具。**
@@ -9,3 +12,23 @@
 **使用微内核架构设计，做到了高扩展性**：支持自定义指标，添加构建过程，自定义运行平台；也提供 API 用于集成。
 
 能够输出结果为 Markdown 表格、CSV、HTML 图表；支持多种统计学指标。
+
+export default function ({ children }) {
+	const stack = {
+		frontend: ["Vite", "Vitest", "Vue3", "Monaco Editor", "Chart.js"],
+		lang: ["TypeScript"],
+		backend: ["Playwright"],
+		operation: ["Vercel"],
+	}
+	const links = [
+		{
+			href: "https://esbench.vercel.app",
+			text: "esbench.vercel.app",
+		},
+		{
+			href: "https://github.com/ESBenchmark/ESBench",
+			text: "GitHub",
+		},
+	]
+	return <ProjectIntro name="基准测试框架 ESBench" stack={stack} links={links} banner={banner}>{children}</ProjectIntro>;
+}

@@ -2,7 +2,6 @@ import Image from "next/image";
 import ExternalLink from "./ExternalLink.jsx";
 import TechLabels from "./TechLabels.jsx";
 import styles from "./ProjectIntro.module.scss";
-import MarkdownView from "./MarkdownView.jsx";
 
 // 因为链接内的伪元素能够点击，所以用个 span 并禁用选中来做分隔。
 function Delimiter() {
@@ -14,8 +13,7 @@ function Delimiter() {
  * 一张大图片、和一段用 Markdown 渲染的介绍。
  */
 export default function ProjectIntro(props) {
-	const { children } = props;
-	const { name, links, techStack, banner, content } = children;
+	const { name, links, stack, banner, children } = props;
 
 	// 可惜数组的 join 不能使用函数，还得循环做。
 	const items = [];
@@ -42,13 +40,13 @@ export default function ProjectIntro(props) {
 				</h2>
 				<div>{items}</div>
 			</header>
-			<TechLabels stack={techStack}/>
+			<TechLabels stack={stack}/>
 			<Image
 				src={banner}
 				alt="banner"
 				className={styles.banner}
 			/>
-			<MarkdownView>{content}</MarkdownView>
+			<div className="markdown">{children}</div>
 		</article>
 	);
 }
