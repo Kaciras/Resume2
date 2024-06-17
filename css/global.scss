@@ -15,9 +15,7 @@ body {
 	/* 微软雅黑的英文太粗无法跟加粗区分，换个细的 */
 	font-family: Arial, sans-serif;
 
-	& > section:nth-child(odd) {
-		background: red;
-	}
+	background: url("../assets/icon/noise.svg") repeat;
 }
 
 a:not(:hover) {
