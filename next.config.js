@@ -7,10 +7,6 @@ function customWebpack(config) {
 	 */
 	const loaders = [
 		{
-			test: /\.(md|aes)$/,
-			type: "asset/source",
-		},
-		{
 			test: /\.svg$/,
 			resourceQuery: /react/,
 			use: "@svgr/webpack",
