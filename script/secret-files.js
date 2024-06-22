@@ -11,53 +11,50 @@
 import { argv, exit, stdout } from "process";
 import { dirname, join } from "path";
 import { readdirSync, readFileSync, statSync, writeFileSync } from "fs";
-import NodeAESHelper from "../lib/crypto-node.js";
+import { AESHelper } from "@kaciras/utilities/browser";
 
 if (argv.length < 4) {
-	console.error("Arguments required, usage: node script/secret-file.js [en|de]crypt password [filename]");
+	console.error("Arguments required, usage: node script/secret-file.js [en|de]crypt password [path]");
 	exit(2);
 }
 
-const [, __filename, mode, password, filename] = argv;
+const [, , mode, password, filename] = argv;
 
 // ES Module 模式下没有 __dirname，用运行参数代替。
-const root = dirname(dirname(__filename));
+const root = dirname(import.meta.dirname);
 const inputDir = join(root, "secret");
 const outputDir = join(root, "public");
 
-const aes = new NodeAESHelper(password);
+const aes = await AESHelper.withPassword(password);
 
 /**
  * 加密 inputDir 下的文件，如果是目录则递归，结果保存到 outputDir。
  */
-function encryptFiles(name) {
+async function encryptFiles(name) {
 	const path = join(inputDir, name);
 
 	if (statSync(path).isDirectory()) {
 		return readdirSync(path).forEach(encryptFiles);
 	}
 
-	const data = aes.encrypt(readFileSync(path));
+	let data = await aes.encrypt(readFileSync(path));
+	data = Buffer.from(data);
 	writeFileSync(`${outputDir}/${name}.aes`, data);
 }
 
-function decryptFile(name) {
+async function decryptFile(name) {
 	if (!name) {
 		console.error("File name needed for decryption.");
 		exit(2);
 	}
 	const path = join(outputDir, name + ".aes");
-	stdout.write(aes.decrypt(readFileSync(path)));
+	stdout.write(await aes.decryptText(readFileSync(path)));
 }
 
-switch (mode) {
-	case "encrypt":
-		encryptFiles(filename ?? ".");
-		break;
-	case "decrypt":
-		decryptFile(filename);
-		break;
-	default:
-		console.error(`Unknown mode: ${mode}, allow "encrypt" or "decrypt"`);
-		exit(2);
+if (mode === "encrypt") {
+	await encryptFiles(filename ?? "secret");
+} else if (mode === "decrypt") {
+	await decryptFile(filename);
+} else {
+	throw new Error(`Unknown command: ${mode}, available: encrypt, decrypt`);
 }
