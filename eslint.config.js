@@ -1,11 +1,11 @@
 import core from "@kaciras/eslint-config-core";
 import jest from "@kaciras/eslint-config-jest";
-// import react from "@kaciras/eslint-config-react";
+import react from "@kaciras/eslint-config-react";
 
 export default [
 	{ ignores: ["out/**", ".next/**"] },
 	...core.map(config => ({ ...config, files: ["**/*.[jt]s?(x)"] })),
-	// ...react,
+	...react,
 	...jest.map(config => ({ ...config, files: ["**/__tests__/**/*.?(m)js"] })),
 	{
 		rules: {
