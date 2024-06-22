@@ -8,9 +8,9 @@ import { TechMeter, TechMeterList } from "../../components/TechMeter.jsx";
 import logo from "../../assets/web-site.svg";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
 import ESBenchProject from "./ESBench.mdx";
-import BlogProject from "./Blog.mdx";
+import BlogProject from "./KsBlog.mdx";
 import ICAnalyzerProject from "./ICAnalyzer.mdx";
-import Skills from "./Skills.mdx";
+import WebSkills from "./WebSkills.mdx";
 import styles from "./index.module.scss";
 import wcLogo from "../../assets/logo/webcomponent.svg";
 import vueLogo from "devicon/icons/vuejs/vuejs-original.svg";
@@ -36,7 +36,7 @@ export default function FrontendResume() {
 						type="application/pdf"
 					>
 						<BsFillFileEarmarkArrowDownFill className={styles.buttonIcon}/>
-						下载 PDF 版简历
+						PDF 版简历
 					</Attachment>
 				</div>
 			</PersonalDetails>
@@ -63,7 +63,7 @@ export default function FrontendResume() {
 			</section>
 
 			<TitledSection title="全栈技能树" subtitle="广泛的知识不惧任何挑战" type="skills">
-				<div className="markdown"><Skills/></div>
+				<div className="markdown"><WebSkills/></div>
 			</TitledSection>
 
 			<TitledSection title="项目展示" subtitle="编织有艺术感的代码">
@@ -76,7 +76,7 @@ export default function FrontendResume() {
 					<div className={styles.cards}>
 						<ProjectCard
 							name="ts-directly"
-							description="7.5 KB（压缩后）库让 Node 直接运行 TS，自动选择已安装的编译器，支持 SWC、esbuild、tsc。"
+							description="7.5 KB（压缩后）库让 Node 直接运行 TS，自动选择已安装的编译器，支持 SWC、esbuild、sucrase、tsc。"
 							url="https://github.com/Kaciras/ts-directly"
 							icon={typescriptLogo}
 						/>

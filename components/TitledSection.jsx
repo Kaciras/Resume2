@@ -5,7 +5,7 @@ export default function TitledSection({ title, subtitle, children, type }) {
 	const header = (
 		<header className={styles.header}>
 			<h1>{title}</h1>
-			{subtitle && <h2>{subtitle}</h2>}
+			{subtitle && <div>{subtitle}</div>}
 		</header>
 	);
 	const clazz = clsx("content", styles[type]);
