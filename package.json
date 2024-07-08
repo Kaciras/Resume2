@@ -16,7 +16,7 @@
 		"build": "next build"
 	},
 	"dependencies": {
-		"@kaciras/utilities": "^1.0.0",
+		"@kaciras/utilities": "^1.0.2",
 		"@mdx-js/react": "^3.0.1",
 		"clsx": "^2.1.1",
 		"devicon": "^2.16.0",
@@ -35,8 +35,8 @@
 		"@next/mdx": "^14.2.4",
 		"@svgr/webpack": "^8.1.0",
 		"@types/react": "^18.3.3",
-		"eslint": "^9.5.0",
+		"eslint": "^9.6.0",
 		"eslint-config-next": "^14.2.4",
-		"sass": "^1.77.5"
+		"sass": "^1.77.6"
 	}
 }
