@@ -24,18 +24,18 @@
 		"qrcode": "^1.5.4",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
-		"react-icons": "^5.2.1"
+		"react-icons": "^5.3.0"
 	},
 	"devDependencies": {
-		"@kaciras/eslint-config-core": "^3.1.0",
-		"@kaciras/eslint-config-jest": "^3.1.0",
-		"@kaciras/eslint-config-react": "^3.1.0",
+		"@kaciras/eslint-config-core": "^3.2.0",
+		"@kaciras/eslint-config-jest": "^3.2.0",
+		"@kaciras/eslint-config-react": "^3.2.0",
 		"@mdx-js/loader": "^3.0.1",
 		"@next/bundle-analyzer": "^14.2.5",
 		"@next/mdx": "^14.2.5",
 		"@svgr/webpack": "^8.1.0",
 		"@types/react": "^18.3.3",
-		"eslint": "^9.8.0",
+		"eslint": "^9.9.0",
 		"eslint-config-next": "^14.2.5",
 		"sass": "^1.77.8"
 	}
