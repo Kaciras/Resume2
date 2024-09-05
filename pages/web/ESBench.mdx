@@ -1,5 +1,4 @@
 import ProjectIntro from "../../components/ProjectIntro.jsx";
-import banner from "../../assets/esbench.png";
 
 **从零开发整个项目**，经历了[完整的需求分析、竞品对比、架构设计的过程](https://blog.kaciras.com/article/37/build-a-js-benchmarking-tool-esbench)（未来还有推广）。
 
@@ -30,5 +29,5 @@ export default function ({ children }) {
 			text: "GitHub",
 		},
 	]
-	return <ProjectIntro name="基准测试框架 ESBench" stack={stack} links={links} banner={banner}>{children}</ProjectIntro>;
+	return <ProjectIntro name="基准测试框架 ESBench" stack={stack} links={links}>{children}</ProjectIntro>;
 }

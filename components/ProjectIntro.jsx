@@ -41,11 +41,14 @@ export default function ProjectIntro(props) {
 				<div>{items}</div>
 			</header>
 			<TechLabels stack={stack}/>
-			<Image
-				src={banner}
-				alt="banner"
-				className={styles.banner}
-			/>
+			{
+				// 大图是可选的，因为简历可能需要紧凑一点。
+				banner && <Image
+					src={banner}
+					alt="banner"
+					className={styles.banner}
+				/>
+			}
 			<div className="markdown">{children}</div>
 		</article>
 	);
