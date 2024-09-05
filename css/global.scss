@@ -18,8 +18,12 @@ body {
 	background: url("../assets/icon/noise.svg") repeat;
 }
 
-a:not(:hover) {
-	text-decoration: none;
+a {
+	color: #0567f1;
+
+	:visited {
+		color: inherit;
+	}
 }
 
 address {
@@ -45,4 +49,8 @@ ul, ol {
 	@include mobile-layout {
 		padding-left: 1em;
 	}
+}
+
+strong {
+	color: #dd0197;
 }
