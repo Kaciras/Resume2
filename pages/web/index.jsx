@@ -4,7 +4,6 @@ import PersonalDetails from "../../components/PersonalDetails.jsx";
 import PageLayout from "../../components/PageLayout.jsx";
 import Attachment from "../../components/Attachment.jsx";
 import ProjectCard from "../../components/ProjectCard.jsx";
-import { TechMeter, TechMeterList } from "../../components/TechMeter.jsx";
 import logo from "../../assets/web-site.svg";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
 import ESBenchProject from "./ESBench.mdx";
@@ -12,23 +11,16 @@ import BlogProject from "./KsBlog.mdx";
 import ICAnalyzerProject from "./ICAnalyzer.mdx";
 import WebSkills from "./WebSkills.mdx";
 import styles from "./index.module.scss";
-import wcLogo from "../../assets/logo/webcomponent.svg";
-import vueLogo from "devicon/icons/vuejs/vuejs-original.svg";
-import reactLogo from "devicon/icons/react/react-original.svg";
-import viteLogo from "../../assets/logo/vite.svg";
 import typescriptLogo from "devicon/icons/typescript/typescript-original.svg";
 import javascriptLogo from "devicon/icons/javascript/javascript-original.svg";
-import webpackLogo from "devicon/icons/webpack/webpack-original.svg";
-import nodeLogo from "devicon/icons/nodejs/nodejs-original.svg";
-import cssLogo from "devicon/icons/css3/css3-original.svg";
-import screenIcon from "../../assets/logo/screen.svg";
-import mobileIcon from "../../assets/logo/mobile.svg";
+import CommitCalendar from "../../components/CommitCalendar.jsx";
 
 export default function FrontendResume() {
 	return (
 		<PageLayout title="Web 前端开发工程师">
 			<PersonalDetails title="Web 前端开发工程师">
 				<div className={styles.custom}>
+					{/* 这个图片没什么用，但右边太空荡不好看 */}
 					<Image src={logo} alt="logo" className={styles.logo}/>
 					<Attachment
 						name="front-end.pdf"
@@ -40,6 +32,7 @@ export default function FrontendResume() {
 				</div>
 			</PersonalDetails>
 
+			{/*
 			<section className={styles.proficiency}>
 				<TechMeterList name="页面框架">
 					<TechMeter name="Vue" value="100" logo={vueLogo}/>
@@ -60,12 +53,14 @@ export default function FrontendResume() {
 					<TechMeter name="HTML + CSS" value="75" logo={cssLogo}/>
 				</TechMeterList>
 			</section>
+			*/}
 
 			<TitledSection title="全栈技能树" subtitle="广泛的知识不惧任何挑战" type="skills">
 				<div className="markdown"><WebSkills/></div>
+				<CommitCalendar className="center"></CommitCalendar>
 			</TitledSection>
 
-			<TitledSection title="项目展示" subtitle="编织有艺术感的代码">
+			<TitledSection title="项目经历" subtitle="编织有艺术感的代码">
 				<ESBenchProject/>
 				<ICAnalyzerProject/>
 				<BlogProject/>
