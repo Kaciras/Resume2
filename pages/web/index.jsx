@@ -32,29 +32,6 @@ export default function FrontendResume() {
 				</div>
 			</PersonalDetails>
 
-			{/*
-			<section className={styles.proficiency}>
-				<TechMeterList name="页面框架">
-					<TechMeter name="Vue" value="100" logo={vueLogo}/>
-					<TechMeter name="React" value="75" logo={reactLogo}/>
-					<TechMeter name="WebComponent & VanillaJS" value="60" logo={wcLogo}/>
-				</TechMeterList>
-				<TechMeterList name="平台" color="#bb00cb">
-					<TechMeter name="NodeJS" value="100" logo={nodeLogo}/>
-					<TechMeter name="Browser (Desktop)" value="90" logo={screenIcon}/>
-					<TechMeter name="Browser (Mobile)" value="65" logo={mobileIcon}/>
-				</TechMeterList>
-				<TechMeterList name="构建工具" color="#0053c7">
-					<TechMeter name="Vite & Rollup" value="100" logo={viteLogo}/>
-					<TechMeter name="Webpack" value="70" logo={webpackLogo}/>
-				</TechMeterList>
-				<TechMeterList name="语言" color="#d40b15">
-					<TechMeter name="TypeScript & JavaScript" value="100" logo={typescriptLogo}/>
-					<TechMeter name="HTML + CSS" value="75" logo={cssLogo}/>
-				</TechMeterList>
-			</section>
-			*/}
-
 			<TitledSection title="全栈技能树" subtitle="广泛的知识不惧任何挑战" type="skills">
 				<div className="markdown"><WebSkills/></div>
 				<CommitCalendar className="center"/>
