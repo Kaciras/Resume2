@@ -1,23 +1,27 @@
 import ProjectIntro from "../../components/ProjectIntro.jsx";
 
-**从零开发整个项目**，经历了[完整的需求分析、竞品对比、架构设计的过程](https://blog.kaciras.com/article/37/build-a-js-benchmarking-tool-esbench)（未来还有推广）。
+### 需求
 
-实现了参数化测试、基线、结果对比，内置支持运行 TypeScript。**功能全面，超越其它现有的工具。**
+随着同构应用的流行，以及 Bun、Deno 等新兴引擎的出现，同一套代码在不同平台上的性能表现逐渐成为了值得关注的指标，而目前的基准测试工具功能较弱，也无法做到多端运行并聚合结果，故决定开发本项目。
 
-支持跨平台运行，**能将同一套测试跑在浏览器、Node、Bun、手机端等等**，对比不同平台的性能。
+### 实现
 
-拥有完善的文档，丰富的示例，清晰的注释，可靠的测试。带 Playground 可在线运行；还提供 IDEA 和 VSCode 插件。
+在前期进行调研，包括 benchmark.js、tinybench 等 8 种库，以及不同语言的 JMH、BenchmarkDotNet、Criterion.rs。**完成了需求评估，技术选型，以及确定 API 设计的最佳实践。**
 
-**使用微内核架构设计，做到了高扩展性**：支持自定义指标，添加构建过程，自定义运行平台；也提供 API 用于集成。
+理清数据结构，以及模块的划分，并对功能进行逐一实现，**通过单元测试保证确保迭代过程的正确性。**
 
-能够输出结果为 Markdown 表格、CSV、HTML 图表；支持多种统计学指标。
+使用 VitePress 构建文档站点并**编写了完善的文档、丰富的示例；还开发了在线 Playground、IDE 插件**，大幅降低了上手门槛，提升了项目的完整性。
+
+### 结果
+
+完整地实现了开始的需求，功能上超越了现有的库，插件化架构也能够快速应对未来的场景，为 JS 性能优化提供了一个易于上手、强而有力的工具。
 
 export default function ({ children }) {
 	const stack = {
 		frontend: ["Vite", "Vitest", "Vue3", "Monaco Editor", "Chart.js"],
-		lang: ["TypeScript"],
-		backend: ["Playwright"],
-		operation: ["Vercel"],
+		lang: ["TypeScript", "Vue"],
+		backend: ["Playwright", "Vitepress"],
+		operation: ["Vercel", "Codecov"],
 	}
 	const links = [
 		{

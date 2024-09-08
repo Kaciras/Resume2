@@ -1,23 +1,30 @@
 import ProjectIntro from "../../components/ProjectIntro.jsx";
 
-ICAnalyzer 是一个**方便（在线使用）、直观（交互丰富）、定量（使用相似度指标）的图片压缩分析工具**。
+### 需求
 
-* [更详细的介绍](https://blog.kaciras.com/article/23/icanalyzer-development-log)
-* [应用实例：WebP 转换参数分析](https://blog.kaciras.com/article/24/analyze-WebP-encode-options)
+图片是前端最常用的资源，占页面流量的主要部分，对图片的压缩成为了前端开发必不可少的一步。目前对压缩的结果质量缺乏广泛地评估，在实际中也发现[某些情况](https://blog.kaciras.com/article/19/Introduction-to-Web-Image-Formats#webp-%E7%9A%84%E7%BC%BA%E9%99%B7)会导致负优化。为了提升图片压缩效率，以及设计优化方案，特开发本工具。
 
-**全程使用 React Hooks**，以简洁的代码实现了美观的界面。同时使用 Devtool 对应用进行分析并优化性能。
+### 实现
 
-**编译 C++ 代码为 WebAssembly**，让编码器在浏览器上执行，**并通过 WebWorker 实现多线程**，充分利用 CPU。
+调研图片编码的技术生态、Squoosh 等在线转码的工具的设计，明确应用的功能需求，梳理了交互流程。
 
-通过 Highcharts 绘制图表，并添加交互功能，在有限的空间内展示了各种变量和指标。
+[整合最新版本的开源编码器](https://github.com/Kaciras/icodec)，**编写 C++ 适配层并编译为 WebAssembly**，实现了在在浏览器中转码，无需上传图片以及购买算力服务器，大大简化了项目的部署，解决了数据的隐私问题。
 
-使用 GitHub Actions 自动构建并上传到 GitHub Pages 和 Vercel，实现零成本部署。
+研究图片相似度的判断方法，并集成相关代码，**还将数据绘制为 HighCharts 图表，实现了对结果的定量分析。**
+
+**对代码进行 Tree-Shakable 设计**，实现了编码器的动态加载，同时**使用 WebWorker 构建线程池**，极大地提升了应用的性能。
+
+[使用 Profiler 分析关键路径](https://blog.kaciras.com/article/25/optimize-react-performace-with-nested-object)，并结合数据特点进行优化，让操作的用时低于刷新间隔，用户感受不到卡顿。
+
+### 结果
+
+最终实现了一个方便（在线使用）、直观（交互丰富）、定量（使用相似度指标）的图片压缩分析工具。并[用其分析了 WebP 的参数](https://blog.kaciras.com/article/24/analyze-WebP-encode-options)，成功解决负优化问题，并制定了图片压缩的最佳方案。
 
 export default function ({ children }) {
 	const stack = {
 		lang: ["TypeScript", "C++", "WebAssembly"],
 		frontend: ["React", "Webpack", "Emscripten", "SWC", "Highcharts"],
-		operation: ["GitHub Actions", "GitHub Pages"],
+		operation: ["GitHub Actions"],
 	}
 	const links = [
 		{

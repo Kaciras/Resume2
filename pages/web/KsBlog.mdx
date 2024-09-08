@@ -1,26 +1,25 @@
 import ProjectIntro from "../../components/ProjectIntro.jsx";
 
-从 0 开发整个项目，包括设计、前端、后端、运维，写文。
+### 需求
 
-**功能完整**，具有评论系统、后台、编辑器等 CMS 所需的功能；**性能强大**，[Lighthouse 满分](https://blog.kaciras.com/article/28/kaciras-blog-v2-release-note#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)。
+额……我觉得做为技术人，总得有个分享的地方，特别是作为前端开发者，拥有自己的网站是标配。
 
-**为 Vite 编写插件**，提供了资源压缩、图片优化、SVG 组件等丰富的功能。
+### 实现
 
-**实现了图片上传后自动优化，节约了 93.6% 的流量**（根据文章里的图片计算）。
-  - [Web 图片优化（一）：压缩方案简介](https://blog.kaciras.com/article/19/Introduction-to-Web-Image-Formats)
+从零开发整个项目，包括前端、后端、运维，写文。做到了**功能完整**，具有评论系统、后台、编辑器等 CMS 所需的模块；**性能强大**，[Lighthouse 满分](https://blog.kaciras.com/article/28/kaciras-blog-v2-release-note#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)。
 
-[扩展 Markdown 转换器使其能够插入视频](https://blog.kaciras.com/article/18/add-video-support-to-markdown)
+**编写 Vite 插件**，提供了资源压缩、模块合并、SVG 组件等丰富的功能。开发 Koa 中间件，**实现了图片上传后自动优化，节约了 93.6% 的流量**（根据文章里的图片计算）。
 
-**支持 PWA**，使用自定义的 ServiceWorker，支持离线访问，还可以添加到桌面。
+实现服务端渲染，让动态内容同样被搜索引擎收录，并提升首屏速度。编写 ServiceWorker 模块，让网站能够离线访问。
 
-支持服务端渲染，让动态内容同样被搜索引擎收录，并提升首屏速度。
+[集成 VSCode 的编辑器](https://blog.kaciras.com/article/36/Integrate-monaco-editor-into-my-blog)，提供了一致的写文体验；**扩展 Markdown-It 添加自定义语法**，增强了 Markdown 的表达能力。
 
 export default function ({ children }) {
 	const stack = {
 		frontend: ["NodeJS", "Vite", "Vitest", "PWA", "Vue3", "Storybook"],
 		backend: ["Spring Boot", "Redis", "MySQL", "MyBatis"],
 		lang: ["JAVA", "TypeScript"],
-		operation: ["Nginx", "Debian", "Sentry", "GitHub Actions", "Travis CI"],
+		operation: ["Nginx", "Debian", "Sentry"],
 	}
 	const links = [
 		{
