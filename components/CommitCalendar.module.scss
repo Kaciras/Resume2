@@ -1,3 +1,5 @@
+@import "../css/mixins.scss";
+
 .container {
 	display: grid;
 	grid-template-columns: auto 1fr auto;
@@ -8,6 +10,10 @@
 	padding: 12px;
 	border: solid 1px #D1D9E0;
 	border-radius: 0.375rem;
+
+	@include mobile-layout {
+		display: none;  /* 太长手机显示不下 */
+	}
 }
 
 .header {

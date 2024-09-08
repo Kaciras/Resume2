@@ -1,11 +1,15 @@
 import clsx from "clsx";
-import commits from "../lib/commits.json" with { type: "json" };
+import data from "../lib/commits.json" with { type: "json" };
 import styles from "./CommitCalendar.module.scss";
 
 export default function CommitCalendar(props) {
+	const { begin, end, commits } = data;
+	const fromMonth = new Date(begin).getMonth();
+	const toMonth = new Date(end).getMonth();
+
 	const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-	const fromMonth = new Date(commits[0].date).getMonth();
-	months.push(...months.splice(0, fromMonth), months[0]);
+	months.push(...months.splice(0, fromMonth));
+	months.push(toMonth === fromMonth ? months[0] : "")
 
 	let totalCommits = 0;
 
@@ -34,7 +38,7 @@ export default function CommitCalendar(props) {
 				{tiles}
 			</div>
 			<span className={styles.total}>
-				{totalCommits} contributions
+				{totalCommits} contributions in the last year
 			</span>
 			<div className={styles.legend}>
 				Less

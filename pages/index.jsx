@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ImGithub } from "react-icons/im";
-import styles from "./index.module.scss";
 import PageLayout from "../components/PageLayout.jsx";
 import home from "../assets/icon/home.svg?react";
+import styles from "./index.module.scss";
 
 function Position({ title, children, href }) {
 	if (typeof location !== "undefined" && location.search) {

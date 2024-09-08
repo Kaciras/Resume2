@@ -4,7 +4,7 @@
 	display: block;
 	padding: 20px;
 
-	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+	border: solid 1px #ccc;
 	background: white;
 	border-radius: 8px;
 
@@ -12,11 +12,10 @@
 	color: inherit;
 
 	transition: .3s;
-	transition-property: transform, box-shadow;
+	transition-property: border-color;
 
 	&:hover, &:focus-visible {
-		transform: translateY(-4px);
-		box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+		border-color: #0567f1;
 	}
 
 	@include mobile-layout {
