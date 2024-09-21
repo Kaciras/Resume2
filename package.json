@@ -16,11 +16,11 @@
 		"build": "next build"
 	},
 	"dependencies": {
-		"@kaciras/utilities": "^1.0.3",
+		"@kaciras/utilities": "^1.0.4",
 		"@mdx-js/react": "^3.0.1",
 		"clsx": "^2.1.1",
 		"devicon": "^2.16.0",
-		"next": "^14.2.11",
+		"next": "^14.2.13",
 		"qrcode": "^1.5.4",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
@@ -31,12 +31,12 @@
 		"@kaciras/eslint-config-jest": "^3.2.0",
 		"@kaciras/eslint-config-react": "^3.2.0",
 		"@mdx-js/loader": "^3.0.1",
-		"@next/bundle-analyzer": "^14.2.11",
-		"@next/mdx": "^14.2.11",
+		"@next/bundle-analyzer": "^14.2.13",
+		"@next/mdx": "^14.2.13",
 		"@svgr/webpack": "^8.1.0",
-		"@types/react": "^18.3.5",
-		"eslint": "^9.10.0",
-		"eslint-config-next": "^14.2.11",
-		"sass": "^1.78.0"
+		"@types/react": "^18.3.8",
+		"eslint": "^9.11.0",
+		"eslint-config-next": "^14.2.13",
+		"sass": "^1.79.3"
 	}
 }
