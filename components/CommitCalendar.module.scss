@@ -2,8 +2,9 @@
 
 .container {
 	display: grid;
-	grid-template-columns: auto 1fr auto;
-	grid-template-rows: auto auto auto;
+	grid-template-columns: auto repeat(53, 10px);
+	grid-template-rows: auto repeat(7, 10px) auto;
+	gap: 3px;
 
 	width: fit-content;
 	font-size: 12px;
@@ -16,34 +17,30 @@
 	}
 }
 
-.header {
-	grid-column: 2/4;
-	margin-bottom: 2px;
+.month {
+	grid-row: 1/2;
+	grid-column-start: span 4;
+	margin-bottom: -2px;
 	display: flex;
 	justify-content: space-between;
 }
 
-.weeks {
-	grid-row: 2/3;
-	margin-right: 8px;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	align-items: flex-end;
+.week {
+	grid-column: 1/2;
+	grid-row-start: span 2;
+	align-content: end;
+	line-height: 10px;
+	margin-right: 5px;
 }
 
 .tiles {
-	grid-row: 2/3;
-	grid-column: 2/4;
+	grid-column: 2/55;
+	grid-row: 2/9;
 
 	display: grid;
-	gap: 3px;
 	grid-auto-flow: column;
-	grid-template-columns: repeat(53, 10px);
-	grid-template-rows: repeat(7, 10px);
-
-	margin-bottom: 0.5rem;
+	grid-template-columns: subgrid;
+	grid-template-rows: subgrid;
 }
 
 .tile {
@@ -52,6 +49,7 @@
 	height: 10px;
 	border-radius: 2px;
 
+	&[data-level="0"] { background: #EBEDF0; }
 	&[data-level="1"] { background: #9be9a8; }
 	&[data-level="2"] { background: #40C463; }
 	&[data-level="3"] { background: #30a14e; }
@@ -59,12 +57,16 @@
 }
 
 .total {
-	grid-column: 2/3;
+	grid-column: 2/30;
+	margin-top: 5px;
 }
 
 .legend {
-	grid-column: 3/4;
+	grid-column: 30/53;
+	margin-top: 5px;
+
 	display: flex;
 	gap: 5px;
+	justify-content: right;
 	align-items: center;
 }
