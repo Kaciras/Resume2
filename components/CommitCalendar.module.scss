@@ -27,10 +27,18 @@
 
 .week {
 	grid-column: 1/2;
-	grid-row-start: span 2;
+	grid-row-start: 3;
 	align-content: end;
 	line-height: 10px;
 	margin-right: 5px;
+
+	& + .week {
+		grid-row-start: 5;
+	}
+
+	& + .week + .week {
+		grid-row-start: 7;
+	}
 }
 
 .tiles {

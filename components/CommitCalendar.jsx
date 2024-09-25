@@ -35,7 +35,6 @@ export default function CommitCalendar(props) {
 
 	return (
 		<div className={clsx(styles.container, props.className)}>
-			<div style={{ gridColumn: `1/5`, gridRow: "1/2" }}></div>
 
 			{months.map(m => <span className={styles.month}>{m}</span>)}
 
