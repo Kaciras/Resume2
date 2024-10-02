@@ -1,10 +1,11 @@
+import React from "react";
 import clsx from "clsx";
 import commits from "../lib/commits.json" with { type: "json" };
 import styles from "./CommitCalendar.module.scss";
 
 const MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-// 英语就是有个复数的麻烦
+// 生成气泡提示的内容，主要就是处理英语就的复数词尾，中文就没这破事。
 function getTooltip(commit, date) {
 	if (commit.level === -1) {
 		return null;
@@ -25,7 +26,7 @@ function daysInMonth(date) {
 	return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
 }
 
-export default function CommitCalendar(props) {
+export default React.memo(props => {
 	const padStart = new Date(commits[0].date).getDay();
 	const months = [];
 
@@ -83,4 +84,4 @@ export default function CommitCalendar(props) {
 			</div>
 		</div>
 	);
-}
+});
