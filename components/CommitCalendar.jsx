@@ -21,23 +21,22 @@ function getTooltip(commit, date) {
 	}
 }
 
-// 获取 date 所在的月份有几天，比如 daysInMonth(new Date("2008-2-16")) -> 29
-function daysInMonth(date) {
-	return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
-}
-
 export default React.memo(props => {
 	const padStart = new Date(commits[0].date).getDay();
 	const months = [];
-
 	let totalCommits = 0;
+	let latestMonth = -1;
 
 	const tiles = commits.map((c, i) => {
 		const date = new Date(c.date);
+		const month = date.getMonth();
 		totalCommits += c.count;
 
-		if (date.getDate() === daysInMonth(date)) {
+		// 在星期天的月份出现变化的列上面显示月份。
+		if (date.getDay() === 0 && month !== latestMonth) {
+			// 计算月份对应的列，从 1 开始、左上角格子留空所以 +2
 			const gridColumnStart = 2 + Math.floor((i + padStart) / 7);
+			latestMonth = month;
 			months.push(
 				<div
 					className={styles.month}
@@ -48,7 +47,6 @@ export default React.memo(props => {
 				</div>,
 			);
 		}
-
 		return (
 			<i
 				className={styles.tile}
