@@ -1,5 +1,7 @@
 import { writeFileSync } from "fs";
+import { join } from "path";
 import { getGitHubContributions } from "../lib/common.js";
 
-const data = await getGitHubContributions("Kaciras");
-writeFileSync("commits.json", JSON.stringify(data));
+const commits = await getGitHubContributions("Kaciras");
+const json = JSON.stringify(commits);
+writeFileSync(join(import.meta.dirname, "../lib/commits.json"), json);
