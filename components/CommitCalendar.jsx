@@ -21,6 +21,7 @@ function getTooltip(commit, date) {
 	}
 }
 
+// 里头需要循环 365 到 372 次，耗时 3ms，还是用 memo 包装下吧。
 export default React.memo(props => {
 	const padStart = new Date(commits[0].date).getDay();
 	const months = [];
@@ -35,13 +36,13 @@ export default React.memo(props => {
 		// 在星期天的月份出现变化的列上面显示月份。
 		if (date.getDay() === 0 && month !== latestMonth) {
 			// 计算月份对应的列，从 1 开始、左上角格子留空所以 +2
-			const gridColumnStart = 2 + Math.floor((i + padStart) / 7);
+			const gridColumn = 2 + Math.floor((i + padStart) / 7);
 			latestMonth = month;
 			months.push(
 				<div
 					className={styles.month}
 					key={i}
-					style={{ gridColumnStart }}
+					style={{ gridColumn }}
 				>
 					{MONTH[date.getMonth()]}
 				</div>,
@@ -56,6 +57,15 @@ export default React.memo(props => {
 			/>
 		);
 	});
+
+	// 俩月份之间至少隔三格，避免重叠，只可能出现在第一个月。
+	if (months[1].props.style.gridColumn - months[0].props.style.gridColumn < 3) {
+		months[0] = null;
+	}
+	// 如果最后一个月在最后一格，则会超出布局范围，故隐藏。
+	if (months.at(-1).props.style.gridColumn > 53) {
+		months[months.length - 1] = null;
+	}
 
 	return (
 		<div className={clsx(styles.container, props.className)}>
