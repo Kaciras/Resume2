@@ -1,6 +1,5 @@
 import React from "react";
 import clsx from "clsx";
-import commits from "../lib/commits.json" with { type: "json" };
 import styles from "./CommitCalendar.module.scss";
 
 const MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -23,12 +22,12 @@ function getTooltip(commit, date) {
 
 // 里头需要循环 365 到 372 次，耗时 3ms，还是用 memo 包装下吧。
 export default React.memo(props => {
-	const padStart = new Date(commits[0].date).getDay();
+	const padStart = new Date(props.commits[0].date).getDay();
 	const months = [];
 	let totalCommits = 0;
 	let latestMonth = -1;
 
-	const tiles = commits.map((c, i) => {
+	const tiles = props.commits.map((c, i) => {
 		const date = new Date(c.date);
 		const month = date.getMonth();
 		totalCommits += c.count;
@@ -70,14 +69,12 @@ export default React.memo(props => {
 	return (
 		<div className={clsx(styles.container, props.className)}>
 			{months}
-
 			<span className={styles.week}>Mon</span>
 			<span className={styles.week}>Wed</span>
 			<span className={styles.week}>Fri</span>
 
-			<div className={styles.tiles}>
-				{tiles}
-			</div>
+			<div className={styles.tiles}>{tiles}</div>
+
 			<div className={styles.total}>
 				{totalCommits} contributions in the last year
 			</div>

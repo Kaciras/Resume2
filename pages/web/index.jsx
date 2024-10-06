@@ -13,6 +13,7 @@ import ICAnalyzerProject from "./ICAnalyzer.mdx";
 import WebSkills from "./WebSkills.mdx";
 import typescriptLogo from "devicon/icons/typescript/typescript-original.svg";
 import javascriptLogo from "devicon/icons/javascript/javascript-original.svg";
+import commits from "../../lib/commits.json" with { type: "json" };
 import styles from "./index.module.scss";
 
 export default function FrontendResume() {
@@ -34,7 +35,7 @@ export default function FrontendResume() {
 
 			<TitledSection title="全栈技能树" subtitle="广泛的知识不惧任何挑战" type="skills">
 				<div className="markdown"><WebSkills/></div>
-				<CommitCalendar className="center"/>
+				<CommitCalendar className="center" commits={commits}/>
 			</TitledSection>
 
 			<TitledSection title="项目经历" subtitle="编织有艺术感的代码">
