@@ -1,36 +1,42 @@
 import React from "react";
 import clsx from "clsx";
-import styles from "./CommitCalendar.module.scss";
+import styles from "./ContributionCalendar.module.scss";
 
 const MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 // 生成气泡提示的内容，主要就是处理英语就的复数词尾，中文就没这破事。
-function getTooltip(commit, date) {
-	if (commit.level === -1) {
+function getTooltip(oneDay, date) {
+	if (oneDay.level === -1) {
 		return null;
 	}
 	const s = date.toISOString().split("T")[0];
-	switch (commit.count) {
+	switch (oneDay.count) {
 		case 0:
 			return `No contributions on ${s}`;
 		case 1:
 			return `1 contribution on ${s}`;
 		default:
-			return `${commit.count} contributions on ${s}`;
+			return `${oneDay.count} contributions on ${s}`;
 	}
 }
 
-// 里头需要循环 365 到 372 次，耗时 3ms，还是用 memo 包装下吧。
-export default React.memo(props => {
-	const padStart = new Date(props.commits[0].date).getDay();
+/**
+ * 仿 GitHub 的贡献图，数据可以用 /script/fetch-contributions.js 抓取。
+ *
+ * @example
+ * const data = [{ level: 1, count: 5, date: 1728272654618 }, ...];
+ * <ContributionCalendar contributions={data}/>
+ */
+function ContributionCalendar(props) {
+	const padStart = new Date(props.contributions[0].date).getDay();
 	const months = [];
-	let totalCommits = 0;
+	let total = 0;
 	let latestMonth = -1;
 
-	const tiles = props.commits.map((c, i) => {
+	const tiles = props.contributions.map((c, i) => {
 		const date = new Date(c.date);
 		const month = date.getMonth();
-		totalCommits += c.count;
+		total += c.count;
 
 		// 在星期天的月份出现变化的列上面显示月份。
 		if (date.getDay() === 0 && month !== latestMonth) {
@@ -76,7 +82,7 @@ export default React.memo(props => {
 			<div className={styles.tiles}>{tiles}</div>
 
 			<div className={styles.total}>
-				{totalCommits} contributions in the last year
+				{total} contributions in the last year
 			</div>
 			<div className={styles.legend}>
 				Less
@@ -89,4 +95,7 @@ export default React.memo(props => {
 			</div>
 		</div>
 	);
-});
+}
+
+// 里头需要循环 365 到 372 次，耗时 3ms，还是用 memo 包装下吧。
+export default React.memo(ContributionCalendar);

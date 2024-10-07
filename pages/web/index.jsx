@@ -4,7 +4,7 @@ import PersonalDetails from "../../components/PersonalDetails.jsx";
 import PageLayout from "../../components/PageLayout.jsx";
 import Attachment from "../../components/Attachment.jsx";
 import ProjectCard from "../../components/ProjectCard.jsx";
-import CommitCalendar from "../../components/CommitCalendar.jsx";
+import ContributionCalendar from "../../components/ContributionCalendar.jsx";
 import logo from "../../assets/web-site.svg";
 import { BsFillFileEarmarkArrowDownFill } from "react-icons/bs";
 import ESBenchProject from "./ESBench.mdx";
@@ -13,7 +13,7 @@ import ICAnalyzerProject from "./ICAnalyzer.mdx";
 import WebSkills from "./WebSkills.mdx";
 import typescriptLogo from "devicon/icons/typescript/typescript-original.svg";
 import javascriptLogo from "devicon/icons/javascript/javascript-original.svg";
-import commits from "../../lib/commits.json" with { type: "json" };
+import contributions from "../../lib/contributions.json" with { type: "json" };
 import styles from "./index.module.scss";
 
 export default function FrontendResume() {
@@ -34,8 +34,13 @@ export default function FrontendResume() {
 			</PersonalDetails>
 
 			<TitledSection title="全栈技能树" subtitle="广泛的知识不惧任何挑战" type="skills">
-				<div className="markdown"><WebSkills/></div>
-				<CommitCalendar className="center" commits={commits}/>
+				<div className="markdown">
+					<WebSkills/>
+				</div>
+				<ContributionCalendar
+					className="center"
+					contributions={contributions}
+				/>
 			</TitledSection>
 
 			<TitledSection title="项目经历" subtitle="编织有艺术感的代码">
