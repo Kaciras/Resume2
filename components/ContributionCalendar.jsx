@@ -6,9 +6,6 @@ const MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "O
 
 // 生成气泡提示的内容，主要就是处理英语就的复数词尾，中文就没这破事。
 function getTooltip(oneDay, date) {
-	if (oneDay.level === -1) {
-		return null;
-	}
 	const s = date.toISOString().split("T")[0];
 	switch (oneDay.count) {
 		case 0:
@@ -97,5 +94,5 @@ function ContributionCalendar(props) {
 	);
 }
 
-// 里头需要循环 365 到 372 次，耗时 3ms，还是用 memo 包装下吧。
+// 里头需要循环 365 次，耗时 3ms，还是用 memo 包装下吧。
 export default React.memo(ContributionCalendar);
