@@ -25,7 +25,8 @@ function getTooltip(oneDay, date) {
  * <ContributionCalendar contributions={data}/>
  */
 function ContributionCalendar(props) {
-	const padStart = new Date(props.contributions[0].date).getDay();
+	const firstDate = new Date(props.contributions[0].date);
+	const startRow = firstDate.getDay();
 	const months = [];
 	let total = 0;
 	let latestMonth = -1;
@@ -38,16 +39,16 @@ function ContributionCalendar(props) {
 		// 在星期天的月份出现变化的列上面显示月份。
 		if (date.getDay() === 0 && month !== latestMonth) {
 			// 计算月份对应的列，从 1 开始、左上角格子留空所以 +2
-			const gridColumn = 2 + Math.floor((i + padStart) / 7);
+			const gridColumn = 2 + Math.floor((i + startRow) / 7);
 			latestMonth = month;
 			months.push(
-				<div
+				<span
 					className={styles.month}
 					key={i}
 					style={{ gridColumn }}
 				>
 					{MONTH[date.getMonth()]}
-				</div>,
+				</span>,
 			);
 		}
 		return (
@@ -60,7 +61,15 @@ function ContributionCalendar(props) {
 		);
 	});
 
-	// 俩月份之间至少隔三格，避免重叠，只可能出现在第一个月。
+	// 第一格不一定是周日，此时前面会有空白，需要设置下起始行。
+	tiles[0] = React.cloneElement(tiles[0], {
+		style: { gridRow: startRow + 1 },
+	});
+	// 如果第一格不是周日，则首月可能跑到第二列，需要再检查下。
+	if (MONTH[firstDate.getMonth()] === months[0].props.children) {
+		months[0].props.style.gridColumn = 2;
+	}
+	// 第一个月可能跟第二个重叠，此时隐藏第一个。
 	if (months[1].props.style.gridColumn - months[0].props.style.gridColumn < 3) {
 		months[0] = null;
 	}
@@ -68,11 +77,6 @@ function ContributionCalendar(props) {
 	if (months.at(-1).props.style.gridColumn > 53) {
 		months[months.length - 1] = null;
 	}
-
-	// 第一格不一定是周末，此时前面会有空白，通过 span 来填充。
-	tiles[0] = React.cloneElement(tiles[0], {
-		style: { gridRow: `1 span/${padStart + 2}` },
-	});
 
 	return (
 		<div className={clsx(styles.container, props.className)}>
