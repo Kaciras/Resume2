@@ -69,6 +69,11 @@ function ContributionCalendar(props) {
 		months[months.length - 1] = null;
 	}
 
+	// 第一格不一定是周末，此时前面会有空白，通过 span 来填充。
+	tiles[0] = React.cloneElement(tiles[0], {
+		style: { gridRow: `1 span/${padStart + 2}` },
+	});
+
 	return (
 		<div className={clsx(styles.container, props.className)}>
 			{months}
