@@ -24,14 +24,14 @@ function getTooltip(oneDay, date) {
  * const data = [{ level: 1, count: 5, date: 1728272654618 }, ...];
  * <ContributionCalendar contributions={data}/>
  */
-function ContributionCalendar(props) {
-	const firstDate = new Date(props.contributions[0].date);
+function ContributionCalendar({ contributions, className, ...rest }) {
+	const firstDate = new Date(contributions[0].date);
 	const startRow = firstDate.getDay();
 	const months = [];
 	let total = 0;
 	let latestMonth = -1;
 
-	const tiles = props.contributions.map((c, i) => {
+	const tiles = contributions.map((c, i) => {
 		const date = new Date(c.date);
 		const month = date.getMonth();
 		total += c.count;
@@ -79,7 +79,7 @@ function ContributionCalendar(props) {
 	}
 
 	return (
-		<div className={clsx(styles.container, props.className)}>
+		<div {...rest} className={clsx(styles.container, className)}>
 			{months}
 			<span className={styles.week}>Mon</span>
 			<span className={styles.week}>Wed</span>
