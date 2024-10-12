@@ -20,7 +20,7 @@
 		"@mdx-js/react": "^3.0.1",
 		"clsx": "^2.1.1",
 		"devicon": "^2.16.0",
-		"next": "^14.2.14",
+		"next": "^14.2.15",
 		"qrcode": "^1.5.4",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
@@ -31,12 +31,12 @@
 		"@kaciras/eslint-config-jest": "^3.2.0",
 		"@kaciras/eslint-config-react": "^3.2.0",
 		"@mdx-js/loader": "^3.0.1",
-		"@next/bundle-analyzer": "^14.2.14",
-		"@next/mdx": "^14.2.14",
+		"@next/bundle-analyzer": "^14.2.15",
+		"@next/mdx": "^14.2.15",
 		"@svgr/webpack": "^8.1.0",
 		"@types/react": "^18.3.11",
 		"eslint": "^9.12.0",
-		"eslint-config-next": "^14.2.14",
-		"sass": "^1.79.4"
+		"eslint-config-next": "^14.2.15",
+		"sass": "^1.79.5"
 	}
 }
