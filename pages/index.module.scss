@@ -48,11 +48,6 @@ $width-desktop: 1000px;
 .cardList {
 	--background-width: 1000px;
 
-	@include tablet-layout {
-		gap: 90px;
-		--background-width: 720px;
-	}
-
 	display: flex;
 	flex-direction: column;
 	gap: 140px;
@@ -63,6 +58,11 @@ $width-desktop: 1000px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: var(--background-width) calc(var(--background-width) / 4 * 5);
+
+	@include tablet-layout {
+		gap: 90px;
+		--background-width: 720px;
+	}
 }
 
 .card {
