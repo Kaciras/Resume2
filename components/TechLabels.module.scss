@@ -1,4 +1,4 @@
-@import "../css/mixins";
+@use "../css/mixins.scss" as *;
 
 /* 子元素有 flex: 1 无需 space-evenly 也能充满一行 */
 .container {

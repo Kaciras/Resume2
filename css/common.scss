@@ -1,4 +1,4 @@
-@import "mixins";
+@use "./mixins.scss" as *;
 
 /*
  * 使用 calc 让 padding 实现 margin: auto 的居中效果和 max-width。

@@ -1,4 +1,4 @@
-@import "css/mixins";
+@use "../css/mixins" as *;
 
 .container {
 	composes: content from global;

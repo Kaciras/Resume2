@@ -1,4 +1,4 @@
-@import "css/mixins";
+@use "../css/mixins.scss" as *;
 
 $column-gap: 10px;
 $logo-size: 3em;

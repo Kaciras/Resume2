@@ -1,4 +1,4 @@
-@import "../css/mixins";
+@use "../css/mixins.scss" as *;
 
 .container:not(:first-of-type) {
 	margin-top: 2rem;

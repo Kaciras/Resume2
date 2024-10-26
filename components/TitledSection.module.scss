@@ -1,4 +1,4 @@
-@import "../css/mixins";
+@use "../css/mixins.scss" as *;
 
 .header {
 	--primary-font: 2.5rem;

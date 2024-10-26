@@ -1,4 +1,4 @@
-@import "../css/mixins.scss";
+@use "../css/mixins.scss" as *;
 
 .sideTOC {
 	position: fixed;
