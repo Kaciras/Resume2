@@ -19,10 +19,10 @@
 		"@mdx-js/react": "^3.1.0",
 		"clsx": "^2.1.1",
 		"devicon": "^2.16.0",
-		"next": "^15.2.3",
+		"next": "^15.2.4",
 		"qrcode": "^1.5.4",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
 		"react-icons": "^5.5.0"
 	},
 	"devDependencies": {
@@ -30,12 +30,12 @@
 		"@kaciras/eslint-config-jest": "^3.3.0",
 		"@kaciras/eslint-config-react": "^3.3.0",
 		"@mdx-js/loader": "^3.1.0",
-		"@next/bundle-analyzer": "^15.2.3",
-		"@next/mdx": "^15.2.3",
+		"@next/bundle-analyzer": "^15.2.4",
+		"@next/mdx": "^15.2.4",
 		"@svgr/webpack": "^8.1.0",
 		"@types/react": "^19.0.12",
 		"eslint": "^9.23.0",
-		"eslint-config-next": "^15.2.3",
+		"eslint-config-next": "^15.2.4",
 		"sass": "^1.86.0"
 	}
 }
