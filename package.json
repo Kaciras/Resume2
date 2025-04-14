@@ -1,8 +1,7 @@
 {
-	"name": "@kaciras/resume",
-	"private": true,
-	"license": "MIT",
 	"author": "Kaciras <contact@kaciras.com>",
+	"license": "MIT",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/Kaciras/Resume2"
@@ -19,7 +18,7 @@
 		"@mdx-js/react": "^3.1.0",
 		"clsx": "^2.1.1",
 		"devicon": "^2.16.0",
-		"next": "^15.2.4",
+		"next": "^15.3.0",
 		"qrcode": "^1.5.4",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
@@ -30,12 +29,12 @@
 		"@kaciras/eslint-config-jest": "^3.3.0",
 		"@kaciras/eslint-config-react": "^3.3.0",
 		"@mdx-js/loader": "^3.1.0",
-		"@next/bundle-analyzer": "^15.2.4",
-		"@next/mdx": "^15.2.4",
+		"@next/bundle-analyzer": "^15.3.0",
+		"@next/mdx": "^15.3.0",
 		"@svgr/webpack": "^8.1.0",
-		"@types/react": "^19.1.0",
+		"@types/react": "^19.1.1",
 		"eslint": "^9.24.0",
-		"eslint-config-next": "^15.2.4",
+		"eslint-config-next": "^15.3.0",
 		"sass": "^1.86.3"
 	}
 }
