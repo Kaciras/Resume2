@@ -33,8 +33,8 @@
 		"@next/mdx": "^15.3.1",
 		"@svgr/webpack": "^8.1.0",
 		"@types/react": "^19.1.2",
-		"eslint": "^9.25.0",
+		"eslint": "^9.25.1",
 		"eslint-config-next": "^15.3.1",
-		"sass": "^1.86.3"
+		"sass": "^1.87.0"
 	}
 }
