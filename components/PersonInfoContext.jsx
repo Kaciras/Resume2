@@ -37,5 +37,5 @@ export default function PersonInfoProvider({ children }) {
 
 	useEffect(tryUseRealData, [key]);
 
-	return <PersonInfoContext.Provider value={value}>{children}</PersonInfoContext.Provider>;
+	return <PersonInfoContext value={value}>{children}</PersonInfoContext>;
 }
