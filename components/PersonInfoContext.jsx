@@ -9,7 +9,7 @@ const demoInfo = {
 	name: "徐先生",
 	education: "某某大学，本科，网络工程，2014-2018",
 	phone: 12345678900,
-	mail: "Kaciras@outlook.com",
+	mail: "contact@kaciras.com",
 	note: "当前是预览模式，为防爬虫，只有邮箱是真的",
 };
 

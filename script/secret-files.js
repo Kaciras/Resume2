@@ -9,8 +9,8 @@
  * 解密 /public/info.json.aes 文件，在控制台输出其内容。
  */
 import { argv, exit, stdout } from "process";
-import { dirname, join } from "path";
-import { readdirSync, readFileSync, statSync, writeFileSync } from "fs";
+import { dirname, join } from "node:path";
+import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { AESHelper } from "@kaciras/utilities/browser";
 
 if (argv.length < 4) {
@@ -52,7 +52,7 @@ async function decryptFile(name) {
 }
 
 if (mode === "encrypt") {
-	await encryptFiles(filename ?? "secret");
+	await encryptFiles(filename ?? ".");
 } else if (mode === "decrypt") {
 	await decryptFile(filename);
 } else {
