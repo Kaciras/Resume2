@@ -27,7 +27,6 @@ export default function PersonInfoProvider({ children }) {
 		if (!key || typeof window === "undefined") {
 			return;
 		}
-		setLoading(true);
 		downloadSecret("/info.json.aes", key)
 			.then(json => JSON.parse(new TextDecoder().decode(json)))
 			.then(setInfo)
