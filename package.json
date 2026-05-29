@@ -32,9 +32,9 @@
 		"@next/bundle-analyzer": "^16.2.6",
 		"@next/mdx": "^16.2.6",
 		"@svgr/webpack": "^8.1.0",
-		"@types/react": "^19.2.14",
+		"@types/react": "^19.2.15",
 		"eslint": "^10.4.0",
 		"eslint-config-next": "^16.2.6",
-		"sass": "^1.99.0"
+		"sass": "^1.100.0"
 	}
 }
