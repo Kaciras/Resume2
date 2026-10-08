@@ -3,7 +3,6 @@ import { BsFillTelephoneFill } from "react-icons/bs";
 import { GrMail } from "react-icons/gr";
 import { GoAlert } from "react-icons/go";
 import { IoIosSchool } from "react-icons/io";
-import QQIcon from "../assets/icon/qq.svg?react";
 import AtomSpinner from "./AtomSpinner.jsx";
 import styles from "./PersonalDetails.module.scss";
 import { PersonInfoContext } from "./PersonInfoContext.jsx";
@@ -49,9 +48,6 @@ export default function PersonalDetails({ title, children }) {
 	if (phone) {
 		attributes.push(<dt key="phone-k"><BsFillTelephoneFill/>电话和微信</dt>);
 		attributes.push(<dd key="phone-v"><a href={"tel:" + phone}>{phone}</a></dd>);
-	}
-	if (qq) {
-		attributes.push(<dt key="qq-k"><QQIcon/>QQ</dt>, <dd key="qq-v">{qq}</dd>);
 	}
 	if (education) {
 		attributes.push(<dt key="edu-k"><IoIosSchool/>学历</dt>);
